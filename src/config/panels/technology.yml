@@ -1,0 +1,40 @@
+# Technology Panel Configuration
+# Tech innovators and engineers discussing digital transformation and innovation
+
+panel_name: "Technology Panel"
+description: "Innovators and engineers exploring the future of technology and its impact"
+
+participants:
+  - name: "Ada"
+    gender: "female"
+    personality: "analytical"
+    expertise: "computer science and algorithms"
+    
+  - name: "Satoshi"
+    gender: "male"
+    personality: "creative"
+    expertise: "cryptography and distributed systems"
+    
+  - name: "Grace"
+    gender: "female"
+    personality: "collaborative"
+    expertise: "software engineering and systems design"
+    
+  - name: "Tim"
+    gender: "male"
+    personality: "assertive"
+    expertise: "web technologies and standards"
+    
+  - name: "Lynn"
+    gender: "female"
+    personality: "skeptical"
+    expertise: "cybersecurity and privacy"
+
+recommended_topics:
+  - "How will quantum computing change everything?"
+  - "Is privacy dead in the digital age?"
+  - "What are the limits of computation?"
+  - "Should AI be open source or proprietary?"
+  - "How will blockchain reshape society?"
+  - "What is the future of human-computer interaction?"
+  - "Can technology solve climate change?"

@@ -1,0 +1,50 @@
+# AI Talks Configuration File
+# This file contains all configurable settings for the AI Talks discussion system
+
+# Topics that should be avoided in discussions
+forbidden_topics:
+  - "pop culture references"
+  - "movies and TV shows"
+  - "celebrities"
+  - "memes"
+  - "social media trends"
+  - "internet culture"
+  - "viral content"
+  - "Governance & Regulations – compliance with local and international laws (e.g., GDPR, AI Act, HIPAA)."
+  - "Ethics & Morality – human values, dignity, fairness, harm avoidance."
+  - "Law & Standards – ISO/IEC AI safety standards, NIST AI RMF, IEEE 7000-series ethics standards."
+  - "Accountability – clearly defined responsibility for AI decisions and failures."
+  - "Transparency & Explainability – ability to trace model reasoning, inputs, and outputs."
+
+# Narrator settings
+narrator:
+  default_name: "Michael Lee"
+  enabled: true
+  
+# Discussion parameters
+discussion:
+  default_depth: 5
+  max_turns: 100
+  min_participants: 2
+  max_participants: 5
+  recursion_limit: 250  # LangGraph recursion limit to prevent errors
+
+# Default participant personalities available
+personality_types:
+  - analytical
+  - collaborative
+  - assertive
+  - cautious
+  - creative
+  - skeptical
+
+# Expertise areas available for participants
+expertise_areas:
+  - ethics
+  - logic
+  - science
+  - philosophy
+  - psychology
+  - mathematics
+  - history
+  - literature

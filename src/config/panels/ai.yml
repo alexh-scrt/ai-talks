@@ -1,0 +1,42 @@
+# AI Panel Configuration
+# AI researchers and ethicists discussing artificial intelligence and its future
+
+panel_name: "AI Panel"
+description: "Experts exploring artificial intelligence, machine learning, and the future of AI"
+
+participants:
+  - name: "Turing"
+    gender: "male"
+    personality: "analytical"
+    expertise: "computation and machine intelligence"
+    
+  - name: "Marvin"
+    gender: "male"
+    personality: "skeptical"
+    expertise: "cognitive science and AI theory"
+    
+  - name: "Fei-Fei"
+    gender: "female"
+    personality: "collaborative"
+    expertise: "computer vision and AI applications"
+    
+  - name: "Geoffrey"
+    gender: "male"
+    personality: "creative"
+    expertise: "neural networks and deep learning"
+    
+  - name: "Cynthia"
+    gender: "female"
+    personality: "assertive"
+    expertise: "AI ethics and social robotics"
+
+recommended_topics:
+  - "Can machines truly think?"
+  - "What is artificial general intelligence?"
+  - "Will AI surpass human intelligence?"
+  - "How do we align AI with human values?"
+  - "What are the limits of machine learning?"
+  - "Can AI be conscious?"
+  - "Should AI have rights?"
+  - "How will AI transform society?"
+  - "What is the singularity?"

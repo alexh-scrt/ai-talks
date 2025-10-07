@@ -1,0 +1,13 @@
+topic: "What is the meaning of life?"
+depth: 2
+
+participants:
+  - name: Sophia
+    gender: female
+    personality: collaborative
+    expertise: existentialism
+    
+  - name: Marcus
+    gender: male
+    personality: skeptical
+    expertise: logic

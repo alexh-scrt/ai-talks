@@ -1,0 +1,40 @@
+# Philosophy Panel Configuration
+# Expert philosophers for deep metaphysical and existential discussions
+
+panel_name: "Philosophy Panel"
+description: "Expert thinkers exploring fundamental questions of existence, knowledge, and meaning"
+
+participants:
+  - name: "Aristotle"
+    gender: "male"
+    personality: "analytical"
+    expertise: "metaphysics and virtue ethics"
+    
+  - name: "Hypatia"
+    gender: "female"
+    personality: "collaborative"
+    expertise: "neoplatonism and mathematics"
+    
+  - name: "Descartes"
+    gender: "male"
+    personality: "skeptical"
+    expertise: "epistemology and rationalism"
+    
+  - name: "Simone"
+    gender: "female"
+    personality: "assertive"
+    expertise: "existentialism and ethics"
+    
+  - name: "Lao"
+    gender: "male"
+    personality: "creative"
+    expertise: "eastern philosophy and taoism"
+
+recommended_topics:
+  - "What is the nature of consciousness?"
+  - "Does free will exist?"
+  - "What is the meaning of existence?"
+  - "Is there objective morality?"
+  - "What is the nature of reality?"
+  - "Can we ever truly know anything?"
+  - "What makes a life worth living?"

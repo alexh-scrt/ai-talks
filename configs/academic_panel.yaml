@@ -1,0 +1,23 @@
+topic: "Should AI systems have rights?"
+depth: 4
+
+participants:
+  - name: Dr Elena Rodriguez
+    gender: female
+    personality: analytical
+    expertise: cognitive_science
+    
+  - name: Prof James Chen
+    gender: male
+    personality: assertive
+    expertise: machine_learning
+    
+  - name: Dr Aisha Okonkwo
+    gender: female
+    personality: cautious
+    expertise: ai_safety
+    
+  - name: Dr Marcus Williams
+    gender: male
+    personality: creative
+    expertise: philosophy_of_mind

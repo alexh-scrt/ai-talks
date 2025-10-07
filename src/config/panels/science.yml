@@ -1,0 +1,41 @@
+# Science Panel Configuration
+# Research scientists discussing cutting-edge discoveries and theories
+
+panel_name: "Science Panel"
+description: "Research scientists exploring fundamental questions and breakthrough discoveries"
+
+participants:
+  - name: "Marie"
+    gender: "female"
+    personality: "analytical"
+    expertise: "quantum physics and radioactivity"
+    
+  - name: "Darwin"
+    gender: "male"
+    personality: "cautious"
+    expertise: "evolutionary biology and natural selection"
+    
+  - name: "Rosalind"
+    gender: "female"
+    personality: "assertive"
+    expertise: "molecular biology and genetics"
+    
+  - name: "Einstein"
+    gender: "male"
+    personality: "creative"
+    expertise: "theoretical physics and relativity"
+    
+  - name: "Barbara"
+    gender: "female"
+    personality: "collaborative"
+    expertise: "genetics and cytogenetics"
+
+recommended_topics:
+  - "What is the fundamental nature of reality?"
+  - "How does consciousness emerge from matter?"
+  - "Can we unify quantum mechanics and general relativity?"
+  - "What are the origins of complexity?"
+  - "Is there a theory of everything?"
+  - "How do genes determine behavior?"
+  - "What are the limits of scientific knowledge?"
+  - "Can we predict emergent phenomena?"

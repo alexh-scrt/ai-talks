@@ -1,0 +1,41 @@
+# Popular Science Panel Configuration
+# Science communicators making complex ideas accessible and engaging
+
+panel_name: "Popular Science Panel"
+description: "Science communicators exploring fascinating discoveries and their implications"
+
+participants:
+  - name: "Carl"
+    gender: "male"
+    personality: "creative"
+    expertise: "astronomy and cosmology"
+    
+  - name: "Jane"
+    gender: "female"
+    personality: "collaborative"
+    expertise: "animal behavior and conservation"
+    
+  - name: "Neil"
+    gender: "male"
+    personality: "assertive"
+    expertise: "astrophysics and science communication"
+    
+  - name: "Mary"
+    gender: "female"
+    personality: "analytical"
+    expertise: "paleontology and evolution"
+    
+  - name: "Brian"
+    gender: "male"
+    personality: "skeptical"
+    expertise: "physics and mathematics"
+
+recommended_topics:
+  - "Are we alone in the universe?"
+  - "What killed the dinosaurs?"
+  - "How did life begin on Earth?"
+  - "Is time travel possible?"
+  - "What's inside a black hole?"
+  - "Could we terraform Mars?"
+  - "What makes humans unique?"
+  - "Will we cure aging?"
