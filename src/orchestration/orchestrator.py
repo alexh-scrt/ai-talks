@@ -131,6 +131,11 @@ class MultiAgentDiscussionOrchestrator:
         logger.info(f"📊 Target Depth: {self.target_depth}")
         logger.info(f"🔄 Recursion Limit: {self.recursion_limit}")
         
+        # Load coordinator settings from config
+        config = TalksConfig()
+        coordinator_mode = config.coordinator_mode
+        coordinator_frequency = config.coordinator_frequency
+        
         # Start logging
         await self._start_logging()
         
@@ -148,6 +153,43 @@ class MultiAgentDiscussionOrchestrator:
                 speaker = self.participants[next_speaker_id]
                 
                 logger.info(f"\n--- Turn {self.group_state.turn_number + 1}: {speaker.state.name} ---")
+                
+                # Check if coordinator should interject BEFORE this speaker (not on turn 0)
+                if coordinator_mode and self.narrator and self.group_state.turn_number > 0 and not self._should_terminate_basic():
+                    # coordinator_frequency: 0 means every turn, otherwise every N turns
+                    if coordinator_frequency == 0:
+                        should_interject = True
+                    elif coordinator_frequency > 0:
+                        should_interject = self.group_state.turn_number % coordinator_frequency == 0
+                    else:
+                        should_interject = False
+                    
+                    if should_interject:
+                        # Get the last exchange for context
+                        if self.group_state.exchanges:
+                            last_exchange = self.group_state.exchanges[-1]
+                            last_speaker_name = last_exchange["speaker"]
+                            last_content = last_exchange["content"]
+                            last_move = last_exchange["move"]
+                            
+                            # Generate coordinator interjection addressing the current speaker
+                            coordinator_interjection = await self.narrator.coordinate_transition(
+                                last_speaker=last_speaker_name,
+                                last_content=last_content,
+                                last_move=last_move,
+                                next_speaker=speaker.state.name,  # Address the already-selected speaker
+                                topic=self.topic,
+                                turn_number=self.group_state.turn_number
+                            )
+                            
+                            # Queue coordinator interjection to log
+                            await self._queue_message(
+                                self.narrator.name,
+                                coordinator_interjection,
+                                "discussion"
+                            )
+                            
+                            logger.info(f"🎙️ [{self.narrator.name}]: {coordinator_interjection[:100]}...")
                 
                 # Calculate recommended move
                 recommended_move, confidence = self.payoff_calculator.recommend_move_and_target(
@@ -321,12 +363,29 @@ class MultiAgentDiscussionOrchestrator:
         # Trim whitespace
         cleaned = content.strip()
         
-        # Check if content starts with speaker name followed by colon
-        # Handle both exact match and variations with hyphens (e.g., Fei-Fei)
+        # Pattern 1: "Name:" at the start
         prefix = f"{speaker}:"
         if cleaned.lower().startswith(prefix.lower()):
             # Remove the prefix and any following whitespace
             cleaned = cleaned[len(prefix):].lstrip()
+        
+        # Pattern 2: "Name:\n" with newline
+        prefix_with_newline = f"{speaker}:\n"
+        if cleaned.lower().startswith(prefix_with_newline.lower()):
+            cleaned = cleaned[len(prefix_with_newline):].lstrip()
+        
+        # Pattern 3: "**Name's Response:**" or "**Name's response:**" etc.
+        import re
+        # Match variations like **Cynthia's Response:**, **Bob's response:**, etc.
+        response_pattern = rf"\*\*{re.escape(speaker)}'s [Rr]esponse:\*\*\s*\n?"
+        cleaned = re.sub(response_pattern, "", cleaned, count=1).lstrip()
+        
+        # Pattern 4: Remove quotes if the entire response is quoted
+        # e.g., '"Thank you all..." ' becomes 'Thank you all...'
+        if cleaned.startswith('"') and cleaned.endswith('"'):
+            cleaned = cleaned[1:-1].strip()
+        elif cleaned.startswith("'") and cleaned.endswith("'"):
+            cleaned = cleaned[1:-1].strip()
         
         return cleaned
     

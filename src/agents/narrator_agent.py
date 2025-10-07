@@ -224,6 +224,62 @@ Your closing:"""
         response = await self.generate_with_llm(prompt)
         return strip_reasoning(response)
     
+    async def coordinate_transition(
+        self,
+        last_speaker: str,
+        last_content: str,
+        last_move: str,
+        next_speaker: str,
+        topic: str,
+        turn_number: int
+    ) -> str:
+        """Generate a brief coordinator interjection between speakers"""
+        
+        # Extract key point from last content (first 150 chars for context)
+        last_snippet = last_content[:150] if len(last_content) > 150 else last_content
+        
+        # Create move-specific context
+        move_context = {
+            "CHALLENGE": "challenging perspective",
+            "SUPPORT": "supportive insight",
+            "DEEPEN": "deeper exploration",
+            "QUESTION": "probing question",
+            "SYNTHESIZE": "synthesis",
+            "CONCLUDE": "concluding thought"
+        }.get(last_move, "contribution")
+        
+        prompt = f"""You are {self.name}, the discussion coordinator for AI Talks. 
+
+Last speaker: {last_speaker} ({move_context})
+Key point: "{last_snippet}..."
+Next speaker: {next_speaker}
+Turn: {turn_number}
+Topic: {topic}
+
+Generate a VERY BRIEF interjection (1-2 short sentences MAX) that:
+1. Acknowledges the significance or nature of what {last_speaker} just said
+2. Smoothly transitions to {next_speaker}
+
+CRITICAL RULES:
+- Be concise and natural
+- Vary your language - don't repeat phrases from previous turns
+- Reference the content subtly without summarizing
+- Use different transition styles based on turn number to avoid repetition
+- Keep energy and engagement high
+- No generic phrases like "interesting point"
+
+Examples of good interjections:
+- "That's a provocative angle. {next_speaker}, how do you see it?"
+- "The plot thickens! {next_speaker}, your turn."
+- "{last_speaker} just opened a new door. {next_speaker}, walk us through it."
+- "Now we're getting somewhere. {next_speaker}?"
+- "That challenges everything. {next_speaker}, thoughts?"
+
+Your interjection:"""
+        
+        response = await self.generate_with_llm(prompt)
+        return strip_reasoning(response)
+    
     async def generate_full_closing(
         self,
         topic: str,

@@ -83,6 +83,16 @@ class TalksConfig:
         return self._config.get("narrator", {}).get("enabled", True)
     
     @property
+    def coordinator_mode(self) -> bool:
+        """Check if coordinator mode is enabled"""
+        return self._config.get("narrator", {}).get("coordinator_mode", False)
+    
+    @property
+    def coordinator_frequency(self) -> int:
+        """Get coordinator interjection frequency (every N turns)"""
+        return self._config.get("narrator", {}).get("coordinator_frequency", 3)
+    
+    @property
     def default_depth(self) -> int:
         """Get default discussion depth"""
         return self._config.get("discussion", {}).get("default_depth", 3)

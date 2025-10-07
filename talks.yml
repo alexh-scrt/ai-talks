@@ -20,6 +20,8 @@ forbidden_topics:
 narrator:
   default_name: "Michael Lee"
   enabled: true
+  coordinator_mode: true  # Enable coordinator interjections between speakers
+  coordinator_frequency: 0  # Interject every N turns (0 = every turn)
   
 # Discussion parameters
 discussion:
