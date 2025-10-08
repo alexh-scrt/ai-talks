@@ -367,6 +367,7 @@ class MultiAgentDiscussionOrchestrator:
         
         # Pattern 1: Remove any instance of "speaker:" or "speaker_id:" at the beginning
         # This handles multiple occurrences like "Michael Lee: Michael Lee: ..."
+        # Also handles bold markdown format like "**Speaker:**"
         # Keep removing until no more matches
         speaker_variations = [speaker]
         # Add common variations like replacing spaces with underscores
@@ -381,6 +382,10 @@ class MultiAgentDiscussionOrchestrator:
                 # Match "Name:" at the start (case-insensitive)
                 pattern = rf"^{re.escape(variant)}:\s*"
                 cleaned = re.sub(pattern, "", cleaned, flags=re.IGNORECASE).lstrip()
+                
+                # Also match "**Name:**" in bold markdown format
+                bold_pattern = rf"^\*\*{re.escape(variant)}:\*\*\s*"
+                cleaned = re.sub(bold_pattern, "", cleaned, flags=re.IGNORECASE).lstrip()
             changed = (original != cleaned)
         
         # Pattern 2: "**Name's Response:**" or "**Name's response:**" etc.
