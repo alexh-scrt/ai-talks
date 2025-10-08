@@ -363,32 +363,37 @@ class MultiAgentDiscussionOrchestrator:
         # Trim whitespace
         cleaned = content.strip()
         
-        # Pattern 1: Handle double name prefix "Name: Name:" or just "Name:"
         import re
-        # This will match "Name: Name:" or just "Name:" at the start (case-insensitive)
-        double_name_pattern = rf"^{re.escape(speaker)}:\s*(?:{re.escape(speaker)}:\s*)?"
-        cleaned = re.sub(double_name_pattern, "", cleaned, flags=re.IGNORECASE).lstrip()
         
-        # Pattern 2: "Name:\n" with newline
-        prefix_with_newline = f"{speaker}:\n"
-        if cleaned.lower().startswith(prefix_with_newline.lower()):
-            cleaned = cleaned[len(prefix_with_newline):].lstrip()
+        # Pattern 1: Remove any instance of "speaker:" or "speaker_id:" at the beginning
+        # This handles multiple occurrences like "Michael Lee: Michael Lee: ..."
+        # Keep removing until no more matches
+        speaker_variations = [speaker]
+        # Add common variations like replacing spaces with underscores
+        speaker_id = speaker.lower().replace(" ", "_")
+        speaker_variations.append(speaker_id)
         
-        # Pattern 3: "**Name's Response:**" or "**Name's response:**" etc.
+        # Remove all instances of speaker name followed by colon at the start
+        changed = True
+        while changed:
+            original = cleaned
+            for variant in speaker_variations:
+                # Match "Name:" at the start (case-insensitive)
+                pattern = rf"^{re.escape(variant)}:\s*"
+                cleaned = re.sub(pattern, "", cleaned, flags=re.IGNORECASE).lstrip()
+            changed = (original != cleaned)
+        
+        # Pattern 2: "**Name's Response:**" or "**Name's response:**" etc.
         # Match variations like **Cynthia's Response:**, **Bob's response:**, etc.
         response_pattern = rf"\*\*{re.escape(speaker)}'s [Rr]esponse:\*\*\s*\n?"
         cleaned = re.sub(response_pattern, "", cleaned, count=1).lstrip()
         
-        # Pattern 4: Remove quotes if the entire response is quoted
+        # Pattern 3: Remove quotes if the entire response is quoted
         # e.g., '"Thank you all..." ' becomes 'Thank you all...'
         if cleaned.startswith('"') and cleaned.endswith('"'):
             cleaned = cleaned[1:-1].strip()
         elif cleaned.startswith("'") and cleaned.endswith("'"):
             cleaned = cleaned[1:-1].strip()
-        
-        # Final check: If it still starts with just the name followed by colon, remove it
-        if cleaned.lower().startswith(f"{speaker.lower()}:"):
-            cleaned = cleaned[len(speaker)+1:].lstrip()
         
         return cleaned
     
@@ -430,8 +435,8 @@ class MultiAgentDiscussionOrchestrator:
                         # Clean content to remove redundant speaker prefixes
                         cleaned_content = self._clean_content(speaker, content)
                         
-                        # Write message with speaker name prefix and cleaned content
-                        f.write(f"\n<{speaker}>\n{speaker}: {cleaned_content}\n</{speaker}>\n")
+                        # Write message with cleaned content (speaker already identified by XML tags)
+                        f.write(f"\n<{speaker}>\n{cleaned_content}\n</{speaker}>\n")
                         f.flush()  # Ensure real-time writing
                         
                     except asyncio.TimeoutError:
