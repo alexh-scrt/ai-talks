@@ -13,17 +13,33 @@ console = Console()
 
 @click.command()
 @click.option("--topic", "-t", help="Discussion topic")
+@click.option("--file", "-f", type=click.Path(exists=True), help="Read topic from file")
 @click.option("--depth", "-d", type=int, help="Depth level (1-5)")
 @click.option("--participants", "-p", default=2, type=int, help="Number of participants")
 @click.option("--panel", type=click.Choice(['philosophy', 'technology', 'popular_science', 'science', 'general', 'ai']), help="Use a predefined panel")
 @click.option("--config", "-c", type=click.Path(exists=True), help="Config file path")
 @click.option("--max-turns", "-m", type=int, help="Maximum number of turns")
 @click.option("--narrator/--no-narrator", default=None, help="Enable/disable narrator")
-def main(topic: str, depth: int, participants: int, panel: str, config: str, max_turns: int, narrator: bool):
+def main(topic: str, file: str, depth: int, participants: int, panel: str, config: str, max_turns: int, narrator: bool):
     """Talks: Multi-Agent Philosophical Discussion System"""
     
     # Load system configuration
     talks_config = TalksConfig()
+    
+    # Read topic from file if provided
+    if file and not topic:
+        try:
+            with open(file, 'r') as f:
+                topic = f.read().strip()
+                if not topic:
+                    console.print("[red]Error: File is empty[/red]")
+                    return
+                console.print(f"[cyan]Topic loaded from file: {file}[/cyan]")
+        except Exception as e:
+            console.print(f"[red]Error reading file: {e}[/red]")
+            return
+    elif file and topic:
+        console.print("[yellow]Warning: Both --topic and --file provided, using --topic[/yellow]")
     
     # Use config defaults if not specified
     if depth is None:
@@ -69,8 +85,12 @@ def main(topic: str, depth: int, participants: int, panel: str, config: str, max
             depth = config_data["depth"]
     else:
         if not topic:
-            console.print("[red]Error: Please provide a topic with --topic, use a --panel, or a config file with --config[/red]")
+            console.print("[red]Error: Please provide a topic with --topic, --file, use a --panel, or a config file with --config[/red]")
             console.print("\nAvailable panels: philosophy, technology, popular_science, science, general, ai")
+            console.print("\nExample usage:")
+            console.print("  python main.py --topic 'What is consciousness?'")
+            console.print("  python main.py --file question.txt")
+            console.print("  python main.py --panel philosophy --topic 'Free will'")
             return
         participants_config = get_default_participants(participants)
     

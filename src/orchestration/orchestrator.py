@@ -363,11 +363,11 @@ class MultiAgentDiscussionOrchestrator:
         # Trim whitespace
         cleaned = content.strip()
         
-        # Pattern 1: "Name:" at the start
-        prefix = f"{speaker}:"
-        if cleaned.lower().startswith(prefix.lower()):
-            # Remove the prefix and any following whitespace
-            cleaned = cleaned[len(prefix):].lstrip()
+        # Pattern 1: Handle double name prefix "Name: Name:" or just "Name:"
+        import re
+        # This will match "Name: Name:" or just "Name:" at the start (case-insensitive)
+        double_name_pattern = rf"^{re.escape(speaker)}:\s*(?:{re.escape(speaker)}:\s*)?"
+        cleaned = re.sub(double_name_pattern, "", cleaned, flags=re.IGNORECASE).lstrip()
         
         # Pattern 2: "Name:\n" with newline
         prefix_with_newline = f"{speaker}:\n"
@@ -375,7 +375,6 @@ class MultiAgentDiscussionOrchestrator:
             cleaned = cleaned[len(prefix_with_newline):].lstrip()
         
         # Pattern 3: "**Name's Response:**" or "**Name's response:**" etc.
-        import re
         # Match variations like **Cynthia's Response:**, **Bob's response:**, etc.
         response_pattern = rf"\*\*{re.escape(speaker)}'s [Rr]esponse:\*\*\s*\n?"
         cleaned = re.sub(response_pattern, "", cleaned, count=1).lstrip()
@@ -386,6 +385,10 @@ class MultiAgentDiscussionOrchestrator:
             cleaned = cleaned[1:-1].strip()
         elif cleaned.startswith("'") and cleaned.endswith("'"):
             cleaned = cleaned[1:-1].strip()
+        
+        # Final check: If it still starts with just the name followed by colon, remove it
+        if cleaned.lower().startswith(f"{speaker.lower()}:"):
+            cleaned = cleaned[len(speaker)+1:].lstrip()
         
         return cleaned
     
@@ -427,8 +430,8 @@ class MultiAgentDiscussionOrchestrator:
                         # Clean content to remove redundant speaker prefixes
                         cleaned_content = self._clean_content(speaker, content)
                         
-                        # Write message with cleaned content
-                        f.write(f"\n<{speaker}>\n{cleaned_content}\n</{speaker}>\n")
+                        # Write message with speaker name prefix and cleaned content
+                        f.write(f"\n<{speaker}>\n{speaker}: {cleaned_content}\n</{speaker}>\n")
                         f.flush()  # Ensure real-time writing
                         
                     except asyncio.TimeoutError:
