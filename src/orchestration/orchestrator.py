@@ -24,7 +24,10 @@ class MultiAgentDiscussionOrchestrator:
         target_depth: int,
         participants_config: List[Dict],
         enable_narrator: Optional[bool] = None,
-        narrator_name: Optional[str] = None
+        narrator_name: Optional[str] = None,
+        enable_synthesizer: Optional[bool] = None,
+        synthesis_frequency: int = 8,
+        synthesis_style: str = "hegelian"
     ):
         # Load configuration
         config = TalksConfig()
@@ -78,6 +81,23 @@ class MultiAgentDiscussionOrchestrator:
             )
         self.introduction_segments = []
         self.closing_segments = []
+        
+        # Synthesizer (optional)
+        if enable_synthesizer is None:
+            enable_synthesizer = config.get('synthesizer.enabled', True)
+        
+        self.enable_synthesizer = enable_synthesizer
+        self.synthesizer = None
+        self.synthesis_frequency = synthesis_frequency
+        
+        if enable_synthesizer:
+            from src.agents.dialectical_synthesizer import DialecticalSynthesizerAgent
+            self.synthesizer = DialecticalSynthesizerAgent(
+                name=config.get('synthesizer.name', 'The Synthesizer'),
+                synthesis_style=synthesis_style,
+                session_id=self.session_id
+            )
+            logger.info(f"🔄 Synthesizer enabled: {self.synthesizer.name} (style: {synthesis_style}, freq: {synthesis_frequency})")
         
         # Initialize logging queue
         self._log_queue = asyncio.Queue()
@@ -235,6 +255,37 @@ class MultiAgentDiscussionOrchestrator:
                     "personality": speaker.state.personality.value
                 }
                 self.group_state.add_exchange(exchange)
+                
+                # Synthesis checkpoint
+                if (self.enable_synthesizer and 
+                    self.group_state.turn_number > 0 and
+                    self.group_state.turn_number % self.synthesis_frequency == 0 and
+                    len(self.group_state.exchanges) >= 3):
+                    
+                    logger.info(f"🔄 Synthesis checkpoint at turn {self.group_state.turn_number}")
+                    
+                    try:
+                        synthesis = await self.synthesizer.synthesize_segment(
+                            exchanges=self.group_state.exchanges,
+                            turn_window=min(self.synthesis_frequency, 8),
+                            topic=self.topic
+                        )
+                        
+                        if synthesis:
+                            # Queue synthesis to log
+                            await self._queue_message(
+                                self.synthesizer.name,
+                                synthesis,
+                                "synthesis"
+                            )
+                            
+                            logger.info(f"🔄 [{self.synthesizer.name}]: {synthesis[:100]}...")
+                        else:
+                            logger.debug("Synthesizer returned no synthesis")
+                            
+                    except Exception as e:
+                        logger.error(f"Synthesis failed: {e}")
+                        # Continue discussion even if synthesis fails
                 
                 # Update group-level metrics
                 await self._update_group_state(response, speaker.state)

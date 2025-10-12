@@ -50,3 +50,10 @@ expertise_areas:
   - mathematics
   - history
   - literature
+
+# Synthesizer settings
+synthesizer:
+  enabled: true
+  name: "Synthesizer"
+  frequency: 8  # Synthesize every N turns (8 = every 8 turns)
+  style: "hegelian"  # Options: hegelian, socratic, pragmatic
