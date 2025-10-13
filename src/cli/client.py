@@ -23,8 +23,9 @@ console = Console()
 @click.option("--synthesis/--no-synthesis", default=None, help="Enable/disable synthesizer")
 @click.option("--synthesis-style", type=click.Choice(['hegelian', 'socratic', 'pragmatic']), help="Synthesis style")
 @click.option("--synthesis-freq", type=int, help="Synthesize every N turns")
+@click.option("--rag-styling/--no-rag-styling", default=None, help="Enable/disable RAG style transfer")
 def main(topic: str, file: str, depth: int, participants: int, panel: str, config: str, max_turns: int, narrator: bool,
-         synthesis: bool, synthesis_style: str, synthesis_freq: int):
+         synthesis: bool, synthesis_style: str, synthesis_freq: int, rag_styling: bool):
     """Talks: Multi-Agent Philosophical Discussion System"""
     
     # Load system configuration
@@ -60,6 +61,10 @@ def main(topic: str, file: str, depth: int, participants: int, panel: str, confi
         synthesis_style = talks_config.get('synthesizer.style', 'hegelian')
     if synthesis_freq is None:
         synthesis_freq = talks_config.get('synthesizer.frequency', 8)
+    
+    # RAG styling default
+    if rag_styling is None:
+        rag_styling = talks_config.rag_style_transfer_enabled
     
     console.print(Panel.fit(
         "[bold cyan]🎭  Talks: Multi-Agent Discussion System[/bold cyan]",
@@ -111,7 +116,8 @@ def main(topic: str, file: str, depth: int, participants: int, panel: str, confi
     console.print(f"[bold]Participants:[/bold] {len(participants_config)}")
     console.print(f"[bold]Max Turns:[/bold] {max_turns}")
     console.print(f"[bold]Narrator:[/bold] {'Enabled' if narrator else 'Disabled'}")
-    console.print(f"[bold]Synthesizer:[/bold] {'Enabled' if synthesis else 'Disabled'} ({synthesis_style}, every {synthesis_freq} turns)\n")
+    console.print(f"[bold]Synthesizer:[/bold] {'Enabled' if synthesis else 'Disabled'} ({synthesis_style}, every {synthesis_freq} turns)")
+    console.print(f"[bold]RAG Styling:[/bold] {'Enabled' if rag_styling else 'Disabled'}\n")
     
     # Display participants
     for p in participants_config:
@@ -124,11 +130,11 @@ def main(topic: str, file: str, depth: int, participants: int, panel: str, confi
     
     # Run discussion
     asyncio.run(run_discussion(topic, depth, participants_config, max_turns, narrator,
-                               synthesis, synthesis_style, synthesis_freq))
+                               synthesis, synthesis_style, synthesis_freq, rag_styling))
 
 
 async def run_discussion(topic: str, depth: int, participants_config: list, max_turns: int, enable_narrator: bool,
-                        enable_synthesis: bool, synthesis_style: str, synthesis_freq: int):
+                        enable_synthesis: bool, synthesis_style: str, synthesis_freq: int, use_rag_styling: bool):
     """Run the discussion and display results"""
     
     orchestrator = MultiAgentDiscussionOrchestrator(
@@ -138,7 +144,8 @@ async def run_discussion(topic: str, depth: int, participants_config: list, max_
         enable_narrator=enable_narrator,
         enable_synthesizer=enable_synthesis,
         synthesis_frequency=synthesis_freq,
-        synthesis_style=synthesis_style
+        synthesis_style=synthesis_style,
+        use_rag_styling=use_rag_styling
     )
     
     # Show forbidden topics from config

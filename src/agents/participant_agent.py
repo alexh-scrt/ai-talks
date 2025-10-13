@@ -23,7 +23,8 @@ class ParticipantAgent(BaseAgent):
         session_id: str,
         llm_model: str = "qwen3:32b",
         llm_temperature: float = 0.85,
-        web_search: bool = True
+        web_search: bool = True,
+        use_rag_styling: bool = True
     ):
         # Initialize base agent with tool support
         super().__init__(
@@ -43,6 +44,15 @@ class ParticipantAgent(BaseAgent):
         )
         
         self.payoff_calculator = PayoffCalculator()
+        
+        # RAG Style Transfer
+        self.use_rag_styling = use_rag_styling
+        self._style_transfer = None
+        
+        if use_rag_styling:
+            from src.agents.rag_style_transfer import RAGStyleTransferAgent
+            self._style_transfer = RAGStyleTransferAgent(session_id=session_id)
+            logger.info(f"🎨 Style transfer enabled for {name}")
     
     async def process(self, prompt: str, context: Optional[str] = None) -> str:
         """Implementation of abstract method from BaseAgent"""
@@ -73,7 +83,35 @@ class ParticipantAgent(BaseAgent):
         logger.info(f"{self.state.name} generating response for move: {recommended_move.move_type}")
         
         # Use the enhanced generate_with_llm that handles tool calls
-        response = await self.generate_with_llm(prompt)
+        raw_response = await self.generate_with_llm(prompt)
+        
+        # Check if web search or other tools were used
+        tools_used = self._tools_used_this_turn
+        
+        # Apply style transfer if RAG was used
+        if self.use_rag_styling and tools_used and self._style_transfer:
+            logger.info(f"🎨 Applying style transfer for {self.state.name} (tools were used)")
+            
+            # Build discussion context for style transfer
+            recent_exchanges = group_state.exchanges[-3:] if group_state.exchanges else []
+            recent_context = "\n".join([
+                f"{e['speaker']}: {e['content']}"
+                for e in recent_exchanges
+            ])
+            
+            try:
+                styled_response = await self._style_transfer.rewrite_in_voice(
+                    source_text=raw_response,
+                    agent_persona=self.state,
+                    discussion_context=recent_context,
+                    search_metadata={"tools_called": self._last_tool_calls}
+                )
+                response = styled_response
+            except Exception as e:
+                logger.error(f"Style transfer failed: {e}, using raw response")
+                response = raw_response
+        else:
+            response = raw_response
         
         # Strip reasoning blocks from the response
         cleaned_content = strip_reasoning(response)
@@ -81,7 +119,8 @@ class ParticipantAgent(BaseAgent):
         # Add to conversation history
         await self.add_to_history("assistant", cleaned_content, {
             "move_type": recommended_move.move_type,
-            "target": recommended_move.target
+            "target": recommended_move.target,
+            "style_transferred": tools_used and self.use_rag_styling
         })
         
         await self._update_state(cleaned_content, recommended_move, group_state)

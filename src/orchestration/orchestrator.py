@@ -27,7 +27,8 @@ class MultiAgentDiscussionOrchestrator:
         narrator_name: Optional[str] = None,
         enable_synthesizer: Optional[bool] = None,
         synthesis_frequency: int = 8,
-        synthesis_style: str = "hegelian"
+        synthesis_style: str = "hegelian",
+        use_rag_styling: Optional[bool] = None
     ):
         # Load configuration
         config = TalksConfig()
@@ -44,16 +45,21 @@ class MultiAgentDiscussionOrchestrator:
         if narrator_name is None:
             narrator_name = config.narrator_name
         
+        # RAG styling configuration
+        if use_rag_styling is None:
+            use_rag_styling = config.rag_style_transfer_enabled
+        
         # Initialize participants
         self.participants = {}
-        for config in participants_config:
+        for config_item in participants_config:
             agent = ParticipantAgent(
-                participant_id=config["name"].lower().replace(" ", "_"),
-                name=config["name"],
-                gender=Gender(config["gender"]),
-                personality=PersonalityArchetype(config["personality"]),
-                expertise=config["expertise"],
-                session_id=self.session_id
+                participant_id=config_item["name"].lower().replace(" ", "_"),
+                name=config_item["name"],
+                gender=Gender(config_item["gender"]),
+                personality=PersonalityArchetype(config_item["personality"]),
+                expertise=config_item["expertise"],
+                session_id=self.session_id,
+                use_rag_styling=use_rag_styling
             )
             self.participants[agent.state.participant_id] = agent
         

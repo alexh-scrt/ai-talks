@@ -141,3 +141,13 @@ class TalksConfig:
                 return default
         
         return value
+    
+    @property
+    def rag_style_transfer_enabled(self) -> bool:
+        """Check if RAG style transfer is enabled"""
+        return self.get('rag.style_transfer.enabled', True)
+    
+    @property
+    def rag_style_transfer_temperature(self) -> float:
+        """Get RAG style transfer temperature"""
+        return self.get('rag.style_transfer.temperature', 0.8)

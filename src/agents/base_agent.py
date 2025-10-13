@@ -29,6 +29,10 @@ class BaseAgent(ABC):
         self.conversation_history = []
         self.session_id = session_id
         
+        # Track tool usage
+        self._last_tool_calls = []  # Store tool call history
+        self._tools_used_this_turn = False  # Flag for current turn
+        
         # Setup LLM parameters
         default_params = {
             "model": self.model,
@@ -99,6 +103,11 @@ class BaseAgent(ABC):
     
     async def generate_with_llm(self, prompt: str, system_prompt: Optional[str] = None) -> str:
         """Generate response using the LLM"""
+        
+        # Reset tool usage tracking for this turn
+        self._last_tool_calls = []
+        self._tools_used_this_turn = False
+        
         messages = []
         if system_prompt:
             messages.append(SystemMessage(content=system_prompt))
@@ -108,6 +117,9 @@ class BaseAgent(ABC):
         
         # Handle tool calls if present
         if hasattr(response, 'tool_calls') and response.tool_calls:
+            self._last_tool_calls = response.tool_calls  # Track calls
+            self._tools_used_this_turn = True  # Set flag
+            
             # Process tool calls
             tool_results = []
             for tool_call in response.tool_calls:
@@ -120,6 +132,7 @@ class BaseAgent(ABC):
                         try:
                             result = await tool.ainvoke(tool_args)
                             tool_results.append(result)
+                            logger.info(f"🔍 {self.agent_id} used {tool_name}")
                         except Exception as e:
                             logger.error(f"Tool execution failed: {e}")
                             tool_results.append(f"Tool error: {str(e)}")

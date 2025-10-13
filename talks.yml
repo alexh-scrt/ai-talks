@@ -57,3 +57,9 @@ synthesizer:
   name: "Synthesizer"
   frequency: 8  # Synthesize every N turns (8 = every 8 turns)
   style: "hegelian"  # Options: hegelian, socratic, pragmatic
+
+# RAG Style Transfer settings
+rag:
+  style_transfer:
+    enabled: true
+    temperature: 0.8  # Higher temperature for creative rewrites
