@@ -1,6 +1,9 @@
 from dataclasses import dataclass, field
 from typing import Dict, List, Set, Optional
 from enum import Enum
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class Gender(Enum):
@@ -30,6 +33,9 @@ class ParticipantState:
     expertise_area: str
     core_beliefs: List[str] = field(default_factory=list)
     
+    # Strategic Objective
+    objective: Optional['AgentObjective'] = None
+    
     # Dynamic discussion state
     confidence_level: float = 0.7
     curiosity_level: float = 0.8
@@ -55,6 +61,14 @@ class ParticipantState:
     wants_to_speak: float = 0.5
     last_spoke_turn: int = -1
     was_addressed: bool = False
+    
+    def __post_init__(self):
+        """Initialize objective from personality if not provided"""
+        if self.objective is None:
+            # Import here to avoid circular import
+            from src.game_theory.agent_objective import AgentObjective
+            self.objective = AgentObjective.from_personality(self.personality.value)
+            logger.debug(f"{self.name}'s objective initialized: {self.objective.get_dominant_objective()}")
     
     def update_relationship(self, other_id: str, delta: float):
         """Update relationship with another participant"""

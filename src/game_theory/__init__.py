@@ -19,3 +19,14 @@ MOVE_TYPES = [
     "SYNTHESIZE",
     "CONCLUDE"
 ]
+
+# Export new classes
+from .agent_objective import AgentObjective
+from .strategic_coordinator import StrategicCoordinator
+
+__all__ = [
+    'DialogueMove',
+    'MOVE_TYPES',
+    'AgentObjective',
+    'StrategicCoordinator'
+]

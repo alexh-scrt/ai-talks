@@ -94,6 +94,26 @@ class PayoffCalculator:
             (0.3 if group_state.novelty_score < 0.3 else 0.0)
         )
         
+        # ADJUST PAYOFFS BASED ON AGENT OBJECTIVES
+        if speaker.objective:
+            for move_type, base_payoff in payoffs.items():
+                # Create a mock move for scoring
+                mock_move = DialogueMove(move_type=move_type)
+                
+                # Build simple context for objective scoring
+                context = {
+                    "move_type": move_type,
+                    "recent_challenges": sum(1 for e in group_state.exchanges[-3:] if e.get("move") == "CHALLENGE"),
+                    "recent_supports": sum(1 for e in group_state.exchanges[-3:] if e.get("move") == "SUPPORT"),
+                    "recent_deepens": sum(1 for e in group_state.exchanges[-3:] if e.get("move") == "DEEPEN")
+                }
+                
+                # Get objective alignment score
+                alignment = speaker.objective.score_move(mock_move, context)
+                
+                # Blend base payoff with objective alignment (70% base, 30% objective)
+                payoffs[move_type] = (base_payoff * 0.7) + (alignment * 0.3)
+        
         return payoffs
     
     def recommend_move_and_target(

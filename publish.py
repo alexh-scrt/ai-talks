@@ -14,7 +14,7 @@ Example:
 import re
 import argparse
 from pathlib import Path
-from typing import List, Tuple
+from typing import List, Tuple, Dict
 
 
 class ConversationPublisher:
@@ -27,6 +27,118 @@ class ConversationPublisher:
         
         self.content = self.input_path.read_text(encoding='utf-8')
         self.lines = self.content.split('\n')
+        self.participants: Dict[str, str] = {}  # lowercase -> proper case mapping
+    
+    def extract_participants(self) -> None:
+        """
+        Extract all participants from XML tags in the document.
+        Creates a mapping of lowercase names to proper case names.
+        Example: <Fei-Fei>...</Fei-Fei> -> {'fei-fei': 'Fei-Fei'}
+        """
+        # Find all opening tags
+        tag_pattern = r'<([^/>]+)>'
+        matches = re.findall(tag_pattern, self.content)
+        
+        for name in matches:
+            # Skip common non-participant tags
+            if name.lower() in ['final_answer', 'synthesizer']:
+                continue
+            
+            # Store mapping: lowercase -> proper case
+            self.participants[name.lower()] = name
+    
+    def capitalize_participant_names(self, text: str) -> str:
+        """
+        Capitalize participant names in text and make them bold.
+        Example: fei-fei -> **Fei-Fei**, hipatia -> **Hipatia**
+        """
+        # Sort by length (longest first) to avoid partial matches
+        sorted_participants = sorted(self.participants.items(), 
+                                    key=lambda x: len(x[0]), 
+                                    reverse=True)
+        
+        for lowercase_name, proper_name in sorted_participants:
+            # Match the lowercase name as a whole word (case-insensitive)
+            # but not when already in markdown bold or in tags
+            pattern = r'(?<!\*\*)(?<!<)(?<!/)' + re.escape(lowercase_name) + r'(?!>)(?!\*\*)'
+            replacement = f'**{proper_name}**'
+            text = re.sub(pattern, replacement, text, flags=re.IGNORECASE)
+        
+        return text
+    
+    def clean_synthesis_content(self, text: str) -> str:
+        """
+        Clean synthesis block content by removing specific patterns:
+        1. Remove **Synthesis:** or Synthesis: at the start
+        2. Remove "What's at stake?" 
+        3. Remove numbered patterns like "1. **What's at stake?**"
+        4. Remove "2. **Where's the agreement?**" or similar
+        5. Remove "3. **Next question?**" or similar (may be on separate line)
+        6. Remove trailing parenthetical notes like "(4 sentences...)"
+        """
+        """
+        Clean synthesis block content by removing specific patterns:
+        1. Remove **Synthesis:** or Synthesis: at the start
+        2. Remove numbered list markers and question prefixes
+        3. Remove variations like "What's at stake?", "Where's the agreement?", etc.
+        4. Remove trailing parenthetical notes like "(4 sentences...)"
+        """
+        # Remove **Synthesis:** or Synthesis: at the beginning
+        text = re.sub(r'^\s*\*\*Synthesis:\*\*\s*\n?', '', text, flags=re.MULTILINE)
+        text = re.sub(r'^\s*Synthesis:\s*\n?', '', text, flags=re.MULTILINE)
+        
+        # Remove numbered list items with question patterns - keep only the answer content
+        # Pattern: "1. **What's at stake?** The answer..." -> "The answer..."
+        text = re.sub(r'^\s*\d+\.\s*\*\*What\'?s at stake\?\*\*\s+', '', text, flags=re.MULTILINE | re.IGNORECASE)
+        text = re.sub(r'^\s*\d+\.\s*\*\*At [Ss]take\*\*:?\s+', '', text, flags=re.MULTILINE | re.IGNORECASE)
+        
+        # Remove "Where's the agreement?" variations
+        text = re.sub(r'^\s*\d+\.\s*\*\*Where\'?s the agreement\?\*\*\s+', '', text, flags=re.MULTILINE | re.IGNORECASE)
+        text = re.sub(r'^\s*\d+\.\s*\*\*Agreement\*\*:?\s+', '', text, flags=re.MULTILINE | re.IGNORECASE)
+        
+        # Remove "Next question?" variations (including "What's the next question?")
+        text = re.sub(r'^\s*\d+\.\s*\*\*Next question\*\*:?\s+', '', text, flags=re.MULTILINE | re.IGNORECASE)
+        text = re.sub(r'^\s*\d+\.\s*\*\*What\'?s the next question\?\*\*\s+', '', text, flags=re.MULTILINE | re.IGNORECASE)
+        text = re.sub(r'^\s*\*\*What\'?s the next question\?\*\*\s+', '', text, flags=re.MULTILINE | re.IGNORECASE)
+        
+        # Remove standalone variations without numbers
+        text = re.sub(r'^\s*\*\*What\'?s at stake\?\*\*\s+', '', text, flags=re.MULTILINE | re.IGNORECASE)
+        text = re.sub(r'^\s*\*\*Where\'?s the agreement\?\*\*\s+', '', text, flags=re.MULTILINE | re.IGNORECASE)
+        text = re.sub(r'^\s*\*\*Next question\?\*\*\s+', '', text, flags=re.MULTILINE | re.IGNORECASE)
+        
+        # Remove other common synthesis headers
+        text = re.sub(r'^\s*\*\*Actionable [Ff]ocus\*\*:?\s+', '', text, flags=re.MULTILINE)
+
+        # Remove **Synthesis:** or Synthesis: at the beginning
+        text = re.sub(r'^\s*\*\*Synthesis:\*\*\s*\n?', '', text, flags=re.MULTILINE)
+        text = re.sub(r'^\s*Synthesis:\s*\n?', '', text, flags=re.MULTILINE)
+        
+        # Remove numbered items with "What's at stake?" - remove the prefix, keep content after
+        text = re.sub(r'^\s*\d+\.\s*\*\*What\'s at stake\?\*\*\s+', '', text, flags=re.MULTILINE | re.IGNORECASE)
+        text = re.sub(r'^\s*What\'s at stake\?\s+', '', text, flags=re.MULTILINE | re.IGNORECASE)
+        
+        # Remove numbered items with "Where's the agreement?"
+        text = re.sub(r'^\s*\d+\.\s*\*\*Where\'s the agreement\?\*\*\s+', '', text, flags=re.MULTILINE | re.IGNORECASE)
+        text = re.sub(r'^\s*Where\'s the agreement\?\s+', '', text, flags=re.MULTILINE | re.IGNORECASE)
+        
+        # Remove "Next question?" - could be numbered or standalone, on same line or separate
+        text = re.sub(r'^\s*\d+\.\s*\*\*Next question\?\*\*\s*\n?', '', text, flags=re.MULTILINE | re.IGNORECASE)
+        text = re.sub(r'^\s*\*\*Next question\?\*\*\s*\n?', '', text, flags=re.MULTILINE | re.IGNORECASE)
+        text = re.sub(r'^\s*Next question\?\s*\n?', '', text, flags=re.MULTILINE | re.IGNORECASE)
+        
+        # Also handle "The next question:" or "Next productive question:" variations
+        text = re.sub(r'^\s*\d+\.\s*\*\*(?:The )?[Nn]ext (?:productive )?question\?\*\*\s*\n?', '', text, flags=re.MULTILINE)
+        text = re.sub(r'^\s*\*\*(?:The )?[Nn]ext (?:productive )?question\?\*\*\s*\n?', '', text, flags=re.MULTILINE)
+        
+        # Remove trailing parenthetical notes before the end
+        # Matches patterns like: (4 sentences, grounded in...) or (3 sentences...)
+        text = re.sub(r'\n\s*\([^)]+\)\s*$', '', text)
+        
+        # Clean up extra whitespace
+        text = re.sub(r'\n{3,}', '\n\n', text)
+        text = text.strip()
+        
+        return text
     
     def clean_xml_tags(self, text: str, speaker: str) -> Tuple[str, str]:
         """
@@ -75,55 +187,22 @@ class ConversationPublisher:
         content = content.strip()
         
         # Remove redundant speaker prefixes at the beginning
-        # Pattern: "Speaker:" or "**Speaker:**" at start
         content = re.sub(rf'^{re.escape(speaker)}:\s*', '', content)
         content = re.sub(rf'^\*\*{re.escape(speaker)}:\*\*\s*', '', content)
-        
-        # Remove patterns like "**Speaker's Response:**"
         content = re.sub(rf'^\*\*{re.escape(speaker)}\'s [Rr]esponse:\*\*\s*\n?', '', content)
         
-        # Bold the first name mentioned in the content (if addressing someone)
-        # Pattern: "Name," at the beginning
-        addressed_match = re.match(r'^([A-Z][a-z]+),\s+', content)
-        if addressed_match:
-            addressed_name = addressed_match.group(1)
-            content = re.sub(
-                rf'^{re.escape(addressed_name)},\s+',
-                f'**{addressed_name}**, ',
-                content,
-                count=1
-            )
+        # Apply participant name capitalization and bolding
+        content = self.capitalize_participant_names(content)
         
-        # Bold other speaker names in phrases like "To Name," or "Name,"
-        for name in ['Aristotle', 'Hypatia', 'Descartes', 'Simone', 'Lao', 
-                     'Sophia', 'Marcus', 'Aisha', 'Michael Lee', 'Synthesizer']:
-            # "To Name," pattern
-            content = re.sub(
-                rf'\bTo {re.escape(name)},',
-                f'**To {name}**,',
-                content
-            )
-            # Standalone "Name," at sentence start
-            content = re.sub(
-                rf'(^|\. ){re.escape(name)},',
-                rf'\1**{name}**,',
-                content
-            )
-        
-        return f"**{speaker}:**\n\n{content}"
+        return f"**{speaker}:**\n\n{content}\n\n---"
     
     def format_synthesis_block(self, content: str) -> str:
-        """
-        Format synthesis blocks with special header.
+        """Format synthesis block with Voice of Reason styling"""
+        # Clean synthesis-specific patterns
+        content = self.clean_synthesis_content(content)
         
-        Args:
-            content: Synthesis content
-            
-        Returns:
-            Formatted synthesis block
-        """
-        # Remove "**Synthesis:**" or "**Hegelian Synthesis:**" prefix
-        content = re.sub(r'^\*\*[^:]+:\*\*\s*\n?', '', content.strip())
+        # Apply participant name capitalization and bolding
+        content = self.capitalize_participant_names(content)
         
         return f"**Voice of Reason:**\n\n{content}\n\n---"
     
@@ -192,6 +271,9 @@ class ConversationPublisher:
         Returns:
             Published content as string
         """
+        # First, extract all participants from the document
+        self.extract_participants()
+        
         sections = {
             'header': [],
             'introduction': [],
@@ -202,7 +284,6 @@ class ConversationPublisher:
         current_section = 'header'
         
         # Parse the document into sections
-        # Note: We treat "## Synthesis" as part of discussion flow
         for line in self.lines:
             # Detect section headers
             if line.startswith('## Introduction'):
@@ -224,8 +305,9 @@ class ConversationPublisher:
         # Build the published document
         output = []
         
-        # Keep header as-is
-        output.extend(sections['header'])
+        # Keep header as-is (but capitalize participant names in metadata)
+        for line in sections['header']:
+            output.append(self.capitalize_participant_names(line))
         output.append('')
         
         # Process Introduction
@@ -255,7 +337,7 @@ class ConversationPublisher:
         
         # Join and clean up excess blank lines
         published_text = '\n'.join(output)
-        published_text = re.sub(r'\n{3,}', '\n\n', published_text)  # Max 2 consecutive newlines
+        published_text = re.sub(r'\n{3,}', '\n\n', published_text)
         
         # Write to file if output path provided
         if output_path:

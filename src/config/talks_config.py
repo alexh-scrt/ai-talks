@@ -151,3 +151,13 @@ class TalksConfig:
     def rag_style_transfer_temperature(self) -> float:
         """Get RAG style transfer temperature"""
         return self.get('rag.style_transfer.temperature', 0.8)
+    
+    @property
+    def strategic_scoring_enabled(self) -> bool:
+        """Check if strategic scoring is enabled"""
+        return self.get('objectives.strategic_scoring', True)
+    
+    @property
+    def log_strategic_metrics(self) -> bool:
+        """Check if strategic metrics should be logged"""
+        return self.get('objectives.log_metrics', True)

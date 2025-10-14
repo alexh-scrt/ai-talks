@@ -63,3 +63,8 @@ rag:
   style_transfer:
     enabled: true
     temperature: 0.8  # Higher temperature for creative rewrites
+
+# Strategic Objectives settings
+objectives:
+  strategic_scoring: true  # Enable objective-based scoring and analytics
+  log_metrics: true        # Log strategic metrics to file

@@ -11,6 +11,7 @@ from src.agents.participant_agent import ParticipantAgent
 from src.agents.narrator_agent import NarratorAgent
 from src.game_theory.turn_selector import TurnSelector
 from src.game_theory.payoff_calculator import PayoffCalculator
+from src.game_theory.strategic_coordinator import StrategicCoordinator
 
 logger = logging.getLogger(__name__)
 
@@ -28,7 +29,8 @@ class MultiAgentDiscussionOrchestrator:
         enable_synthesizer: Optional[bool] = None,
         synthesis_frequency: int = 8,
         synthesis_style: str = "hegelian",
-        use_rag_styling: Optional[bool] = None
+        use_rag_styling: Optional[bool] = None,
+        enable_strategic_scoring: Optional[bool] = None
     ):
         # Load configuration
         config = TalksConfig()
@@ -104,6 +106,18 @@ class MultiAgentDiscussionOrchestrator:
                 session_id=self.session_id
             )
             logger.info(f"🔄 Synthesizer enabled: {self.synthesizer.name} (style: {synthesis_style}, freq: {synthesis_frequency})")
+        
+        # Strategic Coordinator (optional)
+        if enable_strategic_scoring is None:
+            enable_strategic_scoring = config.get('objectives.strategic_scoring', True)
+        
+        self.enable_strategic_scoring = enable_strategic_scoring
+        self.strategic_coordinator = None
+        self.strategic_metrics = {}  # Store final metrics
+        
+        if enable_strategic_scoring:
+            self.strategic_coordinator = StrategicCoordinator()
+            logger.info("📊 Strategic scoring enabled")
         
         # Initialize logging queue
         self._log_queue = asyncio.Queue()
@@ -262,6 +276,21 @@ class MultiAgentDiscussionOrchestrator:
                 }
                 self.group_state.add_exchange(exchange)
                 
+                # STRATEGIC SCORING
+                if self.enable_strategic_scoring and self.strategic_coordinator:
+                    try:
+                        evaluation = await self.strategic_coordinator.evaluate_turn(
+                            agent=speaker.state,
+                            move=recommended_move,
+                            response=response,
+                            group_state=self.group_state
+                        )
+                        # Optionally store evaluation in exchange
+                        exchange['strategic_evaluation'] = evaluation
+                    except Exception as e:
+                        logger.error(f"Strategic evaluation failed: {e}")
+                        # Continue discussion even if scoring fails
+                
                 # Synthesis checkpoint
                 if (self.enable_synthesizer and 
                     self.group_state.turn_number > 0 and
@@ -303,6 +332,11 @@ class MultiAgentDiscussionOrchestrator:
                 if self._should_terminate_basic():
                     logger.info("\n✅ Discussion complete")
                     break
+        
+            # LOG AGGREGATE METRICS
+            if self.enable_strategic_scoring and self.strategic_coordinator:
+                self.strategic_metrics = self.strategic_coordinator.get_aggregate_metrics()
+                logger.info(f"📊 Discussion Metrics: {self.strategic_metrics}")
         
             # Generate narrator closing if enabled
             if self.enable_narrator:

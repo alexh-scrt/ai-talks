@@ -215,6 +215,24 @@ async def run_discussion(topic: str, depth: int, participants_config: list, max_
         state = agent.state
         console.print(f"  • {state.name}: {state.speaking_turns} turns, {state.words_spoken} words")
     
+    # DISPLAY STRATEGIC METRICS
+    if orchestrator.enable_strategic_scoring and hasattr(orchestrator, 'strategic_metrics') and orchestrator.strategic_metrics:
+        metrics = orchestrator.strategic_metrics
+        
+        console.print("\n[bold]📊 Strategic Metrics:[/bold]")
+        console.print(f"  Turns Evaluated: {metrics['total_turns_evaluated']}")
+        console.print(f"  Average Alignment: {metrics['avg_alignment']:.1%}")
+        console.print(f"  Average Originality: {metrics['avg_originality']:.1%}")
+        console.print(f"  Average Quality: {metrics['avg_quality']:.1%}")
+        console.print(f"  Dominant Theme: [cyan]{metrics['dominant_theme'].replace('_', ' ').title()}[/cyan]")
+        
+        if metrics.get('objective_distribution'):
+            console.print(f"\n  [bold]Objective Pursuit:[/bold]")
+            for obj, count in sorted(metrics['objective_distribution'].items(), key=lambda x: x[1], reverse=True):
+                obj_name = obj.replace('_', ' ').title()
+                percentage = (count / metrics['total_turns_evaluated']) * 100
+                console.print(f"    - {obj_name}: {count} turns ({percentage:.0f}%)")
+    
     # Display narrator closing if enabled
     if enable_narrator and orchestrator.closing_segments:
         console.print("\n" + "─" * 60 + "\n")
