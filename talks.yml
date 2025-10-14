@@ -68,3 +68,9 @@ rag:
 objectives:
   strategic_scoring: true  # Enable objective-based scoring and analytics
   log_metrics: true        # Log strategic metrics to file
+
+# Cognitive Coda settings
+coda:
+  enabled: true            # Enable cognitive coda generation
+  temperature: 0.7         # Temperature for creative theorem generation
+  model: "qwen3:32b"      # Model for coda generation

@@ -24,8 +24,9 @@ console = Console()
 @click.option("--synthesis-style", type=click.Choice(['hegelian', 'socratic', 'pragmatic']), help="Synthesis style")
 @click.option("--synthesis-freq", type=int, help="Synthesize every N turns")
 @click.option("--rag-styling/--no-rag-styling", default=None, help="Enable/disable RAG style transfer")
+@click.option("--coda/--no-coda", default=None, help="Enable/disable cognitive coda generation")
 def main(topic: str, file: str, depth: int, participants: int, panel: str, config: str, max_turns: int, narrator: bool,
-         synthesis: bool, synthesis_style: str, synthesis_freq: int, rag_styling: bool):
+         synthesis: bool, synthesis_style: str, synthesis_freq: int, rag_styling: bool, coda: bool):
     """Talks: Multi-Agent Philosophical Discussion System"""
     
     # Load system configuration
@@ -65,6 +66,10 @@ def main(topic: str, file: str, depth: int, participants: int, panel: str, confi
     # RAG styling default
     if rag_styling is None:
         rag_styling = talks_config.rag_style_transfer_enabled
+    
+    # Coda default
+    if coda is None:
+        coda = talks_config.coda_enabled
     
     console.print(Panel.fit(
         "[bold cyan]🎭  Talks: Multi-Agent Discussion System[/bold cyan]",
@@ -130,11 +135,12 @@ def main(topic: str, file: str, depth: int, participants: int, panel: str, confi
     
     # Run discussion
     asyncio.run(run_discussion(topic, depth, participants_config, max_turns, narrator,
-                               synthesis, synthesis_style, synthesis_freq, rag_styling))
+                               synthesis, synthesis_style, synthesis_freq, rag_styling, coda))
 
 
 async def run_discussion(topic: str, depth: int, participants_config: list, max_turns: int, enable_narrator: bool,
-                        enable_synthesis: bool, synthesis_style: str, synthesis_freq: int, use_rag_styling: bool):
+                        enable_synthesis: bool, synthesis_style: str, synthesis_freq: int, use_rag_styling: bool,
+                        enable_coda: bool):
     """Run the discussion and display results"""
     
     orchestrator = MultiAgentDiscussionOrchestrator(
@@ -145,7 +151,8 @@ async def run_discussion(topic: str, depth: int, participants_config: list, max_
         enable_synthesizer=enable_synthesis,
         synthesis_frequency=synthesis_freq,
         synthesis_style=synthesis_style,
-        use_rag_styling=use_rag_styling
+        use_rag_styling=use_rag_styling,
+        enable_coda=enable_coda
     )
     
     # Show forbidden topics from config

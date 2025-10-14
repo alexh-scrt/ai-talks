@@ -161,3 +161,18 @@ class TalksConfig:
     def log_strategic_metrics(self) -> bool:
         """Check if strategic metrics should be logged"""
         return self.get('objectives.log_metrics', True)
+    
+    @property
+    def coda_enabled(self) -> bool:
+        """Check if cognitive coda generation is enabled"""
+        return self.get('coda.enabled', True)
+    
+    @property
+    def coda_temperature(self) -> float:
+        """Get temperature for coda generation"""
+        return self.get('coda.temperature', 0.7)
+    
+    @property
+    def coda_model(self) -> str:
+        """Get model for coda generation"""
+        return self.get('coda.model', 'qwen3:32b')

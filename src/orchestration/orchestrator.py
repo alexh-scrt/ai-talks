@@ -9,6 +9,7 @@ from src.states.group_state import GroupDiscussionState
 from src.states.participant_state import ParticipantState, Gender, PersonalityArchetype
 from src.agents.participant_agent import ParticipantAgent
 from src.agents.narrator_agent import NarratorAgent
+from src.agents.cognitive_coda import CognitiveCodaAgent
 from src.game_theory.turn_selector import TurnSelector
 from src.game_theory.payoff_calculator import PayoffCalculator
 from src.game_theory.strategic_coordinator import StrategicCoordinator
@@ -30,7 +31,8 @@ class MultiAgentDiscussionOrchestrator:
         synthesis_frequency: int = 8,
         synthesis_style: str = "hegelian",
         use_rag_styling: Optional[bool] = None,
-        enable_strategic_scoring: Optional[bool] = None
+        enable_strategic_scoring: Optional[bool] = None,
+        enable_coda: Optional[bool] = None
     ):
         # Load configuration
         config = TalksConfig()
@@ -118,6 +120,21 @@ class MultiAgentDiscussionOrchestrator:
         if enable_strategic_scoring:
             self.strategic_coordinator = StrategicCoordinator()
             logger.info("📊 Strategic scoring enabled")
+        
+        # Cognitive Coda Agent (optional)
+        if enable_coda is None:
+            enable_coda = config.coda_enabled
+        
+        self.enable_coda = enable_coda
+        self.coda_agent = None
+        
+        if enable_coda:
+            self.coda_agent = CognitiveCodaAgent(
+                model=config.coda_model,
+                temperature=config.coda_temperature,
+                session_id=self.session_id
+            )
+            logger.info("🧠 Cognitive Coda generation enabled")
         
         # Initialize logging queue
         self._log_queue = asyncio.Queue()
@@ -333,6 +350,10 @@ class MultiAgentDiscussionOrchestrator:
                     logger.info("\n✅ Discussion complete")
                     break
         
+            # GENERATE COGNITIVE CODA
+            if self.enable_coda and self.coda_agent:
+                await self._generate_cognitive_coda()
+        
             # LOG AGGREGATE METRICS
             if self.enable_strategic_scoring and self.strategic_coordinator:
                 self.strategic_metrics = self.strategic_coordinator.get_aggregate_metrics()
@@ -441,6 +462,65 @@ class MultiAgentDiscussionOrchestrator:
             )
         
         return self.closing_segments
+    
+    async def _generate_cognitive_coda(self):
+        """Generate the final cognitive coda and add to conversation log"""
+        logger.info("\n🧠 Generating Cognitive Coda...")
+        
+        try:
+            # Gather synthesis texts if available, otherwise use recent exchanges
+            synthesis_texts = []
+            for exchange in self.group_state.exchanges:
+                if hasattr(exchange, 'get') and exchange.get('speaker') in ['Synthesizer', 'The Synthesizer']:
+                    synthesis_texts.append(exchange['content'])
+            
+            # Use final synthesis or full discussion summary
+            if synthesis_texts:
+                # Use last 3 synthesis outputs
+                episode_summary = "\n\n".join(synthesis_texts[-3:])
+                logger.info(f"🧠 Using {len(synthesis_texts[-3:])} synthesis outputs for coda")
+            else:
+                # Fallback: use recent exchanges
+                recent = self.group_state.exchanges[-10:] if len(self.group_state.exchanges) >= 10 else self.group_state.exchanges
+                episode_summary = "\n\n".join([
+                    f"{e['speaker']}: {e['content']}" for e in recent
+                ])
+                logger.info(f"🧠 Using {len(recent)} recent exchanges for coda")
+            
+            # Generate coda
+            coda_result = await self.coda_agent.generate_coda(
+                episode_summary=episode_summary,
+                topic=self.topic
+            )
+            
+            # Store as special exchange
+            coda_exchange = {
+                'turn': len(self.group_state.exchanges),
+                'speaker': 'Cognitive Coda',
+                'content': coda_result['coda'],
+                'reasoning': coda_result['reasoning'],
+                'move': 'CODA',
+                'target': None,
+                'personality': 'meta'
+            }
+            
+            self.group_state.exchanges.append(coda_exchange)
+            
+            # Queue to conversation log with special formatting
+            formatted_content = f"{coda_result['coda']}\n\n*Reasoning: {coda_result['reasoning']}*"
+            await self._queue_message(
+                'Cognitive Coda',
+                formatted_content,
+                "closing"
+            )
+            
+            logger.info(f"✅ Cognitive Coda generated: {coda_result['coda']}")
+            return coda_result
+            
+        except Exception as e:
+            logger.error(f"❌ Cognitive coda generation failed: {e}")
+            # Continue without coda
+            return None
     
     async def _queue_message(self, speaker: str, content: str, section: str = "discussion"):
         """Add a message to the logging queue"""
