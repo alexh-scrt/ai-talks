@@ -38,7 +38,8 @@ class MultiAgentDiscussionOrchestrator:
         enable_redundancy_control: Optional[bool] = None,
         similarity_threshold: float = 0.85,
         max_dyad_volleys: int = 2,
-        max_tension_cycles: int = 2
+        max_tension_cycles: int = 2,
+        enable_mathematical_model: Optional[bool] = None
     ):
         # Load configuration
         config = TalksConfig()
@@ -130,6 +131,8 @@ class MultiAgentDiscussionOrchestrator:
         # Cognitive Coda Agent (optional)
         if enable_coda is None:
             enable_coda = config.coda_enabled
+        if enable_mathematical_model is None:
+            enable_mathematical_model = config.get('coda.mathematical_model', True)
         
         self.enable_coda = enable_coda
         self.coda_agent = None
@@ -138,9 +141,10 @@ class MultiAgentDiscussionOrchestrator:
             self.coda_agent = CognitiveCodaAgent(
                 model=config.coda_model,
                 temperature=config.coda_temperature,
-                session_id=self.session_id
+                session_id=self.session_id,
+                enable_mathematical_model=enable_mathematical_model
             )
-            logger.info("🧠 Cognitive Coda generation enabled")
+            logger.info(f"🧠 Cognitive Coda generation enabled (math_model: {enable_mathematical_model})")
         
         # Redundancy Control System (optional)
         if enable_redundancy_control is None:
@@ -633,62 +637,108 @@ class MultiAgentDiscussionOrchestrator:
         return self.closing_segments
     
     async def _generate_cognitive_coda(self):
-        """Generate the final cognitive coda and add to conversation log"""
-        logger.info("\n🧠 Generating Cognitive Coda...")
+        """Generate enhanced cognitive coda with mathematical model"""
+        logger.info("\n🧠 Generating Enhanced Cognitive Coda...")
         
         try:
-            # Gather synthesis texts if available, otherwise use recent exchanges
+            # Gather synthesis texts if available
             synthesis_texts = []
             for exchange in self.group_state.exchanges:
                 if hasattr(exchange, 'get') and exchange.get('speaker') in ['Synthesizer', 'The Synthesizer']:
                     synthesis_texts.append(exchange['content'])
             
-            # Use final synthesis or full discussion summary
+            # Build summary
             if synthesis_texts:
-                # Use last 3 synthesis outputs
                 episode_summary = "\n\n".join(synthesis_texts[-3:])
-                logger.info(f"🧠 Using {len(synthesis_texts[-3:])} synthesis outputs for coda")
+                logger.info(f"🧠 Using {len(synthesis_texts[-3:])} synthesis outputs")
             else:
-                # Fallback: use recent exchanges
                 recent = self.group_state.exchanges[-10:] if len(self.group_state.exchanges) >= 10 else self.group_state.exchanges
                 episode_summary = "\n\n".join([
                     f"{e['speaker']}: {e['content']}" for e in recent
                 ])
-                logger.info(f"🧠 Using {len(recent)} recent exchanges for coda")
+                logger.info(f"🧠 Using {len(recent)} recent exchanges")
             
-            # Generate coda
+            # Generate enhanced coda with full exchanges for signal extraction
+            coda_result = await self.coda_agent.generate_coda(
+                episode_summary=episode_summary,
+                topic=self.topic,
+                exchanges=self.group_state.exchanges,  # Pass full history
+                window_size=8
+            )
+            
+            # Format output
+            coda_content = f"**{coda_result['coda']}**\n\n"
+            coda_content += f"*Reasoning: {coda_result['reasoning']}*\n"
+            
+            # Add mathematical model if present
+            if 'mathematical_model' in coda_result:
+                math_model = coda_result['mathematical_model']
+                coda_content += f"\n**Mathematical Model:**\n"
+                coda_content += f"```\n{math_model['equation']}\n{math_model['numbers']}\n```\n"
+                coda_content += f"\n**Interpretation:** {math_model['verbal_axiom']}\n"
+                coda_content += f"\n**Maxim:** {math_model['maxim']}\n"
+                
+                # Add recommendations
+                if 'recommendations' in coda_result and coda_result['recommendations']:
+                    coda_content += f"\n**Next Actions:**\n"
+                    for action in coda_result['recommendations']:
+                        coda_content += f"- {action}\n"
+            
+            # Store as exchange
+            coda_exchange = {
+                'turn': len(self.group_state.exchanges),
+                'speaker': 'Cognitive Coda',
+                'content': coda_content,
+                'move': 'CODA',
+                'target': None,
+                'personality': 'meta',
+                'mathematical_data': coda_result.get('mathematical_model')
+            }
+            
+            self.group_state.exchanges.append(coda_exchange)
+            
+            # Queue to log
+            await self._queue_message(
+                'Cognitive Coda',
+                coda_content,
+                "closing"
+            )
+            
+            logger.info(f"✅ Enhanced coda generated: {coda_result['coda']}")
+            return coda_result
+            
+        except Exception as e:
+            logger.error(f"❌ Enhanced coda generation failed: {e}", exc_info=True)
+            # Fallback to simple coda
+            return await self._generate_simple_fallback_coda()
+    
+    async def _generate_simple_fallback_coda(self):
+        """Generate simple fallback coda when enhanced version fails"""
+        try:
+            recent = self.group_state.exchanges[-5:] if len(self.group_state.exchanges) >= 5 else self.group_state.exchanges
+            episode_summary = "\n\n".join([f"{e['speaker']}: {e['content']}" for e in recent])
+            
+            # Disable mathematical model for fallback
+            self.coda_agent.enable_math_model = False
+            
             coda_result = await self.coda_agent.generate_coda(
                 episode_summary=episode_summary,
                 topic=self.topic
             )
             
-            # Store as special exchange
-            coda_exchange = {
-                'turn': len(self.group_state.exchanges),
-                'speaker': 'Cognitive Coda',
-                'content': coda_result['coda'],
-                'reasoning': coda_result['reasoning'],
-                'move': 'CODA',
-                'target': None,
-                'personality': 'meta'
-            }
-            
-            self.group_state.exchanges.append(coda_exchange)
-            
-            # Queue to conversation log with special formatting
             formatted_content = f"{coda_result['coda']}\n\n*Reasoning: {coda_result['reasoning']}*"
+            
             await self._queue_message(
                 'Cognitive Coda',
                 formatted_content,
                 "closing"
             )
             
-            logger.info(f"✅ Cognitive Coda generated: {coda_result['coda']}")
+            logger.info(f"✅ Fallback coda generated: {coda_result['coda']}")
             return coda_result
             
         except Exception as e:
-            logger.error(f"❌ Cognitive coda generation failed: {e}")
-            # Continue without coda
+            logger.error(f"❌ Even fallback coda generation failed: {e}")
             return None
     
     async def _queue_message(self, speaker: str, content: str, section: str = "discussion"):

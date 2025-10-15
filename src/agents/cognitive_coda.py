@@ -2,7 +2,10 @@
 
 import logging
 import re
-from typing import Dict, Optional
+import json
+from pathlib import Path
+from datetime import datetime
+from typing import Dict, Optional, List
 from src.agents.base_agent import BaseAgent
 
 logger = logging.getLogger(__name__)
@@ -66,7 +69,8 @@ class CognitiveCodaAgent(BaseAgent):
         name: str = "Cognitive Coda",
         model: str = "qwen3:32b",
         temperature: float = 0.7,
-        session_id: Optional[str] = None
+        session_id: Optional[str] = None,
+        enable_mathematical_model: bool = True
     ):
         """
         Initialize the cognitive coda agent.
@@ -76,6 +80,7 @@ class CognitiveCodaAgent(BaseAgent):
             model: Ollama model to use
             temperature: Higher for creativity (0.6-0.8 recommended)
             session_id: Optional session ID for tracking
+            enable_mathematical_model: Whether to enable S-A-D mathematical analysis
         """
         self.name = name
         
@@ -97,54 +102,110 @@ class CognitiveCodaAgent(BaseAgent):
             re.IGNORECASE | re.DOTALL
         )
         
-        logger.info(f"🧠 CognitiveCodaAgent initialized: {name}")
+        # Add signal extraction and meaning model
+        self.enable_math_model = enable_mathematical_model
+        self.signal_extractor = None
+        self.meaning_model = None
+        
+        if enable_mathematical_model:
+            try:
+                from src.analysis.signal_extractors import SignalExtractor
+                from src.analysis.meaning_model import MeaningModel
+                self.signal_extractor = SignalExtractor()
+                self.meaning_model = MeaningModel()
+                logger.info("📊 Mathematical meaning model enabled")
+            except ImportError as e:
+                logger.warning(f"Mathematical model dependencies not available: {e}")
+                self.enable_math_model = False
+        
+        logger.info(f"🧠 CognitiveCodaAgent initialized: {name} (math_model: {self.enable_math_model})")
     
     async def generate_coda(
         self,
         episode_summary: str,
-        topic: str = ""
-    ) -> Dict[str, str]:
+        topic: str = "",
+        exchanges: Optional[List[Dict]] = None,
+        window_size: int = 8
+    ) -> Dict[str, any]:
         """
-        Generate the cognitive coda for a discussion.
+        Generate enhanced cognitive coda with mathematical model
         
         Args:
-            episode_summary: Full discussion text or final synthesis
-            topic: Original discussion topic
+            episode_summary: Text summary of discussion
+            topic: Discussion topic
+            exchanges: Full exchange history (for signal extraction)
+            window_size: Number of recent turns to analyze
             
         Returns:
-            Dictionary with 'coda' and 'reasoning' keys
+            Dictionary with coda, reasoning, signals, and recommendations
         """
-        logger.info("🧠 Generating Cognitive Coda...")
+        logger.info("🧠 Generating Enhanced Cognitive Coda...")
         
-        # Build the prompt
-        user_prompt = self._build_prompt(episode_summary, topic)
+        # Step 1: Extract signals if exchanges provided
+        signals_data = None
+        meaning_data = None
         
-        # Generate response
+        if self.enable_math_model and self.signal_extractor and exchanges:
+            signals_data = self._compute_signals(exchanges, window_size)
+            meaning_data = self._compute_meaning(signals_data)
+        
+        # Step 2: Generate poetic coda (existing LLM generation)
+        user_prompt = self._build_prompt(episode_summary, topic, signals_data)
         raw_response = await self.generate_with_llm(
             prompt=user_prompt,
             system_prompt=COGNITIVE_CODA_SYSTEM_PROMPT
         )
         
-        # Parse and validate
+        # Step 3: Parse response
         try:
-            result = self._parse_response(raw_response)
-            self._validate_coda(result['coda'])
-            
-            logger.info(f"✅ Coda generated: {result['coda']}")
-            return result
-            
+            parsed = self._parse_response(raw_response)
+            self._validate_coda(parsed['coda'])
         except ValueError as e:
-            logger.error(f"❌ Coda generation failed: {e}")
-            # Return a fallback
-            return {
+            logger.error(f"❌ Coda parsing failed: {e}")
+            parsed = {
                 'coda': "Truth emerges where dialogue and doubt converge.",
                 'reasoning': "Fallback coda due to parsing error."
             }
+        
+        # Step 4: Build enhanced result
+        result = {
+            'coda': parsed['coda'],
+            'reasoning': parsed['reasoning'],
+            'timestamp': datetime.utcnow().isoformat() + 'Z'
+        }
+        
+        # Step 5: Add mathematical components if available
+        if meaning_data:
+            result['mathematical_model'] = meaning_data
+            result['recommendations'] = self.meaning_model.recommend_actions(
+                signals_data['components']
+            )
+        
+        logger.info(f"✅ Enhanced coda generated: {result['coda']}")
+        
+        # Step 6: Persist to storage
+        if self.enable_math_model and meaning_data:
+            self._persist_coda(result, exchanges, window_size)
+        
+        return result
     
-    def _build_prompt(self, episode_summary: str, topic: str) -> str:
-        """Build the user prompt for coda generation"""
+    def _build_prompt(
+        self,
+        episode_summary: str,
+        topic: str,
+        signals: Optional[Dict] = None
+    ) -> str:
+        """Build enhanced prompt with optional signal context"""
         prompt = f"Topic: {topic}\n\n" if topic else ""
         prompt += f"Discussion Summary:\n{episode_summary.strip()}\n\n"
+        
+        # Add signal context if available
+        if signals:
+            prompt += f"\nDiscussion Metrics:\n"
+            prompt += f"- Structure (S): {signals['S']:.2f} (order/groundedness)\n"
+            prompt += f"- Agency (A): {signals['A']:.2f} (choice/commitment)\n"
+            prompt += f"- Dependence (D): {signals['D']:.2f} (external control)\n\n"
+        
         prompt += "Generate the Cognitive Coda for this episode."
         return prompt
     
@@ -216,6 +277,63 @@ class CognitiveCodaAgent(BaseAgent):
         if word_count < 3:
             raise ValueError("Cognitive Coda too short. Must be at least 3 words.")
     
+    def _compute_signals(self, exchanges: List[Dict], window: int) -> Dict:
+        """Compute S-A-D signals from exchanges"""
+        return self.signal_extractor.compute_aggregate_signals(
+            exchanges=exchanges,
+            window=window
+        )
+
+    def _compute_meaning(self, signals: Dict) -> Dict:
+        """Compute meaning score and generate interpretations"""
+        S = signals['S']
+        A = signals['A']
+        D = signals['D']
+        
+        M = self.meaning_model.compute(S, A, D)
+        
+        return {
+            'signals': {'S': S, 'A': A, 'D': D},
+            'components': signals['components'],
+            'M': M,
+            'equation': self.meaning_model.get_equation_string(),
+            'numbers': self.meaning_model.format_numbers(S, A, D, M),
+            'parameters': self.meaning_model.get_parameters_dict(),
+            'verbal_axiom': self.meaning_model.get_interpretation(S, A, D),
+            'maxim': self.meaning_model.get_maxim(M)
+        }
+
+    def _persist_coda(
+        self,
+        result: Dict,
+        exchanges: List[Dict],
+        window: int
+    ):
+        """Save coda to JSONL file"""
+        output_dir = Path("outputs/codas")
+        output_dir.mkdir(parents=True, exist_ok=True)
+        
+        output_file = output_dir / "codas.jsonl"
+        
+        # Build record
+        record = {
+            'run_id': result['timestamp'],
+            'window_turns': [e.get('turn', i) for i, e in enumerate(exchanges[-window:])],
+            'coda': {
+                'poetic': result['coda'],
+                'reasoning': result['reasoning'],
+                **result.get('mathematical_model', {}),
+                'recommendations': result.get('recommendations', [])
+            },
+            'version': 'coda/v2.0'
+        }
+        
+        # Append to JSONL
+        with open(output_file, 'a') as f:
+            f.write(json.dumps(record) + '\n')
+        
+        logger.info(f"💾 Coda persisted to {output_file}")
+
     async def process(self, **kwargs) -> str:
         """
         Required implementation of abstract process method from BaseAgent.
@@ -223,6 +341,18 @@ class CognitiveCodaAgent(BaseAgent):
         """
         episode_summary = kwargs.get('episode_summary', '')
         topic = kwargs.get('topic', '')
+        exchanges = kwargs.get('exchanges', None)
         
-        result = await self.generate_coda(episode_summary, topic)
-        return f"Cognitive Coda: {result['coda']}\n\nReasoning: {result['reasoning']}"
+        result = await self.generate_coda(episode_summary, topic, exchanges)
+        
+        output = f"Cognitive Coda: {result['coda']}\n\nReasoning: {result['reasoning']}"
+        
+        # Add mathematical model if present
+        if 'mathematical_model' in result:
+            math_model = result['mathematical_model']
+            output += f"\n\nMathematical Model: {math_model['equation']}"
+            output += f"\nNumbers: {math_model['numbers']}"
+            output += f"\nInterpretation: {math_model['verbal_axiom']}"
+            output += f"\nMaxim: {math_model['maxim']}"
+        
+        return output

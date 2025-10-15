@@ -69,11 +69,37 @@ objectives:
   strategic_scoring: true  # Enable objective-based scoring and analytics
   log_metrics: true        # Log strategic metrics to file
 
-# Cognitive Coda settings
+# Enhanced Cognitive Coda settings
 coda:
-  enabled: true            # Enable cognitive coda generation
-  temperature: 0.7         # Temperature for creative theorem generation
-  model: "qwen3:32b"      # Model for coda generation
+  enabled: true                 # Enable cognitive coda generation
+  mathematical_model: true      # Enable mathematical S-A-D model
+  model: "qwen3:32b"           # Model for coda generation
+  temperature: 0.7             # Temperature for creative theorem generation
+  window_size: 8               # Number of recent turns to analyze
+  
+  # Meaning model parameters
+  meaning_model:
+    S_star: 0.6    # Optimal structure target
+    sigma: 0.18    # Ridge width
+    alpha: 1.0     # Agency curvature
+    beta: 1.2      # Dependence penalty
+  
+  # Signal extraction weights (optional customization)
+  signal_weights:
+    structure:
+      S_cite: 0.25
+      S_logic: 0.25
+      S_consis: 0.25
+      S_focus: 0.25
+    agency:
+      A_ought: 0.25
+      A_decis: 0.25
+      A_conse: 0.25
+      A_stanc: 0.25
+    dependence:
+      D_sim: 0.33
+      D_rules: 0.33
+      D_nonvar: 0.34
 
 # Redundancy Control settings
 redundancy_control:
