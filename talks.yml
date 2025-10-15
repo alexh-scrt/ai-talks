@@ -119,3 +119,50 @@ entailment:
     - application     # "in practice" examples
     - counterexample  # "unless" or "except when"
     - test           # "we could test" criteria
+
+# Progression Engine - Force Progression, Stop Orbiting
+progression_engine:
+  enabled: true                    # Enable progression control system
+  cycles_threshold: 2              # Max cycles on same tension before test
+  max_consequence_tests: 2         # Max tests before forced pivot
+  synthesis_interval: 12           # Periodic synthesis every N turns
+  entailment_required: true        # Require entailments to advance
+  topic_window: 2                  # Context window for topic detection
+  test_timeout_turns: 3            # Turns before test times out
+  
+  # Philosophical tensions to track
+  tensions:
+    - ["necessity", "contingency"]
+    - ["structure", "agency"] 
+    - ["objectivity", "subjectivity"]
+    - ["simulation", "reality"]
+    - ["math", "ethics"]
+    - ["determinism", "freedom"]
+    - ["universal", "particular"]
+    - ["mind", "matter"]
+    - ["being", "becoming"]
+    - ["one", "many"]
+  
+  # Consequence test templates and domains
+  consequence_domains:
+    - "free will"
+    - "moral responsibility"
+    - "knowledge"
+    - "consciousness"
+    - "decision-making"
+    - "justice"
+    - "truth"
+    - "meaning"
+    - "identity"
+    - "existence"
+    - "causation"
+    - "time"
+    - "space"
+    - "language"
+  
+  # Metrics tracking
+  metrics:
+    track_orbit_rate: true         # Track % turns without entailment
+    track_consequence_density: true # Track entailments per turn window
+    track_pivot_timing: true       # Track time between saturation and pivot
+    log_tension_states: true       # Log detailed tension state info

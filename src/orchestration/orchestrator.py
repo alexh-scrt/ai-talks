@@ -15,6 +15,7 @@ from src.game_theory.payoff_calculator import PayoffCalculator
 from src.game_theory.strategic_coordinator import StrategicCoordinator
 from src.utils.entailment_detector import EntailmentDetector
 from src.utils.redundancy_checker import RedundancyChecker
+from src.controllers.progression_controller import ProgressionController, ProgressionConfig
 
 logger = logging.getLogger(__name__)
 
@@ -39,7 +40,9 @@ class MultiAgentDiscussionOrchestrator:
         similarity_threshold: float = 0.85,
         max_dyad_volleys: int = 2,
         max_tension_cycles: int = 2,
-        enable_mathematical_model: Optional[bool] = None
+        enable_mathematical_model: Optional[bool] = None,
+        enable_progression_control: Optional[bool] = None,
+        progression_config: Optional[Dict] = None
     ):
         # Load configuration
         config = TalksConfig()
@@ -160,6 +163,31 @@ class MultiAgentDiscussionOrchestrator:
             self.entailment_detector = EntailmentDetector()
             self.redundancy_checker = RedundancyChecker(similarity_threshold=similarity_threshold)
             logger.info(f"🔍 Redundancy control enabled (similarity threshold: {similarity_threshold})")
+        
+        # Progression Control System (optional)
+        if enable_progression_control is None:
+            enable_progression_control = config.get('progression_engine.enabled', True)
+        
+        self.enable_progression_control = enable_progression_control
+        self.progression_controller = None
+        
+        if enable_progression_control:
+            # Create progression config from provided dict or defaults
+            if progression_config:
+                prog_config = ProgressionConfig.from_dict(progression_config)
+            else:
+                prog_config = ProgressionConfig(
+                    cycles_threshold=config.get('progression_engine.cycles_threshold', 2),
+                    max_consequence_tests=config.get('progression_engine.max_consequence_tests', 2),
+                    synthesis_interval=config.get('progression_engine.synthesis_interval', 12),
+                    entailment_required=config.get('progression_engine.entailment_required', True),
+                    enable_progression=True
+                )
+            
+            from src.utils.llm_client import LLMClient
+            llm_client = LLMClient()
+            self.progression_controller = ProgressionController(prog_config, llm_client)
+            logger.info(f"🚀 Progression control enabled (cycles: {prog_config.cycles_threshold}, tests: {prog_config.max_consequence_tests})")
         
         # Initialize logging queue
         self._log_queue = asyncio.Queue()
@@ -303,6 +331,72 @@ class MultiAgentDiscussionOrchestrator:
         
         return False
     
+    async def _handle_progression_intervention(self, intervention: Dict):
+        """Handle progression control interventions"""
+        intervention_type = intervention.get("type")
+        
+        if intervention_type == "consequence_test":
+            logger.info(f"🔬 Injecting consequence test for {intervention['tension']}")
+            
+            # Create moderator/narrator intervention
+            test_exchange = {
+                'turn': self.group_state.turn_number + 0.5,  # Fractional turn for interventions
+                'speaker': self.narrator.name if self.narrator else 'Moderator',
+                'content': intervention['prompt'],
+                'move': 'CONSEQUENCE_TEST',
+                'intervention_type': 'consequence_test',
+                'tension': intervention['tension']
+            }
+            
+            await self._queue_message(
+                test_exchange['speaker'],
+                intervention['prompt'],
+                "discussion"
+            )
+            
+            logger.info(f"🔬 Consequence test: {intervention['prompt'][:100]}...")
+        
+        elif intervention_type == "pivot":
+            logger.info(f"🔄 Forcing pivot from {intervention['tension']}")
+            
+            # Create synthesis + pivot intervention
+            pivot_exchange = {
+                'turn': self.group_state.turn_number + 0.5,
+                'speaker': 'Voice of Reason',
+                'content': intervention['prompt'],
+                'move': 'PIVOT_SYNTHESIS',
+                'intervention_type': 'pivot',
+                'tension': intervention['tension']
+            }
+            
+            await self._queue_message(
+                pivot_exchange['speaker'],
+                intervention['prompt'],
+                "discussion"
+            )
+            
+            logger.info(f"🔄 Pivot synthesis: {intervention['prompt'][:100]}...")
+        
+        elif intervention_type == "synthesis":
+            logger.info(f"🎯 Periodic synthesis for {intervention['tension']}")
+            
+            synthesis_exchange = {
+                'turn': self.group_state.turn_number + 0.5,
+                'speaker': 'Progression Synthesizer',
+                'content': intervention['prompt'],
+                'move': 'PERIODIC_SYNTHESIS',
+                'intervention_type': 'synthesis',
+                'tension': intervention['tension']
+            }
+            
+            await self._queue_message(
+                synthesis_exchange['speaker'],
+                intervention['prompt'],
+                "discussion"
+            )
+            
+            logger.info(f"🎯 Synthesis: {intervention['prompt'][:100]}...")
+
     async def _execute_forced_pivot(self):
         """Execute a forced pivot with new speaker or dilemma"""
         logger.info("Executing forced pivot...")
@@ -432,6 +526,11 @@ class MultiAgentDiscussionOrchestrator:
                 if self.group_state.turn_number == 0 and self.narrator_context:
                     context['narrator_context'] = self.narrator_context
                 
+                # Add progression context
+                if self.enable_progression_control and self.progression_controller:
+                    recent_exchanges = self.group_state.exchanges[-5:] if self.group_state.exchanges else []
+                    context['episode_summary'] = "\n".join([f"{e['speaker']}: {e['content']}" for e in recent_exchanges])
+                
                 response = await self._propose_and_refine_turn(
                     speaker=speaker,
                     recommended_move=recommended_move,
@@ -450,6 +549,25 @@ class MultiAgentDiscussionOrchestrator:
                 if self.enable_redundancy_control and self.entailment_detector:
                     entailments = list(self.entailment_detector.detect(response))
                 
+                # Process turn through progression controller
+                progression_result = {}
+                if self.enable_progression_control and self.progression_controller:
+                    try:
+                        progression_result = await self.progression_controller.process_turn(
+                            content=response,
+                            speaker=speaker.state.name,
+                            context=context
+                        )
+                        
+                        # Handle any interventions
+                        if progression_result.get("interventions"):
+                            for intervention in progression_result["interventions"]:
+                                await self._handle_progression_intervention(intervention)
+                        
+                    except Exception as e:
+                        logger.error(f"Progression control error: {e}")
+                        progression_result = {"interventions": [], "state_update": {}}
+                
                 # Record exchange
                 exchange = {
                     "turn": self.group_state.turn_number,
@@ -459,7 +577,8 @@ class MultiAgentDiscussionOrchestrator:
                     "move": recommended_move.move_type,
                     "target": recommended_move.target,
                     "personality": speaker.state.personality.value,
-                    "entailments": [e.value for e in entailments] if entailments else []
+                    "entailments": [e.value for e in entailments] if entailments else [],
+                    "progression_state": progression_result.get("state_update", {})
                 }
                 self.group_state.add_exchange(exchange)
                 
@@ -531,6 +650,20 @@ class MultiAgentDiscussionOrchestrator:
             if self.enable_strategic_scoring and self.strategic_coordinator:
                 self.strategic_metrics = self.strategic_coordinator.get_aggregate_metrics()
                 logger.info(f"📊 Discussion Metrics: {self.strategic_metrics}")
+            
+            # LOG PROGRESSION METRICS
+            if self.enable_progression_control and self.progression_controller:
+                progression_report = self.progression_controller.get_status_report()
+                logger.info(f"🚀 Progression Metrics: {progression_report['metrics']}")
+                
+                # Save progression state for persistence
+                try:
+                    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                    state_filepath = f"outputs/progression/progression_state_{self.session_id}_{timestamp}.json"
+                    self.progression_controller.save_state(state_filepath)
+                    logger.info(f"💾 Progression state saved to: {state_filepath}")
+                except Exception as e:
+                    logger.error(f"Failed to save progression state: {e}")
         
             # Generate narrator closing if enabled
             if self.enable_narrator:

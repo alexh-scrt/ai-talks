@@ -29,9 +29,13 @@ console = Console()
 @click.option("--redundancy-control/--no-redundancy-control", default=None, help="Enable/disable redundancy control")
 @click.option("--dyad-limit", type=int, default=2, help="Max volleys per dyad (default: 2)")
 @click.option("--similarity-threshold", type=float, default=0.85, help="Similarity threshold for redundancy (default: 0.85)")
+@click.option("--progression-control/--no-progression-control", default=None, help="Enable/disable progression control")
+@click.option("--cycles-threshold", type=int, default=2, help="Max cycles on same tension before test (default: 2)")
+@click.option("--max-consequence-tests", type=int, default=2, help="Max consequence tests before pivot (default: 2)")
 def main(topic: str, file: str, depth: int, participants: int, panel: str, config: str, max_turns: int, narrator: bool,
          synthesis: bool, synthesis_style: str, synthesis_freq: int, rag_styling: bool, coda: bool,
-         no_math_model: bool, redundancy_control: bool, dyad_limit: int, similarity_threshold: float):
+         no_math_model: bool, redundancy_control: bool, dyad_limit: int, similarity_threshold: float,
+         progression_control: bool, cycles_threshold: int, max_consequence_tests: int):
     """Talks: Multi-Agent Philosophical Discussion System"""
     
     # Load system configuration
@@ -79,6 +83,10 @@ def main(topic: str, file: str, depth: int, participants: int, panel: str, confi
     # Redundancy control defaults
     if redundancy_control is None:
         redundancy_control = talks_config.get('redundancy_control.enabled', True)
+    
+    # Progression control defaults
+    if progression_control is None:
+        progression_control = talks_config.get('progression_engine.enabled', True)
     
     console.print(Panel.fit(
         "[bold cyan]🎭  Talks: Multi-Agent Discussion System[/bold cyan]",
@@ -133,7 +141,8 @@ def main(topic: str, file: str, depth: int, participants: int, panel: str, confi
     console.print(f"[bold]Synthesizer:[/bold] {'Enabled' if synthesis else 'Disabled'} ({synthesis_style}, every {synthesis_freq} turns)")
     console.print(f"[bold]RAG Styling:[/bold] {'Enabled' if rag_styling else 'Disabled'}")
     console.print(f"[bold]Coda:[/bold] {'Enabled' if coda else 'Disabled'} (math model: {'Disabled' if no_math_model else 'Enabled'})")
-    console.print(f"[bold]Redundancy Control:[/bold] {'Enabled' if redundancy_control else 'Disabled'} (dyad limit: {dyad_limit}, similarity: {similarity_threshold})\n")
+    console.print(f"[bold]Redundancy Control:[/bold] {'Enabled' if redundancy_control else 'Disabled'} (dyad limit: {dyad_limit}, similarity: {similarity_threshold})")
+    console.print(f"[bold]Progression Control:[/bold] {'Enabled' if progression_control else 'Disabled'} (cycles: {cycles_threshold}, tests: {max_consequence_tests})\n")
     
     # Display participants
     for p in participants_config:
@@ -147,14 +156,23 @@ def main(topic: str, file: str, depth: int, participants: int, panel: str, confi
     # Run discussion
     asyncio.run(run_discussion(topic, depth, participants_config, max_turns, narrator,
                                synthesis, synthesis_style, synthesis_freq, rag_styling, coda,
-                               not no_math_model, redundancy_control, dyad_limit, similarity_threshold))
+                               not no_math_model, redundancy_control, dyad_limit, similarity_threshold,
+                               progression_control, cycles_threshold, max_consequence_tests))
 
 
 async def run_discussion(topic: str, depth: int, participants_config: list, max_turns: int, enable_narrator: bool,
                         enable_synthesis: bool, synthesis_style: str, synthesis_freq: int, use_rag_styling: bool,
                         enable_coda: bool, enable_mathematical_model: bool, enable_redundancy_control: bool, 
-                        dyad_limit: int, similarity_threshold: float):
+                        dyad_limit: int, similarity_threshold: float, enable_progression_control: bool,
+                        cycles_threshold: int, max_consequence_tests: int):
     """Run the discussion and display results"""
+    
+    # Create progression config
+    progression_config = {
+        "cycles_threshold": cycles_threshold,
+        "max_consequence_tests": max_consequence_tests,
+        "enable_progression": enable_progression_control
+    }
     
     orchestrator = MultiAgentDiscussionOrchestrator(
         topic=topic,
@@ -169,7 +187,9 @@ async def run_discussion(topic: str, depth: int, participants_config: list, max_
         enable_mathematical_model=enable_mathematical_model,
         enable_redundancy_control=enable_redundancy_control,
         max_dyad_volleys=dyad_limit,
-        similarity_threshold=similarity_threshold
+        similarity_threshold=similarity_threshold,
+        enable_progression_control=enable_progression_control,
+        progression_config=progression_config
     )
     
     # Show forbidden topics from config
