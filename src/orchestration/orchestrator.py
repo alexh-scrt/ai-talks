@@ -13,6 +13,8 @@ from src.agents.cognitive_coda import CognitiveCodaAgent
 from src.game_theory.turn_selector import TurnSelector
 from src.game_theory.payoff_calculator import PayoffCalculator
 from src.game_theory.strategic_coordinator import StrategicCoordinator
+from src.utils.entailment_detector import EntailmentDetector
+from src.utils.redundancy_checker import RedundancyChecker
 
 logger = logging.getLogger(__name__)
 
@@ -28,11 +30,15 @@ class MultiAgentDiscussionOrchestrator:
         enable_narrator: Optional[bool] = None,
         narrator_name: Optional[str] = None,
         enable_synthesizer: Optional[bool] = None,
-        synthesis_frequency: int = 8,
+        synthesis_frequency: int = 12,
         synthesis_style: str = "hegelian",
         use_rag_styling: Optional[bool] = None,
         enable_strategic_scoring: Optional[bool] = None,
-        enable_coda: Optional[bool] = None
+        enable_coda: Optional[bool] = None,
+        enable_redundancy_control: Optional[bool] = None,
+        similarity_threshold: float = 0.85,
+        max_dyad_volleys: int = 2,
+        max_tension_cycles: int = 2
     ):
         # Load configuration
         config = TalksConfig()
@@ -136,6 +142,21 @@ class MultiAgentDiscussionOrchestrator:
             )
             logger.info("🧠 Cognitive Coda generation enabled")
         
+        # Redundancy Control System (optional)
+        if enable_redundancy_control is None:
+            enable_redundancy_control = config.get('redundancy_control.enabled', True)
+        
+        self.enable_redundancy_control = enable_redundancy_control
+        self.entailment_detector = None
+        self.redundancy_checker = None
+        self.max_dyad_volleys = max_dyad_volleys
+        self.max_tension_cycles = max_tension_cycles
+        
+        if enable_redundancy_control:
+            self.entailment_detector = EntailmentDetector()
+            self.redundancy_checker = RedundancyChecker(similarity_threshold=similarity_threshold)
+            logger.info(f"🔍 Redundancy control enabled (similarity threshold: {similarity_threshold})")
+        
         # Initialize logging queue
         self._log_queue = asyncio.Queue()
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -180,6 +201,142 @@ class MultiAgentDiscussionOrchestrator:
         
         return self.introduction_segments
     
+    async def _propose_and_refine_turn(
+        self,
+        speaker: ParticipantAgent,
+        recommended_move,
+        context: Dict
+    ) -> str:
+        """Propose turn with refinement for redundancy and entailments"""
+        
+        if not self.enable_redundancy_control:
+            # Legacy behavior - generate without validation
+            if context.get('narrator_context'):
+                return await speaker.generate_response(
+                    topic=self.topic,
+                    group_state=self.group_state,
+                    recommended_move=recommended_move,
+                    narrator_context=context['narrator_context']
+                )
+            else:
+                return await speaker.generate_response(
+                    topic=self.topic,
+                    group_state=self.group_state,
+                    recommended_move=recommended_move
+                )
+        
+        # Get recent exchanges for context
+        recent_texts = [
+            e['content'] for e in self.group_state.exchanges[-3:]
+        ]
+        
+        max_attempts = 3
+        for attempt in range(max_attempts):
+            # Generate response
+            if context.get('narrator_context'):
+                response = await speaker.generate_response(
+                    topic=self.topic,
+                    group_state=self.group_state,
+                    recommended_move=recommended_move,
+                    narrator_context=context['narrator_context']
+                )
+            else:
+                response = await speaker.generate_response(
+                    topic=self.topic,
+                    group_state=self.group_state,
+                    recommended_move=recommended_move
+                )
+            
+            # Check 1: Redundancy
+            if self.redundancy_checker.is_redundant(response, recent_texts):
+                logger.warning(f"Attempt {attempt+1}: Response too similar to recent turns")
+                if attempt < max_attempts - 1:
+                    # TODO: Add revision instruction mechanism if supported by agent
+                    continue
+            
+            # Check 2: Entailment requirement
+            entailments = self.entailment_detector.detect(response)
+            if not entailments:
+                logger.warning(f"Attempt {attempt+1}: No new entailments detected")
+                if attempt < max_attempts - 1:
+                    # TODO: Add revision instruction mechanism if supported by agent
+                    continue
+            
+            # Success - response passes checks
+            logger.debug(f"Turn validated with entailments: {[e.value for e in entailments]}")
+            return response
+        
+        # After max attempts, return best attempt
+        logger.warning("Max refinement attempts reached, using last response")
+        return response
+    
+    def _should_force_pivot(self) -> bool:
+        """Check if we should force a topic/speaker pivot"""
+        
+        if not self.enable_redundancy_control:
+            return False
+        
+        # Check dyad budget
+        if self.group_state.last_speaker_id and len(self.group_state.exchanges) >= 1:
+            last_exchange = self.group_state.exchanges[-1]
+            current_speaker_id = last_exchange.get('speaker_id')
+            
+            if current_speaker_id and self.group_state.last_speaker_id != current_speaker_id:
+                dyad = self.group_state.get_dyad_state(
+                    self.group_state.last_speaker_id,
+                    current_speaker_id
+                )
+                if not dyad.can_continue():
+                    logger.info(f"🔄 Dyad budget exceeded: forcing pivot")
+                    return True
+        
+        # Check tension cycles
+        if self.group_state.current_tension:
+            tension = self.group_state.get_tension_state(*self.group_state.current_tension)
+            if not tension.can_continue():
+                logger.info(f"🔄 Tension cycles exceeded: forcing pivot")
+                return True
+        
+        return False
+    
+    async def _execute_forced_pivot(self):
+        """Execute a forced pivot with new speaker or dilemma"""
+        logger.info("Executing forced pivot...")
+        
+        # Option 1: Introduce a dilemma through the moderator
+        if self.narrator and hasattr(self.narrator, 'inject_dilemma'):
+            try:
+                dilemma = await self.narrator.inject_dilemma(
+                    topic=self.topic,
+                    recent_exchanges=self.group_state.exchanges[-5:]
+                )
+                
+                dilemma_exchange = {
+                    'turn': self.group_state.turn_number,
+                    'speaker': self.narrator.name,
+                    'content': dilemma,
+                    'move': 'PIVOT_DILEMMA',
+                    'addressed_to': None
+                }
+                self.group_state.add_exchange(dilemma_exchange)
+                
+                await self._queue_message(
+                    self.narrator.name,
+                    dilemma,
+                    "discussion"
+                )
+            except AttributeError:
+                logger.warning("Narrator does not support inject_dilemma method")
+        
+        # Reset dyad states
+        for dyad in self.group_state.dyads.values():
+            dyad.reset()
+        
+        # Reset current tension
+        if self.group_state.current_tension:
+            tension = self.group_state.get_tension_state(*self.group_state.current_tension)
+            tension.reset()
+    
     async def run_discussion(self, max_iterations: int = 30) -> List[Dict]:
         """Main discussion loop with optional narrator introduction"""
         
@@ -202,6 +359,13 @@ class MultiAgentDiscussionOrchestrator:
                 await self.run_introduction()
         
             while self.group_state.turn_number < max_iterations:
+                
+                # Check for forced pivot before selecting speaker
+                if self._should_force_pivot():
+                    await self._execute_forced_pivot()
+                    # Continue to next iteration with fresh state
+                    continue
+                
                 # Select next speaker (use designated first speaker if this is turn 1 with narrator)
                 if self.group_state.turn_number == 0 and self.first_speaker_id:
                     next_speaker_id = self.first_speaker_id
@@ -259,20 +423,16 @@ class MultiAgentDiscussionOrchestrator:
                     target_name = self.group_state.get_participant(recommended_move.target).name
                     logger.info(f"Addressing: {target_name}")
                 
-                # Generate response (pass narrator context to first speaker)
+                # Generate response with redundancy control
+                context = {}
                 if self.group_state.turn_number == 0 and self.narrator_context:
-                    response = await speaker.generate_response(
-                        topic=self.topic,
-                        group_state=self.group_state,
-                        recommended_move=recommended_move,
-                        narrator_context=self.narrator_context
-                    )
-                else:
-                    response = await speaker.generate_response(
-                        topic=self.topic,
-                        group_state=self.group_state,
-                        recommended_move=recommended_move
-                    )
+                    context['narrator_context'] = self.narrator_context
+                
+                response = await self._propose_and_refine_turn(
+                    speaker=speaker,
+                    recommended_move=recommended_move,
+                    context=context
+                )
                 
                 # Queue participant response to log
                 await self._queue_message(
@@ -280,6 +440,11 @@ class MultiAgentDiscussionOrchestrator:
                     response,
                     "discussion"
                 )
+                
+                # Record entailments if redundancy control is enabled
+                entailments = []
+                if self.enable_redundancy_control and self.entailment_detector:
+                    entailments = list(self.entailment_detector.detect(response))
                 
                 # Record exchange
                 exchange = {
@@ -289,9 +454,13 @@ class MultiAgentDiscussionOrchestrator:
                     "content": response,
                     "move": recommended_move.move_type,
                     "target": recommended_move.target,
-                    "personality": speaker.state.personality.value
+                    "personality": speaker.state.personality.value,
+                    "entailments": [e.value for e in entailments] if entailments else []
                 }
                 self.group_state.add_exchange(exchange)
+                
+                # Update dyad state
+                self.group_state.update_dyad(next_speaker_id)
                 
                 # STRATEGIC SCORING
                 if self.enable_strategic_scoring and self.strategic_coordinator:
@@ -308,18 +477,18 @@ class MultiAgentDiscussionOrchestrator:
                         logger.error(f"Strategic evaluation failed: {e}")
                         # Continue discussion even if scoring fails
                 
-                # Synthesis checkpoint
+                # Synthesis checkpoint (mandatory every 12 turns)
                 if (self.enable_synthesizer and 
                     self.group_state.turn_number > 0 and
-                    self.group_state.turn_number % self.synthesis_frequency == 0 and
+                    self.group_state.turn_number % 12 == 0 and
                     len(self.group_state.exchanges) >= 3):
                     
-                    logger.info(f"🔄 Synthesis checkpoint at turn {self.group_state.turn_number}")
+                    logger.info(f"🔄 MANDATORY Synthesis checkpoint at turn {self.group_state.turn_number}")
                     
                     try:
                         synthesis = await self.synthesizer.synthesize_segment(
                             exchanges=self.group_state.exchanges,
-                            turn_window=min(self.synthesis_frequency, 8),
+                            turn_window=12,
                             topic=self.topic
                         )
                         

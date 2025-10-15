@@ -1,6 +1,8 @@
 from dataclasses import dataclass, field
-from typing import Dict, List, Set, Optional
+from typing import Dict, List, Set, Optional, Tuple
 import json
+from .dyad_state import DyadState
+from .tension_state import TensionState
 
 
 @dataclass
@@ -32,6 +34,12 @@ class GroupDiscussionState:
     convergence_level: float = 0.0
     novelty_score: float = 1.0
     
+    # Redundancy control tracking
+    dyads: Dict[Tuple[str, str], DyadState] = field(default_factory=dict)
+    tensions: Dict[Tuple[str, str], TensionState] = field(default_factory=dict)
+    last_speaker_id: Optional[str] = None
+    current_tension: Optional[Tuple[str, str]] = None
+    
     def get_participant(self, participant_id: str) -> 'ParticipantState':
         """Get participant state by ID"""
         return self.participants[participant_id]
@@ -50,6 +58,27 @@ class GroupDiscussionState:
         """Add exchange and update turn number"""
         self.exchanges.append(exchange)
         self.turn_number += 1
+    
+    def get_dyad_state(self, speaker_a: str, speaker_b: str) -> DyadState:
+        """Get or create dyad state for two speakers"""
+        pair = tuple(sorted([speaker_a, speaker_b]))
+        if pair not in self.dyads:
+            self.dyads[pair] = DyadState(pair=pair, max_volleys=2)
+        return self.dyads[pair]
+    
+    def update_dyad(self, current_speaker: str):
+        """Update dyad tracking after a turn"""
+        if self.last_speaker_id and self.last_speaker_id != current_speaker:
+            dyad = self.get_dyad_state(self.last_speaker_id, current_speaker)
+            dyad.increment()
+        self.last_speaker_id = current_speaker
+    
+    def get_tension_state(self, concept_a: str, concept_b: str) -> TensionState:
+        """Get or create tension state"""
+        pair = tuple(sorted([concept_a, concept_b]))
+        if pair not in self.tensions:
+            self.tensions[pair] = TensionState(pair=pair)
+        return self.tensions[pair]
     
     def to_json(self) -> str:
         """Serialize state to JSON for storage"""

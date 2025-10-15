@@ -26,7 +26,7 @@ narrator:
 # Discussion parameters
 discussion:
   default_depth: 5
-  max_turns: 100
+  max_turns: 48  # Reduced from 100 for length control
   min_participants: 2
   max_participants: 5
   recursion_limit: 250  # LangGraph recursion limit to prevent errors
@@ -55,7 +55,7 @@ expertise_areas:
 synthesizer:
   enabled: true
   name: "Synthesizer"
-  frequency: 8  # Synthesize every N turns (8 = every 8 turns)
+  frequency: 12  # Synthesize every N turns (12 = every 12 turns)
   style: "hegelian"  # Options: hegelian, socratic, pragmatic
 
 # RAG Style Transfer settings
@@ -74,3 +74,22 @@ coda:
   enabled: true            # Enable cognitive coda generation
   temperature: 0.7         # Temperature for creative theorem generation
   model: "qwen3:32b"      # Model for coda generation
+
+# Redundancy Control settings
+redundancy_control:
+  enabled: true                 # Enable redundancy optimization and length control
+  dyad_max_volleys: 2          # Maximum volleys per speaker pair
+  tension_max_cycles: 2        # Maximum cycles per philosophical tension
+  similarity_threshold: 0.85   # Semantic similarity threshold for redundancy detection
+  require_entailment: true     # Require new entailments in each turn
+  synthesis_interval: 12       # Fixed synthesis interval
+  max_total_turns: 48         # Hard limit on total discussion turns
+
+# Entailment Detection
+entailment:
+  enabled: true
+  types:
+    - implication     # "if X then Y" statements
+    - application     # "in practice" examples
+    - counterexample  # "unless" or "except when"
+    - test           # "we could test" criteria

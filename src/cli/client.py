@@ -25,8 +25,12 @@ console = Console()
 @click.option("--synthesis-freq", type=int, help="Synthesize every N turns")
 @click.option("--rag-styling/--no-rag-styling", default=None, help="Enable/disable RAG style transfer")
 @click.option("--coda/--no-coda", default=None, help="Enable/disable cognitive coda generation")
+@click.option("--redundancy-control/--no-redundancy-control", default=None, help="Enable/disable redundancy control")
+@click.option("--dyad-limit", type=int, default=2, help="Max volleys per dyad (default: 2)")
+@click.option("--similarity-threshold", type=float, default=0.85, help="Similarity threshold for redundancy (default: 0.85)")
 def main(topic: str, file: str, depth: int, participants: int, panel: str, config: str, max_turns: int, narrator: bool,
-         synthesis: bool, synthesis_style: str, synthesis_freq: int, rag_styling: bool, coda: bool):
+         synthesis: bool, synthesis_style: str, synthesis_freq: int, rag_styling: bool, coda: bool,
+         redundancy_control: bool, dyad_limit: int, similarity_threshold: float):
     """Talks: Multi-Agent Philosophical Discussion System"""
     
     # Load system configuration
@@ -70,6 +74,10 @@ def main(topic: str, file: str, depth: int, participants: int, panel: str, confi
     # Coda default
     if coda is None:
         coda = talks_config.coda_enabled
+    
+    # Redundancy control defaults
+    if redundancy_control is None:
+        redundancy_control = talks_config.get('redundancy_control.enabled', True)
     
     console.print(Panel.fit(
         "[bold cyan]🎭  Talks: Multi-Agent Discussion System[/bold cyan]",
@@ -122,7 +130,8 @@ def main(topic: str, file: str, depth: int, participants: int, panel: str, confi
     console.print(f"[bold]Max Turns:[/bold] {max_turns}")
     console.print(f"[bold]Narrator:[/bold] {'Enabled' if narrator else 'Disabled'}")
     console.print(f"[bold]Synthesizer:[/bold] {'Enabled' if synthesis else 'Disabled'} ({synthesis_style}, every {synthesis_freq} turns)")
-    console.print(f"[bold]RAG Styling:[/bold] {'Enabled' if rag_styling else 'Disabled'}\n")
+    console.print(f"[bold]RAG Styling:[/bold] {'Enabled' if rag_styling else 'Disabled'}")
+    console.print(f"[bold]Redundancy Control:[/bold] {'Enabled' if redundancy_control else 'Disabled'} (dyad limit: {dyad_limit}, similarity: {similarity_threshold})\n")
     
     # Display participants
     for p in participants_config:
@@ -135,12 +144,13 @@ def main(topic: str, file: str, depth: int, participants: int, panel: str, confi
     
     # Run discussion
     asyncio.run(run_discussion(topic, depth, participants_config, max_turns, narrator,
-                               synthesis, synthesis_style, synthesis_freq, rag_styling, coda))
+                               synthesis, synthesis_style, synthesis_freq, rag_styling, coda,
+                               redundancy_control, dyad_limit, similarity_threshold))
 
 
 async def run_discussion(topic: str, depth: int, participants_config: list, max_turns: int, enable_narrator: bool,
                         enable_synthesis: bool, synthesis_style: str, synthesis_freq: int, use_rag_styling: bool,
-                        enable_coda: bool):
+                        enable_coda: bool, enable_redundancy_control: bool, dyad_limit: int, similarity_threshold: float):
     """Run the discussion and display results"""
     
     orchestrator = MultiAgentDiscussionOrchestrator(
@@ -152,7 +162,10 @@ async def run_discussion(topic: str, depth: int, participants_config: list, max_
         synthesis_frequency=synthesis_freq,
         synthesis_style=synthesis_style,
         use_rag_styling=use_rag_styling,
-        enable_coda=enable_coda
+        enable_coda=enable_coda,
+        enable_redundancy_control=enable_redundancy_control,
+        max_dyad_volleys=dyad_limit,
+        similarity_threshold=similarity_threshold
     )
     
     # Show forbidden topics from config
