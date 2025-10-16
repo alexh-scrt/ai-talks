@@ -32,10 +32,14 @@ console = Console()
 @click.option("--progression-control/--no-progression-control", default=None, help="Enable/disable progression control")
 @click.option("--cycles-threshold", type=int, default=2, help="Max cycles on same tension before test (default: 2)")
 @click.option("--max-consequence-tests", type=int, default=2, help="Max consequence tests before pivot (default: 2)")
+@click.option("--quotes/--no-quotes", default=None, help="Enable/disable philosophical quote enrichment")
+@click.option("--quote-interval", type=int, default=8, help="Turns between quotes (default: 8)")
+@click.option("--no-quote-adaptation", is_flag=True, help="Disable voice adaptation for quotes")
 def main(topic: str, file: str, depth: int, participants: int, panel: str, config: str, max_turns: int, narrator: bool,
          synthesis: bool, synthesis_style: str, synthesis_freq: int, rag_styling: bool, coda: bool,
          no_math_model: bool, redundancy_control: bool, dyad_limit: int, similarity_threshold: float,
-         progression_control: bool, cycles_threshold: int, max_consequence_tests: int):
+         progression_control: bool, cycles_threshold: int, max_consequence_tests: int,
+         quotes: bool, quote_interval: int, no_quote_adaptation: bool):
     """Talks: Multi-Agent Philosophical Discussion System"""
     
     # Load system configuration
@@ -87,6 +91,10 @@ def main(topic: str, file: str, depth: int, participants: int, panel: str, confi
     # Progression control defaults
     if progression_control is None:
         progression_control = talks_config.get('progression_engine.enabled', True)
+    
+    # Quote enrichment defaults  
+    if quotes is None:
+        quotes = talks_config.get('quotes.enabled', True)
     
     console.print(Panel.fit(
         "[bold cyan]🎭  Talks: Multi-Agent Discussion System[/bold cyan]",
@@ -142,7 +150,8 @@ def main(topic: str, file: str, depth: int, participants: int, panel: str, confi
     console.print(f"[bold]RAG Styling:[/bold] {'Enabled' if rag_styling else 'Disabled'}")
     console.print(f"[bold]Coda:[/bold] {'Enabled' if coda else 'Disabled'} (math model: {'Disabled' if no_math_model else 'Enabled'})")
     console.print(f"[bold]Redundancy Control:[/bold] {'Enabled' if redundancy_control else 'Disabled'} (dyad limit: {dyad_limit}, similarity: {similarity_threshold})")
-    console.print(f"[bold]Progression Control:[/bold] {'Enabled' if progression_control else 'Disabled'} (cycles: {cycles_threshold}, tests: {max_consequence_tests})\n")
+    console.print(f"[bold]Progression Control:[/bold] {'Enabled' if progression_control else 'Disabled'} (cycles: {cycles_threshold}, tests: {max_consequence_tests})")
+    console.print(f"[bold]Quote Enrichment:[/bold] {'Enabled' if quotes else 'Disabled'} (interval: {quote_interval}, adaptation: {'Disabled' if no_quote_adaptation else 'Enabled'})\n")
     
     # Display participants
     for p in participants_config:
@@ -157,14 +166,16 @@ def main(topic: str, file: str, depth: int, participants: int, panel: str, confi
     asyncio.run(run_discussion(topic, depth, participants_config, max_turns, narrator,
                                synthesis, synthesis_style, synthesis_freq, rag_styling, coda,
                                not no_math_model, redundancy_control, dyad_limit, similarity_threshold,
-                               progression_control, cycles_threshold, max_consequence_tests))
+                               progression_control, cycles_threshold, max_consequence_tests,
+                               quotes, quote_interval, not no_quote_adaptation))
 
 
 async def run_discussion(topic: str, depth: int, participants_config: list, max_turns: int, enable_narrator: bool,
                         enable_synthesis: bool, synthesis_style: str, synthesis_freq: int, use_rag_styling: bool,
                         enable_coda: bool, enable_mathematical_model: bool, enable_redundancy_control: bool, 
                         dyad_limit: int, similarity_threshold: float, enable_progression_control: bool,
-                        cycles_threshold: int, max_consequence_tests: int):
+                        cycles_threshold: int, max_consequence_tests: int,
+                        enable_quotes: bool, quote_interval: int, enable_quote_adaptation: bool):
     """Run the discussion and display results"""
     
     # Create progression config
@@ -189,7 +200,10 @@ async def run_discussion(topic: str, depth: int, participants_config: list, max_
         max_dyad_volleys=dyad_limit,
         similarity_threshold=similarity_threshold,
         enable_progression_control=enable_progression_control,
-        progression_config=progression_config
+        progression_config=progression_config,
+        enable_quote_enrichment=enable_quotes,
+        quote_interval=quote_interval,
+        enable_quote_voice_adaptation=enable_quote_adaptation
     )
     
     # Show forbidden topics from config

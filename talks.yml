@@ -166,3 +166,27 @@ progression_engine:
     track_consequence_density: true # Track entailments per turn window
     track_pivot_timing: true       # Track time between saturation and pivot
     log_tension_states: true       # Log detailed tension state info
+
+# Philosophical Quotes Enrichment - Intellectual Gravitas
+quotes:
+  enabled: true                    # Enable philosophical quote enrichment
+  interval: 8                      # Add quote every N turns
+  voice_adaptation: true           # Adapt quotes to speaker voice
+  corpus_path: "data/philosophical_quotes.jsonl"
+  
+  # Retrieval settings
+  retrieval:
+    top_k: 3                      # Number of candidate quotes to consider
+    relevance_threshold: 0.4      # Minimum relevance score (0-1)
+    diversity_weight: 0.3         # Balance relevance vs diversity (0-1)
+  
+  # Balance targets (for corpus expansion)
+  balance:
+    era:
+      ancient: 0.35              # Target 35% ancient quotes
+      modern: 0.35               # Target 35% modern quotes  
+      contemporary: 0.30         # Target 30% contemporary quotes
+    tradition:
+      western: 0.60              # Target 60% western philosophy
+      eastern: 0.30              # Target 30% eastern philosophy
+      other: 0.10                # Target 10% other traditions

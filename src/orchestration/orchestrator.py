@@ -16,6 +16,7 @@ from src.game_theory.strategic_coordinator import StrategicCoordinator
 from src.utils.entailment_detector import EntailmentDetector
 from src.utils.redundancy_checker import RedundancyChecker
 from src.controllers.progression_controller import ProgressionController, ProgressionConfig
+from src.agents.quote_enrichment_agent import QuoteEnrichmentAgent
 
 logger = logging.getLogger(__name__)
 
@@ -42,7 +43,10 @@ class MultiAgentDiscussionOrchestrator:
         max_tension_cycles: int = 2,
         enable_mathematical_model: Optional[bool] = None,
         enable_progression_control: Optional[bool] = None,
-        progression_config: Optional[Dict] = None
+        progression_config: Optional[Dict] = None,
+        enable_quote_enrichment: Optional[bool] = None,
+        quote_interval: int = 8,
+        enable_quote_voice_adaptation: bool = True
     ):
         # Load configuration
         config = TalksConfig()
@@ -188,6 +192,21 @@ class MultiAgentDiscussionOrchestrator:
             llm_client = LLMClient()
             self.progression_controller = ProgressionController(prog_config, llm_client)
             logger.info(f"🚀 Progression control enabled (cycles: {prog_config.cycles_threshold}, tests: {prog_config.max_consequence_tests})")
+        
+        # Quote Enrichment System (optional)
+        if enable_quote_enrichment is None:
+            enable_quote_enrichment = config.get('quotes.enabled', True)
+        
+        self.enable_quote_enrichment = enable_quote_enrichment
+        self.quote_agent = None
+        
+        if enable_quote_enrichment:
+            self.quote_agent = QuoteEnrichmentAgent(
+                quote_interval=quote_interval,
+                enable_voice_adaptation=enable_quote_voice_adaptation,
+                session_id=self.session_id
+            )
+            logger.info(f"📚 Quote enrichment enabled (interval={quote_interval})")
         
         # Initialize logging queue
         self._log_queue = asyncio.Queue()
@@ -537,6 +556,40 @@ class MultiAgentDiscussionOrchestrator:
                     context=context
                 )
                 
+                # 🆕 QUOTE ENRICHMENT
+                if self.enable_quote_enrichment and self.quote_agent:
+                    if self.quote_agent.should_enrich(
+                        turn_number=self.group_state.turn_number,
+                        phase='mid'
+                    ):
+                        # Extract current topics using existing topic extractor
+                        from src.utils.topic_extractor import TopicExtractor
+                        topic_extractor = TopicExtractor()
+                        topics = list(topic_extractor.extract_topics(response))
+                        
+                        # Get current tension if available
+                        current_tension = getattr(self.group_state, 'current_tension', None)
+                        
+                        # Build discussion context from recent exchanges
+                        recent_context = "\n".join([
+                            f"{e['speaker']}: {e['content'][:200]}"
+                            for e in self.group_state.exchanges[-3:]
+                        ])
+                        
+                        try:
+                            # Enrich with quote
+                            response = await self.quote_agent.enrich_response(
+                                response=response,
+                                speaker=speaker.state,
+                                discussion_topics=topics,
+                                current_tension=current_tension,
+                                discussion_context=recent_context
+                            )
+                            
+                            logger.info(f"📖 Quote added to {speaker.state.name}'s response")
+                        except Exception as e:
+                            logger.warning(f"Quote enrichment failed: {e}")
+                
                 # Queue participant response to log
                 await self._queue_message(
                     speaker.state.name,
@@ -664,6 +717,12 @@ class MultiAgentDiscussionOrchestrator:
                     logger.info(f"💾 Progression state saved to: {state_filepath}")
                 except Exception as e:
                     logger.error(f"Failed to save progression state: {e}")
+            
+            # LOG QUOTE ENRICHMENT METRICS
+            if self.enable_quote_enrichment and self.quote_agent:
+                quote_stats = self.quote_agent.get_statistics()
+                logger.info(f"📚 Quote Enrichment Metrics: {quote_stats['quotes_placed']} placed, "
+                           f"{quote_stats['unique_authors']} authors, semantic: {quote_stats['semantic_search_enabled']}")
         
             # Generate narrator closing if enabled
             if self.enable_narrator:

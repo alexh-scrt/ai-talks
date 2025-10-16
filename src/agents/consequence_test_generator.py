@@ -6,6 +6,7 @@ from dataclasses import dataclass
 import random
 
 from ..utils.llm_client import LLMClient
+from ..utils.text_processing import clean_llm_response
 
 
 @dataclass
@@ -184,16 +185,17 @@ Please improve this consequence test to:
 3. Force a concrete, testable prediction
 4. Stay focused on one clear consequence
 
-Respond with just the improved test prompt, starting with "Consequence Test:".
+Respond with just the improved test prompt (without any prefix).
 """
         
         try:
             response = await self.llm_client.complete(enhancement_prompt)
-            enhanced = response.strip()
             
-            # Ensure it starts with "Consequence Test:"
-            if not enhanced.startswith("Consequence Test:"):
-                enhanced = f"Consequence Test: {enhanced}"
+            # Use comprehensive cleaning to remove reasoning blocks and format properly
+            enhanced = clean_llm_response(response, is_quote=False)
+            
+            # The response should be the test prompt without prefix, so we don't need to check/add it
+            # since we'll add the prefix at the end of generate_test()
             
             return enhanced
         except Exception:

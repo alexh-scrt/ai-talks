@@ -6,6 +6,7 @@ from langchain_ollama import ChatOllama
 from langchain_community.tools.tavily_search import TavilySearchResults
 from langchain_core.tools import BaseTool
 from langchain_core.messages import HumanMessage, SystemMessage
+from ..utils.text_processing import strip_reasoning
 
 logger = logging.getLogger(__name__)
 
@@ -143,9 +144,11 @@ class BaseAgent(ABC):
                 tool_message = f"Tool results: {tool_results}"
                 messages.append(HumanMessage(content=tool_message))
                 final_response = await self.llm.ainvoke(messages)
-                return final_response.content
+                # Apply basic cleaning to remove reasoning blocks
+                return strip_reasoning(final_response.content)
         
-        return response.content
+        # Apply basic cleaning to remove reasoning blocks
+        return strip_reasoning(response.content)
     
     def clear_history(self):
         """Clear conversation history"""
