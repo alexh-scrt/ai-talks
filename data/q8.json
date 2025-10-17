@@ -1,0 +1,616 @@
+{
+    "quotes": [
+        {
+            "author": "Octavia Butler",
+            "field": "Science Fiction",
+            "quote": "All that you touch you change. All that you change changes you.",
+            "meaning": "Interaction creates mutual transformation."
+        },
+        {
+            "author": "Toni Morrison",
+            "field": "Literature",
+            "quote": "Freeing yourself was one thing, claiming ownership of that freed self was another.",
+            "meaning": "Liberation requires both escape and self-possession."
+        },
+        {
+            "author": "James McBride",
+            "field": "Literature/Music",
+            "quote": "You're going to walk out of here one day and you're going to make a life for yourself.",
+            "meaning": "Future self-determination surpasses current circumstances."
+        },
+        {
+            "author": "Colson Whitehead",
+            "field": "Literature",
+            "quote": "You are a New York City girl. That's what makes you different.",
+            "meaning": "Geographic identity shapes character distinctiveness."
+        },
+        {
+            "author": "Jesmyn Ward",
+            "field": "Literature",
+            "quote": "I wanted to write about the experiences of the poor, black community I come from.",
+            "meaning": "Literary purpose involves representing one's origins."
+        },
+        {
+            "author": "Angie Thomas",
+            "field": "Young Adult Literature",
+            "quote": "Sometimes you can do everything right and things will still go wrong.",
+            "meaning": "Outcomes don't always correlate with actions."
+        },
+        {
+            "author": "Nic Stone",
+            "field": "Young Adult Literature",
+            "quote": "No matter what conclusions you come to, you have to figure it out on your own.",
+            "meaning": "Understanding requires personal intellectual journey."
+        },
+        {
+            "author": "Jason Reynolds",
+            "field": "Young Adult Literature",
+            "quote": "Stories are medicine. They have such power.",
+            "meaning": "Narratives provide healing and transformative effect."
+        },
+        {
+            "author": "Jacqueline Woodson",
+            "field": "Literature",
+            "quote": "Everything I write comes from my childhood in one way or another.",
+            "meaning": "Early experience forms foundation of creative expression."
+        },
+        {
+            "author": "Walter Dean Myers",
+            "field": "Young Adult Literature",
+            "quote": "We all think we're different, but when it comes around, we end up needing the same things.",
+            "meaning": "Universal human needs transcend perceived differences."
+        },
+        {
+            "author": "Nikki Giovanni",
+            "field": "Poetry",
+            "quote": "Mistakes are a fact of life. It is the response to the error that counts.",
+            "meaning": "Recovery matters more than initial failure."
+        },
+        {
+            "author": "Gwendolyn Brooks",
+            "field": "Poetry",
+            "quote": "We are each other's harvest; we are each other's business.",
+            "meaning": "Mutual interdependence defines human relationships."
+        },
+        {
+            "author": "Rita Dove",
+            "field": "Poetry",
+            "quote": "Poetry is language at its most distilled and most powerful.",
+            "meaning": "Verse concentrates linguistic impact to maximum intensity."
+        },
+        {
+            "author": "Yusef Komunyakaa",
+            "field": "Poetry",
+            "quote": "I believe in the power of the imagination to remake the world.",
+            "meaning": "Creative vision enables reality transformation."
+        },
+        {
+            "author": "Natasha Trethewey",
+            "field": "Poetry",
+            "quote": "The past is never dead. It's not even past.",
+            "meaning": "History continuously influences present experience."
+        },
+        {
+            "author": "Lucille Clifton",
+            "field": "Poetry",
+            "quote": "Come celebrate with me that every day something has tried to kill me and has failed.",
+            "meaning": "Survival itself merits celebration and gratitude."
+        },
+        {
+            "author": "Amiri Baraka",
+            "field": "Poetry/Activism",
+            "quote": "Art is whatever makes you proud to be human.",
+            "meaning": "Creative expression affirms human dignity."
+        },
+        {
+            "author": "Sonia Sanchez",
+            "field": "Poetry",
+            "quote": "We must learn to be still in the midst of activity and to be vibrantly alive in repose.",
+            "meaning": "Balance requires maintaining energy across states."
+        },
+        {
+            "author": "June Jordan",
+            "field": "Poetry/Activism",
+            "quote": "Poetry is a political act because it involves telling the truth.",
+            "meaning": "Honest expression inherently challenges power."
+        },
+        {
+            "author": "Claudia Rankine",
+            "field": "Poetry",
+            "quote": "The worst injury is feeling you don't belong so much that you never fight for belonging.",
+            "meaning": "Internalized exclusion prevents self-advocacy."
+        },
+        {
+            "author": "Terrance Hayes",
+            "field": "Poetry",
+            "quote": "I want to be able to contain everything in a poem.",
+            "meaning": "Poetic ambition seeks comprehensive expression."
+        },
+        {
+            "author": "Tracy K. Smith",
+            "field": "Poetry",
+            "quote": "Poetry is a way of living with the questions.",
+            "meaning": "Verse enables dwelling in uncertainty."
+        },
+        {
+            "author": "Elizabeth Alexander",
+            "field": "Poetry",
+            "quote": "Poetry is how we name the nameless.",
+            "meaning": "Verse articulates ineffable experience."
+        },
+        {
+            "author": "Kevin Young",
+            "field": "Poetry",
+            "quote": "The only way to write is to write through the fear.",
+            "meaning": "Creative production requires confronting anxiety."
+        },
+        {
+            "author": "Warsan Shire",
+            "field": "Poetry",
+            "quote": "You can't make homes out of human beings.",
+            "meaning": "People cannot provide stable foundation like place."
+        },
+        {
+            "author": "Rupi Kaur",
+            "field": "Poetry",
+            "quote": "What terrifies me most is how we foam at the mouth with envy when others succeed.",
+            "meaning": "Jealousy reveals disturbing aspects of human nature."
+        },
+        {
+            "author": "Amanda Gorman",
+            "field": "Poetry",
+            "quote": "For there is always light, if only we're brave enough to see it, if only we're brave enough to be it.",
+            "meaning": "Hope requires courage to perceive and embody."
+        },
+        {
+            "author": "Nayyirah Waheed",
+            "field": "Poetry",
+            "quote": "You broke the ocean in half to be here. Only to meet nothing that wants you.",
+            "meaning": "Immense sacrifice confronts unwelcoming reception."
+        },
+        {
+            "author": "Ocean Vuong",
+            "field": "Poetry/Literature",
+            "quote": "Let no one mistake us for the fruit of violence—but that violence, having passed through the fruit, failed to spoil it.",
+            "meaning": "Trauma's survivors transcend its corrupting potential."
+        },
+        {
+            "author": "Saul Williams",
+            "field": "Poetry/Music",
+            "quote": "Your existence makes me want to spit shine reality.",
+            "meaning": "Another's presence inspires transforming perception."
+        },
+        {
+            "author": "Gil Scott-Heron",
+            "field": "Music/Poetry",
+            "quote": "The revolution will not be televised.",
+            "meaning": "True transformation occurs beyond media spectacle."
+        },
+        {
+            "author": "Nas",
+            "field": "Hip-Hop",
+            "quote": "Life's a bitch and then you die.",
+            "meaning": "Existence involves hardship ending in mortality."
+        },
+        {
+            "author": "Tupac Shakur",
+            "field": "Hip-Hop",
+            "quote": "Reality is wrong. Dreams are for real.",
+            "meaning": "Aspirations hold more truth than circumstances."
+        },
+        {
+            "author": "The Notorious B.I.G.",
+            "field": "Hip-Hop",
+            "quote": "Stay far from timid, only make moves when your heart's in it.",
+            "meaning": "Authentic action requires passionate commitment."
+        },
+        {
+            "author": "Jay-Z",
+            "field": "Hip-Hop/Business",
+            "quote": "I'm not a businessman, I'm a business, man.",
+            "meaning": "Personal brand supersedes traditional business models."
+        },
+        {
+            "author": "Kendrick Lamar",
+            "field": "Hip-Hop",
+            "quote": "We gon' be alright.",
+            "meaning": "Collective resilience promises survival."
+        },
+        {
+            "author": "J. Cole",
+            "field": "Hip-Hop",
+            "quote": "There's no such thing as a life that's better than yours.",
+            "meaning": "Comparison diminishes appreciation of own existence."
+        },
+        {
+            "author": "Kanye West",
+            "field": "Hip-Hop/Fashion",
+            "quote": "I refuse to accept other people's ideas of happiness for me.",
+            "meaning": "Fulfillment requires personal definition."
+        },
+        {
+            "author": "Lauryn Hill",
+            "field": "Music",
+            "quote": "It could all be so simple, but you'd rather make it hard.",
+            "meaning": "Complexity often results from choice, not necessity."
+        },
+        {
+            "author": "Nina Simone",
+            "field": "Music",
+            "quote": "You've got to learn to leave the table when love's no longer being served.",
+            "meaning": "Self-preservation requires leaving unrewarding situations."
+        },
+        {
+            "author": "Aretha Franklin",
+            "field": "Music",
+            "quote": "Being the Queen is not all about singing, and being a diva is not all about singing. It has much to do with your service to people.",
+            "meaning": "Leadership involves contribution beyond talent."
+        },
+        {
+            "author": "Billie Holiday",
+            "field": "Music",
+            "quote": "You can be up to your boobies in white satin, with gardenias in your hair and no sugar cane for miles, but you can still be working on a plantation.",
+            "meaning": "Superficial luxury doesn't eliminate exploitation."
+        },
+        {
+            "author": "Ella Fitzgerald",
+            "field": "Music",
+            "quote": "Just don't give up trying to do what you really want to do.",
+            "meaning": "Persistence toward authentic goals matters most."
+        },
+        {
+            "author": "Stevie Wonder",
+            "field": "Music",
+            "quote": "Music is a world within itself, with a language we all understand.",
+            "meaning": "Sound communicates universally across barriers."
+        },
+        {
+            "author": "Marvin Gaye",
+            "field": "Music",
+            "quote": "If you cannot find peace within yourself, you will never find it anywhere else.",
+            "meaning": "Internal tranquility precedes external harmony."
+        },
+        {
+            "author": "Prince",
+            "field": "Music",
+            "quote": "A strong spirit transcends rules.",
+            "meaning": "Powerful character operates beyond constraints."
+        },
+        {
+            "author": "Michael Jackson",
+            "field": "Music",
+            "quote": "The greatest education in the world is watching the masters at work.",
+            "meaning": "Observation of excellence teaches more than formal instruction."
+        },
+        {
+            "author": "Whitney Houston",
+            "field": "Music",
+            "quote": "I decided long ago never to walk in anyone's shadow.",
+            "meaning": "Authenticity requires forging independent path."
+        },
+        {
+            "author": "Tina Turner",
+            "field": "Music",
+            "quote": "Sometimes you've got to let everything go—purge yourself.",
+            "meaning": "Renewal requires releasing accumulated burdens."
+        },
+        {
+            "author": "Diana Ross",
+            "field": "Music",
+            "quote": "Instead of looking at the past, I put myself ahead twenty years and try to look at what I need to do now.",
+            "meaning": "Forward vision guides present action more than history."
+        },
+        {
+            "author": "James Brown",
+            "field": "Music",
+            "quote": "I taught them everything they know, but not everything I know.",
+            "meaning": "Mentorship shares generously while maintaining mastery."
+        },
+        {
+            "author": "Ray Charles",
+            "field": "Music",
+            "quote": "I was born with music inside me.",
+            "meaning": "Artistic capacity exists as innate characteristic."
+        },
+        {
+            "author": "BB King",
+            "field": "Music",
+            "quote": "The beautiful thing about learning is that nobody can take it away from you.",
+            "meaning": "Knowledge provides permanent, inalienable value."
+        },
+        {
+            "author": "Muddy Waters",
+            "field": "Music",
+            "quote": "The blues had a baby and they called it rock and roll.",
+            "meaning": "Musical genres descend from ancestral forms."
+        },
+        {
+            "author": "John Lee Hooker",
+            "field": "Music",
+            "quote": "It don't take me no three days to record no album.",
+            "meaning": "Authentic expression flows naturally without excessive production."
+        },
+        {
+            "author": "Robert Johnson",
+            "field": "Music",
+            "quote": "You may bury my body down by the highway side.",
+            "meaning": "Blues tradition embraces mortality and marginality."
+        },
+        {
+            "author": "Bessie Smith",
+            "field": "Music",
+            "quote": "Blues is a feeling.",
+            "meaning": "Genre represents emotional state, not technical form."
+        },
+        {
+            "author": "Ma Rainey",
+            "field": "Music",
+            "quote": "White folks hear the blues come out, but they don't know how it got there.",
+            "meaning": "Cultural outsiders appreciate form without understanding origin."
+        },
+        {
+            "author": "Lead Belly",
+            "field": "Music",
+            "quote": "You sing about what you know.",
+            "meaning": "Authentic expression draws from lived experience."
+        },
+        {
+            "author": "Woody Guthrie",
+            "field": "Music/Activism",
+            "quote": "This land is your land, this land is my land.",
+            "meaning": "National territory belongs equally to all people."
+        },
+        {
+            "author": "Pete Seeger",
+            "field": "Music/Activism",
+            "quote": "Any darn fool can make something complex; it takes a genius to make something simple.",
+            "meaning": "Simplicity requires greater skill than complexity."
+        },
+        {
+            "author": "Joan Baez",
+            "field": "Music/Activism",
+            "quote": "Action is the antidote to despair.",
+            "meaning": "Engagement combats hopelessness."
+        },
+        {
+            "author": "Bob Dylan",
+            "field": "Music",
+            "quote": "A man is a success if he gets up in the morning and gets to bed at night, and in between he does what he wants to do.",
+            "meaning": "Autonomy defines achievement more than conventional markers."
+        },
+        {
+            "author": "Leonard Cohen",
+            "field": "Music/Poetry",
+            "quote": "There is a crack in everything. That's how the light gets in.",
+            "meaning": "Imperfection enables illumination and growth."
+        },
+        {
+            "author": "Joni Mitchell",
+            "field": "Music",
+            "quote": "We are stardust, we are golden.",
+            "meaning": "Cosmic origin confers inherent preciousness."
+        },
+        {
+            "author": "Neil Young",
+            "field": "Music",
+            "quote": "It's better to burn out than to fade away.",
+            "meaning": "Intense brief existence surpasses gradual decline."
+        },
+        {
+            "author": "Jimi Hendrix",
+            "field": "Music",
+            "quote": "Knowledge speaks, but wisdom listens.",
+            "meaning": "Understanding requires receptivity, not assertion."
+        },
+        {
+            "author": "Janis Joplin",
+            "field": "Music",
+            "quote": "Don't compromise yourself. You are all you've got.",
+            "meaning": "Self-integrity represents only assured possession."
+        },
+        {
+            "author": "Jim Morrison",
+            "field": "Music/Poetry",
+            "quote": "Expose yourself to your deepest fear; after that, fear has no power.",
+            "meaning": "Confronting terror neutralizes its control."
+        },
+        {
+            "author": "Kurt Cobain",
+            "field": "Music",
+            "quote": "Wanting to be someone else is a waste of the person you are.",
+            "meaning": "Imitation squanders authentic self."
+        },
+        {
+            "author": "Freddie Mercury",
+            "field": "Music",
+            "quote": "I won't be a rock star. I will be a legend.",
+            "meaning": "Ambition reaches beyond category to immortality."
+        },
+        {
+            "author": "Elton John",
+            "field": "Music",
+            "quote": "Music has healing power. It has the ability to take people out of themselves for a few hours.",
+            "meaning": "Sound provides therapeutic escape and relief."
+        },
+        {
+            "author": "Paul McCartney",
+            "field": "Music",
+            "quote": "In the end, the love you take is equal to the love you make.",
+            "meaning": "Reciprocity governs affection's economy."
+        },
+        {
+            "author": "John Lennon",
+            "field": "Music/Activism",
+            "quote": "Imagine all the people living life in peace.",
+            "meaning": "Envisioning harmony constitutes first step toward achieving it."
+        },
+        {
+            "author": "George Harrison",
+            "field": "Music/Spirituality",
+            "quote": "All the world is birthday cake, so take a piece, but not too much.",
+            "meaning": "Abundance permits enjoyment with moderation."
+        },
+        {
+            "author": "Ringo Starr",
+            "field": "Music",
+            "quote": "Peace and love.",
+            "meaning": "Simple dual commitment to harmony and affection."
+        },
+        {
+            "author": "Mick Jagger",
+            "field": "Music",
+            "quote": "I'd rather be dead than singing 'Satisfaction' when I'm 45.",
+            "meaning": "Artistic relevance requires evolution beyond past success."
+        },
+        {
+            "author": "Keith Richards",
+            "field": "Music",
+            "quote": "I've never had a problem with drugs. I've had problems with the police.",
+            "meaning": "Legal enforcement, not substances, creates difficulty."
+        },
+        {
+            "author": "Eric Clapton",
+            "field": "Music",
+            "quote": "Music became a healer for me.",
+            "meaning": "Sound provided recovery and restoration."
+        },
+        {
+            "author": "Jimmy Page",
+            "field": "Music",
+            "quote": "You don't find light by avoiding the darkness.",
+            "meaning": "Illumination requires engaging with shadow."
+        },
+        {
+            "author": "Robert Plant",
+            "field": "Music",
+            "quote": "The past is a stepping stone, not a millstone.",
+            "meaning": "History enables progress rather than hindering it."
+        },
+        {
+            "author": "Roger Waters",
+            "field": "Music",
+            "quote": "All you touch and all you see is all your life will ever be.",
+            "meaning": "Experience comprises totality of existence."
+        },
+        {
+            "author": "David Gilmour",
+            "field": "Music",
+            "quote": "I don't want to be a legend. I just want to make good music.",
+            "meaning": "Craft quality matters more than reputation."
+        },
+        {
+            "author": "Pete Townshend",
+            "field": "Music",
+            "quote": "I hope I die before I get old.",
+            "meaning": "Youthful vitality preferred over aged decline."
+        },
+        {
+            "author": "Frank Zappa",
+            "field": "Music",
+            "quote": "Art is making something out of nothing and selling it.",
+            "meaning": "Creation involves generating value from imagination."
+        },
+        {
+            "author": "Lou Reed",
+            "field": "Music",
+            "quote": "One chord is fine. Two chords are pushing it. Three chords and you're into jazz.",
+            "meaning": "Minimalism defines rock aesthetic versus complexity."
+        },
+        {
+            "author": "Iggy Pop",
+            "field": "Music",
+            "quote": "I'm not ashamed to dress like a woman because I don't think it's shameful to be a woman.",
+            "meaning": "Gender expression reflects equality, not degradation."
+        },
+        {
+            "author": "Patti Smith",
+            "field": "Music/Poetry",
+            "quote": "To me, punk rock is the freedom to create, freedom to be successful, freedom to not be successful.",
+            "meaning": "Movement embodies unrestricted creative autonomy."
+        },
+        {
+            "author": "Debbie Harry",
+            "field": "Music",
+            "quote": "I mean, I think about it, but I don't design my record to get a certain public response.",
+            "meaning": "Artistic integrity precedes audience consideration."
+        },
+        {
+            "author": "Joan Jett",
+            "field": "Music",
+            "quote": "I don't give a damn about my reputation.",
+            "meaning": "Self-direction supersedes social opinion."
+        },
+        {
+            "author": "Chrissie Hynde",
+            "field": "Music",
+            "quote": "Let's get these teen hearts beating faster, faster.",
+            "meaning": "Music energizes youthful passion and excitement."
+        },
+        {
+            "author": "Siouxsie Sioux",
+            "field": "Music",
+            "quote": "I've always been an outsider.",
+            "meaning": "Marginality defines persistent identity."
+        },
+        {
+            "author": "Morrissey",
+            "field": "Music",
+            "quote": "I would rather eat my own testicles than reform The Smiths, and that's saying something for a vegetarian.",
+            "meaning": "Artistic principles outweigh financial incentives."
+        },
+        {
+            "author": "Johnny Marr",
+            "field": "Music",
+            "quote": "The guitar is just a wonderful instrument.",
+            "meaning": "Instrument appreciation as simple reverence."
+        },
+        {
+            "author": "Ian Curtis",
+            "field": "Music",
+            "quote": "Existence well what does it matter? I exist on the best terms I can.",
+            "meaning": "Living according to available conditions defines approach."
+        },
+        {
+            "author": "Thom Yorke",
+            "field": "Music",
+            "quote": "I'm a creep, I'm a weirdo.",
+            "meaning": "Self-awareness of social marginalization."
+        },
+        {
+            "author": "Eddie Vedder",
+            "field": "Music",
+            "quote": "Music was your real passion, this thing you held dear.",
+            "meaning": "Sound represents authentic devotion."
+        },
+        {
+            "author": "Chris Cornell",
+            "field": "Music",
+            "quote": "The most important thing for me was to never ever, ever deny it.",
+            "meaning": "Accepting truth about self enables authenticity."
+        },
+        {
+            "author": "Layne Staley",
+            "field": "Music",
+            "quote": "Drugs are not the way to the light. They won't lead to a fairy-tale life.",
+            "meaning": "Substances fail to provide promised transformation."
+        },
+        {
+            "author": "Shannon Hoon",
+            "field": "Music",
+            "quote": "Life is one big question when you're starin' at the clock.",
+            "meaning": "Temporal awareness provokes existential uncertainty."
+        },
+        {
+            "author": "Jeff Buckley",
+            "field": "Music",
+            "quote": "Grace is what matters in anything, especially life, especially growth, tragedy, pain, love, death.",
+            "meaning": "Elegance transforms all human experiences."
+        },
+        {
+            "author": "Elliott Smith",
+            "field": "Music",
+            "quote": "I'm happy some of the time, and some of the time I'm not.",
+            "meaning": "Emotional fluctuation defines normal existence."
+        }
+    ]
+}

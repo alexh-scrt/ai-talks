@@ -1,0 +1,580 @@
+{
+    "quotes": [
+        {
+            "author": "Socrates",
+            "field": "Ancient Greek Philosophy",
+            "quote": "The unexamined life is not worth living.",
+            "meaning": "Self-reflection and critical inquiry give life meaning and value."
+        },
+        {
+            "author": "Plato",
+            "field": "Ancient Greek Philosophy",
+            "quote": "Reality is created by the mind; we can change our reality by changing our mind.",
+            "meaning": "Perception and thought shape our experience of existence."
+        },
+        {
+            "author": "Aristotle",
+            "field": "Ancient Greek Philosophy",
+            "quote": "Happiness is the meaning and the purpose of life, the whole aim and end of human existence.",
+            "meaning": "Eudaimonia or flourishing is the ultimate human goal."
+        },
+        {
+            "author": "Epicurus",
+            "field": "Ancient Greek Philosophy",
+            "quote": "The art of living well and the art of dying well are one.",
+            "meaning": "How we approach mortality reflects our entire philosophy of life."
+        },
+        {
+            "author": "Marcus Aurelius",
+            "field": "Stoic Philosophy",
+            "quote": "The happiness of your life depends upon the quality of your thoughts.",
+            "meaning": "Mental discipline and perspective determine well-being."
+        },
+        {
+            "author": "Epictetus",
+            "field": "Stoic Philosophy",
+            "quote": "It's not what happens to you, but how you react to it that matters.",
+            "meaning": "We control our responses, not external events."
+        },
+        {
+            "author": "Seneca",
+            "field": "Stoic Philosophy",
+            "quote": "As is a tale, so is life: not how long it is, but how good it is, is what matters.",
+            "meaning": "Quality of existence surpasses duration."
+        },
+        {
+            "author": "Heraclitus",
+            "field": "Pre-Socratic Philosophy",
+            "quote": "No man ever steps in the same river twice, for it's not the same river and he's not the same man.",
+            "meaning": "Reality is constant flux; permanence is illusion."
+        },
+        {
+            "author": "Parmenides",
+            "field": "Pre-Socratic Philosophy",
+            "quote": "What is, is, and what is not cannot be.",
+            "meaning": "Being is absolute; non-existence is inconceivable."
+        },
+        {
+            "author": "Democritus",
+            "field": "Pre-Socratic Philosophy",
+            "quote": "Happiness resides not in possessions, and not in gold, happiness dwells in the soul.",
+            "meaning": "Well-being is internal, not material."
+        },
+        {
+            "author": "Diogenes",
+            "field": "Cynic Philosophy",
+            "quote": "I am a citizen of the world.",
+            "meaning": "Human identity transcends local and national boundaries."
+        },
+        {
+            "author": "Plotinus",
+            "field": "Neoplatonism",
+            "quote": "Withdraw into yourself and look.",
+            "meaning": "Truth is discovered through inward contemplation."
+        },
+        {
+            "author": "Augustine of Hippo",
+            "field": "Christian Philosophy",
+            "quote": "Our hearts are restless until they rest in Thee.",
+            "meaning": "Human longing finds fulfillment only in the divine."
+        },
+        {
+            "author": "Boethius",
+            "field": "Medieval Philosophy",
+            "quote": "Nothing is miserable unless you think it so.",
+            "meaning": "Suffering depends on mental interpretation."
+        },
+        {
+            "author": "Thomas Aquinas",
+            "field": "Scholastic Philosophy",
+            "quote": "To one who has faith, no explanation is necessary. To one without faith, no explanation is possible.",
+            "meaning": "Belief systems create incompatible frameworks of understanding."
+        },
+        {
+            "author": "Averroes",
+            "field": "Islamic Philosophy",
+            "quote": "Ignorance leads to fear, fear leads to hate, and hate leads to violence.",
+            "meaning": "Knowledge prevents the chain reaction toward harm."
+        },
+        {
+            "author": "Maimonides",
+            "field": "Jewish Philosophy",
+            "quote": "The risk of a wrong decision is preferable to the terror of indecision.",
+            "meaning": "Action despite uncertainty surpasses paralysis."
+        },
+        {
+            "author": "René Descartes",
+            "field": "Early Modern Philosophy",
+            "quote": "I think, therefore I am.",
+            "meaning": "Consciousness itself proves existence; thought is the foundation of being."
+        },
+        {
+            "author": "Baruch Spinoza",
+            "field": "Rationalism",
+            "quote": "All things excellent are as difficult as they are rare.",
+            "meaning": "Value correlates with both scarcity and effort required."
+        },
+        {
+            "author": "Blaise Pascal",
+            "field": "Philosophy/Theology",
+            "quote": "Man is equally incapable of seeing the nothingness from which he emerges and the infinity in which he is engulfed.",
+            "meaning": "Human perspective is fundamentally limited by our finite nature."
+        },
+        {
+            "author": "Gottfried Wilhelm Leibniz",
+            "field": "Rationalism",
+            "quote": "We live in the best of all possible worlds.",
+            "meaning": "Reality is optimally designed despite apparent imperfections."
+        },
+        {
+            "author": "John Locke",
+            "field": "Empiricism",
+            "quote": "What worries you, masters you.",
+            "meaning": "Anxiety grants control over consciousness and action."
+        },
+        {
+            "author": "George Berkeley",
+            "field": "Idealism",
+            "quote": "To be is to be perceived.",
+            "meaning": "Existence depends on observation and consciousness."
+        },
+        {
+            "author": "David Hume",
+            "field": "Empiricism",
+            "quote": "Beauty in things exists in the mind which contemplates them.",
+            "meaning": "Aesthetic value is subjective, not objective property."
+        },
+        {
+            "author": "Jean-Jacques Rousseau",
+            "field": "Enlightenment Philosophy",
+            "quote": "Man is born free, and everywhere he is in chains.",
+            "meaning": "Natural liberty is constrained by social structures."
+        },
+        {
+            "author": "Voltaire",
+            "field": "Enlightenment Philosophy",
+            "quote": "Judge a man by his questions rather than his answers.",
+            "meaning": "Quality of inquiry reveals depth of understanding."
+        },
+        {
+            "author": "Immanuel Kant",
+            "field": "German Idealism",
+            "quote": "Two things fill the mind with ever-increasing wonder and awe: the starry heavens above me and the moral law within me.",
+            "meaning": "External cosmos and internal ethics evoke profound reverence."
+        },
+        {
+            "author": "Immanuel Kant",
+            "field": "German Idealism",
+            "quote": "We are not rich by what we possess but by what we can do without.",
+            "meaning": "Freedom from attachment constitutes true wealth."
+        },
+        {
+            "author": "Georg Wilhelm Friedrich Hegel",
+            "field": "German Idealism",
+            "quote": "The owl of Minerva spreads its wings only with the falling of the dusk.",
+            "meaning": "Understanding arrives only after events have concluded."
+        },
+        {
+            "author": "Arthur Schopenhauer",
+            "field": "Pessimism",
+            "quote": "Life swings like a pendulum backward and forward between pain and boredom.",
+            "meaning": "Human existence oscillates between suffering and emptiness."
+        },
+        {
+            "author": "Arthur Schopenhauer",
+            "field": "Pessimism",
+            "quote": "Talent hits a target no one else can hit. Genius hits a target no one else can see.",
+            "meaning": "Brilliance perceives possibilities invisible to others."
+        },
+        {
+            "author": "Søren Kierkegaard",
+            "field": "Existentialism",
+            "quote": "Life can only be understood backwards; but it must be lived forwards.",
+            "meaning": "Meaning emerges retrospectively while action requires forward commitment."
+        },
+        {
+            "author": "Søren Kierkegaard",
+            "field": "Existentialism",
+            "quote": "Anxiety is the dizziness of freedom.",
+            "meaning": "Unlimited choice creates existential vertigo."
+        },
+        {
+            "author": "Friedrich Nietzsche",
+            "field": "Existentialism/Nihilism",
+            "quote": "He who has a why to live can bear almost any how.",
+            "meaning": "Purpose provides strength to endure hardship."
+        },
+        {
+            "author": "Friedrich Nietzsche",
+            "field": "Existentialism/Nihilism",
+            "quote": "That which does not kill us makes us stronger.",
+            "meaning": "Adversity builds resilience and capability."
+        },
+        {
+            "author": "Friedrich Nietzsche",
+            "field": "Existentialism/Nihilism",
+            "quote": "God is dead. God remains dead. And we have killed him.",
+            "meaning": "Traditional metaphysical foundations have collapsed."
+        },
+        {
+            "author": "Friedrich Nietzsche",
+            "field": "Existentialism/Nihilism",
+            "quote": "There are no facts, only interpretations.",
+            "meaning": "Reality is mediated through subjective perspective."
+        },
+        {
+            "author": "William James",
+            "field": "Pragmatism",
+            "quote": "The greatest discovery of my generation is that a human being can alter his life by altering his attitudes.",
+            "meaning": "Mental framework determines life experience and outcomes."
+        },
+        {
+            "author": "Henri Bergson",
+            "field": "Process Philosophy",
+            "quote": "To exist is to change, to change is to mature, to mature is to go on creating oneself endlessly.",
+            "meaning": "Life is continuous self-transformation."
+        },
+        {
+            "author": "Edmund Husserl",
+            "field": "Phenomenology",
+            "quote": "To the things themselves.",
+            "meaning": "Return to direct experience without theoretical preconceptions."
+        },
+        {
+            "author": "Martin Heidegger",
+            "field": "Existential Phenomenology",
+            "quote": "Man acts as though he were the shaper and master of language, while in fact language remains the master of man.",
+            "meaning": "Linguistic structures constrain and shape human thought."
+        },
+        {
+            "author": "Martin Heidegger",
+            "field": "Existential Phenomenology",
+            "quote": "The most thought-provoking thing in our thought-provoking time is that we are still not thinking.",
+            "meaning": "Modern era lacks genuine philosophical contemplation."
+        },
+        {
+            "author": "Jean-Paul Sartre",
+            "field": "Existentialism",
+            "quote": "Existence precedes essence.",
+            "meaning": "Humans create their nature through choices, not by predetermined design."
+        },
+        {
+            "author": "Jean-Paul Sartre",
+            "field": "Existentialism",
+            "quote": "Man is condemned to be free.",
+            "meaning": "Freedom is inescapable burden requiring constant choice."
+        },
+        {
+            "author": "Jean-Paul Sartre",
+            "field": "Existentialism",
+            "quote": "Hell is other people.",
+            "meaning": "Others' judgments trap us in limiting definitions."
+        },
+        {
+            "author": "Simone de Beauvoir",
+            "field": "Existentialism/Feminism",
+            "quote": "One is not born, but rather becomes, a woman.",
+            "meaning": "Gender identity is socially constructed, not biologically determined."
+        },
+        {
+            "author": "Albert Camus",
+            "field": "Absurdism",
+            "quote": "The only way to deal with an unfree world is to become so absolutely free that your very existence is an act of rebellion.",
+            "meaning": "Radical freedom resists oppressive structures."
+        },
+        {
+            "author": "Albert Camus",
+            "field": "Absurdism",
+            "quote": "In the depth of winter, I finally learned that within me there lay an invincible summer.",
+            "meaning": "Inner strength persists regardless of external adversity."
+        },
+        {
+            "author": "Albert Camus",
+            "field": "Absurdism",
+            "quote": "The struggle itself toward the heights is enough to fill a man's heart. One must imagine Sisyphus happy.",
+            "meaning": "Finding meaning in absurd repetition enables fulfillment."
+        },
+        {
+            "author": "Ludwig Wittgenstein",
+            "field": "Analytic Philosophy",
+            "quote": "The limits of my language mean the limits of my world.",
+            "meaning": "Linguistic capacity bounds conceptual possibility."
+        },
+        {
+            "author": "Ludwig Wittgenstein",
+            "field": "Analytic Philosophy",
+            "quote": "Whereof one cannot speak, thereof one must be silent.",
+            "meaning": "Topics beyond comprehension should not be discussed carelessly."
+        },
+        {
+            "author": "Bertrand Russell",
+            "field": "Analytic Philosophy",
+            "quote": "The whole problem with the world is that fools and fanatics are always so certain of themselves, and wiser people so full of doubts.",
+            "meaning": "Wisdom involves acknowledging uncertainty; ignorance breeds overconfidence."
+        },
+        {
+            "author": "Karl Popper",
+            "field": "Philosophy of Science",
+            "quote": "True ignorance is not the absence of knowledge, but the refusal to acquire it.",
+            "meaning": "Willful rejection of learning differs from mere lack of information."
+        },
+        {
+            "author": "Hannah Arendt",
+            "field": "Political Philosophy",
+            "quote": "The sad truth is that most evil is done by people who never make up their minds to be good or evil.",
+            "meaning": "Harm results from thoughtlessness more than malice."
+        },
+        {
+            "author": "Emmanuel Levinas",
+            "field": "Continental Philosophy",
+            "quote": "The face of the Other demands ethical response.",
+            "meaning": "Encountering another person creates moral obligation."
+        },
+        {
+            "author": "Maurice Merleau-Ponty",
+            "field": "Phenomenology",
+            "quote": "The body is our general medium for having a world.",
+            "meaning": "Embodiment enables environmental engagement."
+        },
+        {
+            "author": "Simone Weil",
+            "field": "Philosophy/Mysticism",
+            "quote": "Attention is the rarest and purest form of generosity.",
+            "meaning": "Focused presence represents highest gift to others."
+        },
+        {
+            "author": "Michel Foucault",
+            "field": "Post-Structuralism",
+            "quote": "Knowledge is not for knowing: knowledge is for cutting.",
+            "meaning": "Understanding serves as tool for power, not passive contemplation."
+        },
+        {
+            "author": "Jacques Derrida",
+            "field": "Deconstruction",
+            "quote": "There is nothing outside of the text.",
+            "meaning": "Meaning exists only within systems of language and interpretation."
+        },
+        {
+            "author": "Gilles Deleuze",
+            "field": "Post-Structuralism",
+            "quote": "A concept is a brick. It can be used to build a courthouse of reason. Or it can be thrown through the window.",
+            "meaning": "Ideas serve both constructive and destructive purposes."
+        },
+        {
+            "author": "Paul Ricoeur",
+            "field": "Hermeneutics",
+            "quote": "The symbol gives rise to thought.",
+            "meaning": "Meaning emerges from interpretive engagement with signs."
+        },
+        {
+            "author": "Jürgen Habermas",
+            "field": "Critical Theory",
+            "quote": "What I would like to point out is that all rational beings are essentially social beings.",
+            "meaning": "Reason develops through communicative interaction."
+        },
+        {
+            "author": "John Rawls",
+            "field": "Political Philosophy",
+            "quote": "Each person possesses an inviolability founded on justice that even the welfare of society as a whole cannot override.",
+            "meaning": "Individual rights cannot be sacrificed for collective good."
+        },
+        {
+            "author": "Alasdair MacIntyre",
+            "field": "Virtue Ethics",
+            "quote": "I can only answer the question 'What am I to do?' if I can answer the prior question 'Of what story or stories do I find myself a part?'",
+            "meaning": "Identity and ethics derive from narrative context."
+        },
+        {
+            "author": "Martha Nussbaum",
+            "field": "Virtue Ethics",
+            "quote": "To be a good human being is to have a kind of openness to the world.",
+            "meaning": "Virtue involves receptivity and engagement with experience."
+        },
+        {
+            "author": "Peter Singer",
+            "field": "Utilitarian Ethics",
+            "quote": "All the arguments to prove man's superiority cannot shatter this hard fact: in suffering, the animals are our equals.",
+            "meaning": "Capacity for pain creates moral equality regardless of species."
+        },
+        {
+            "author": "Thomas Nagel",
+            "field": "Philosophy of Mind",
+            "quote": "Consciousness is what makes the mind-body problem really intractable.",
+            "meaning": "Subjective experience resists reductive explanation."
+        },
+        {
+            "author": "Derek Parfit",
+            "field": "Ethics/Personal Identity",
+            "quote": "What we believe about what persons are can make a great difference to what is rational or right.",
+            "meaning": "Metaphysical views about identity shape ethical conclusions."
+        },
+        {
+            "author": "Charles Taylor",
+            "field": "Philosophy",
+            "quote": "The self is dialogically constituted.",
+            "meaning": "Identity forms through interpersonal exchange."
+        },
+        {
+            "author": "Arne Naess",
+            "field": "Environmental Philosophy",
+            "quote": "The essence of deep ecology is to ask deeper questions.",
+            "meaning": "Fundamental inquiry reveals interconnected reality."
+        },
+        {
+            "author": "Slavoj Žižek",
+            "field": "Continental Philosophy",
+            "quote": "We feel free because we lack the very language to articulate our unfreedom.",
+            "meaning": "Inability to express constraints creates illusion of liberty."
+        },
+        {
+            "author": "Alain Badiou",
+            "field": "Continental Philosophy",
+            "quote": "Philosophy is the practice of thinking the unthinkable.",
+            "meaning": "Intellectual work pushes beyond accepted boundaries."
+        },
+        {
+            "author": "Judith Butler",
+            "field": "Gender Theory",
+            "quote": "Acts, gestures, and desire produce the effect of an internal core or substance, but produce this on the surface of the body.",
+            "meaning": "Identity is performed, not essential."
+        },
+        {
+            "author": "Cornel West",
+            "field": "Pragmatism/Social Philosophy",
+            "quote": "Never forget that justice is what love looks like in public.",
+            "meaning": "Social fairness manifests collective compassion."
+        },
+        {
+            "author": "bell hooks",
+            "field": "Feminism/Critical Theory",
+            "quote": "The moment we choose to love we begin to move against domination, against oppression.",
+            "meaning": "Compassion inherently resists power structures."
+        },
+        {
+            "author": "Kwame Anthony Appiah",
+            "field": "Ethics/Political Philosophy",
+            "quote": "No one is just one thing: we are each of us many things.",
+            "meaning": "Identity is multiple and complex, not singular."
+        },
+        {
+            "author": "Martha Nussbaum",
+            "field": "Ethics",
+            "quote": "The fully human life is one in which we cultivate our capacity for rich awareness.",
+            "meaning": "Consciousness development defines human flourishing."
+        },
+        {
+            "author": "Daniel Dennett",
+            "field": "Philosophy of Mind",
+            "quote": "We are made of star-stuff. We are a way for the universe to know itself.",
+            "meaning": "Human consciousness enables cosmic self-awareness."
+        },
+        {
+            "author": "Confucius",
+            "field": "Chinese Philosophy",
+            "quote": "It does not matter how slowly you go as long as you do not stop.",
+            "meaning": "Persistence and consistent progress outweigh speed."
+        },
+        {
+            "author": "Lao Tzu",
+            "field": "Taoism",
+            "quote": "A journey of a thousand miles begins with a single step.",
+            "meaning": "Great accomplishments start with small decisive actions."
+        },
+        {
+            "author": "Lao Tzu",
+            "field": "Taoism",
+            "quote": "Nature does not hurry, yet everything is accomplished.",
+            "meaning": "Natural processes achieve completeness without urgency."
+        },
+        {
+            "author": "Zhuangzi",
+            "field": "Taoism",
+            "quote": "The fish trap exists because of the fish. Once you've gotten the fish you can forget the trap.",
+            "meaning": "Methods are instrumental; discard them after achieving goals."
+        },
+        {
+            "author": "Mencius",
+            "field": "Confucianism",
+            "quote": "The great man is he who does not lose his child's heart.",
+            "meaning": "Maturity preserves innocent wonder and authenticity."
+        },
+        {
+            "author": "Buddha",
+            "field": "Buddhism",
+            "quote": "All that we are is the result of what we have thought.",
+            "meaning": "Mind shapes experience and identity comprehensively."
+        },
+        {
+            "author": "Buddha",
+            "field": "Buddhism",
+            "quote": "Three things cannot be long hidden: the sun, the moon, and the truth.",
+            "meaning": "Reality inevitably reveals itself despite concealment."
+        },
+        {
+            "author": "Nagarjuna",
+            "field": "Buddhist Philosophy",
+            "quote": "Things derive their being and nature by mutual dependence and are nothing in themselves.",
+            "meaning": "Reality is interdependent; entities lack independent essence."
+        },
+        {
+            "author": "Rumi",
+            "field": "Sufism/Persian Philosophy",
+            "quote": "Yesterday I was clever, so I wanted to change the world. Today I am wise, so I am changing myself.",
+            "meaning": "Wisdom recognizes self-transformation precedes world transformation."
+        },
+        {
+            "author": "Ibn Arabi",
+            "field": "Islamic Philosophy",
+            "quote": "He who knows himself knows his Lord.",
+            "meaning": "Self-knowledge leads to divine understanding."
+        },
+        {
+            "author": "Rabindranath Tagore",
+            "field": "Indian Philosophy",
+            "quote": "You can't cross the sea merely by standing and staring at the water.",
+            "meaning": "Achievement requires action, not passive observation."
+        },
+        {
+            "author": "Jiddu Krishnamurti",
+            "field": "Modern Indian Philosophy",
+            "quote": "It is no measure of health to be well adjusted to a profoundly sick society.",
+            "meaning": "Conforming to dysfunctional norms indicates problems, not wellness."
+        },
+        {
+            "author": "Thich Nhat Hanh",
+            "field": "Zen Buddhism",
+            "quote": "The present moment is the only time over which we have dominion.",
+            "meaning": "Control exists only in current awareness, not past or future."
+        },
+        {
+            "author": "Dalai Lama",
+            "field": "Tibetan Buddhism",
+            "quote": "The purpose of our lives is to be happy.",
+            "meaning": "Well-being is the fundamental human objective."
+        },
+        {
+            "author": "Alan Watts",
+            "field": "Comparative Philosophy",
+            "quote": "Trying to define yourself is like trying to bite your own teeth.",
+            "meaning": "Self cannot fully grasp itself through introspection alone."
+        },
+        {
+            "author": "Viktor Frankl",
+            "field": "Existential Psychology",
+            "quote": "When we are no longer able to change a situation, we are challenged to change ourselves.",
+            "meaning": "Adaptation and perspective shift respond to unchangeable circumstances."
+        },
+        {
+            "author": "Erich Fromm",
+            "field": "Humanistic Philosophy",
+            "quote": "Man's main task in life is to give birth to himself.",
+            "meaning": "Self-creation is the fundamental human project."
+        },
+        {
+            "author": "Abraham Maslow",
+            "field": "Humanistic Psychology",
+            "quote": "What is necessary to change a person is to change his awareness of himself.",
+            "meaning": "Self-perception transformation enables behavioral change."
+        }
+    ]
+}

@@ -84,6 +84,28 @@ coda:
     alpha: 1.0     # Agency curvature
     beta: 1.2      # Dependence penalty
   
+  # Phase 6A: CT Cleanup settings
+  ct_cleanup:
+    enabled: true              # Enable CT block cleanup post-processing
+    context_window: 1500       # Characters for template selection context
+  
+  # Phase 6A: Decision rule injection
+  decision_rules:
+    enabled: true              # Enable decision rule injection
+    window_size: 8             # Number of recent turns to check for decision language
+    min_rules_per_agent: 1     # Minimum decision rules per agent in window
+  
+  # Enhanced Agency extraction (Phase 6A)
+  agency_extraction:
+    enabled: true              # Enable enhanced agency extraction with sub-signals
+    window_size: 8             # Number of recent turns for agency computation
+    negation_damping: true     # Apply negation damping (halve weight for negated statements)
+    weights:                   # Sub-signal weights for agency computation
+      A_ought: 0.35           # Ethical obligations and responsibility
+      A_decis: 0.35           # Decision-making and commitment
+      A_conseq: 0.20          # Consequential reasoning
+      A_stance: 0.10          # Stance-taking and position maintenance
+  
   # Signal extraction weights (optional customization)
   signal_weights:
     structure:

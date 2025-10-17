@@ -336,6 +336,32 @@ class QuoteRetriever:
             'semantic_search_enabled': self.embedding_model is not None
         }
     
+    def search_quotes(self, query: str, limit: int = 10, diversity_threshold: float = 0.7, **kwargs) -> List[Dict]:
+        """
+        Search quotes using semantic search - compatibility method
+        
+        Args:
+            query: Search query string
+            limit: Maximum number of results
+            diversity_threshold: Threshold for diversity filtering (ignored in current implementation)
+            **kwargs: Additional parameters (for compatibility)
+            
+        Returns:
+            List of quote dictionaries with relevance scores
+        """
+        # Extract keywords from query for topic-based search
+        topics = query.lower().split()
+        
+        # Use the main retrieve method
+        results = self.retrieve(
+            topics=topics,
+            top_k=limit,
+            diversity_weight=0.2,  # Lower diversity for search
+            relevance_threshold=0.0  # Lower threshold for broader results
+        )
+        
+        return results
+    
     def reset_session(self):
         """Reset tracking for new discussion session"""
         self.used_quotes.clear()

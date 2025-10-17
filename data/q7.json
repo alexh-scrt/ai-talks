@@ -1,0 +1,574 @@
+{
+    "quotes": [
+        {
+            "author": "Hans Morgenthau",
+            "field": "International Relations",
+            "quote": "Politics is the art of the possible, the attainable.",
+            "meaning": "Governance involves practical compromise, not idealistic perfection."
+        },
+        {
+            "author": "Carl von Clausewitz",
+            "field": "Military Strategy",
+            "quote": "War is the continuation of politics by other means.",
+            "meaning": "Armed conflict extends diplomatic objectives through force."
+        },
+        {
+            "author": "Sun Tzu",
+            "field": "Military Strategy",
+            "quote": "The supreme art of war is to subdue the enemy without fighting.",
+            "meaning": "Strategic victory through intimidation surpasses costly battle."
+        },
+        {
+            "author": "Julius Caesar",
+            "field": "Military/Politics",
+            "quote": "I came, I saw, I conquered.",
+            "meaning": "Decisive action produces swift, complete victory."
+        },
+        {
+            "author": "Alexander the Great",
+            "field": "Military/Leadership",
+            "quote": "There is nothing impossible to him who will try.",
+            "meaning": "Determination overcomes apparent limitations."
+        },
+        {
+            "author": "Napoleon Bonaparte",
+            "field": "Military/Politics",
+            "quote": "Impossible is a word to be found only in the dictionary of fools.",
+            "meaning": "Perceived limitations reflect mindset, not reality."
+        },
+        {
+            "author": "Otto von Bismarck",
+            "field": "Politics/Diplomacy",
+            "quote": "Politics is the art of the possible.",
+            "meaning": "Statecraft requires pragmatism within constraints."
+        },
+        {
+            "author": "Winston Churchill",
+            "field": "Politics/Leadership",
+            "quote": "Never, never, never give up.",
+            "meaning": "Persistence through all circumstances determines outcome."
+        },
+        {
+            "author": "Charles de Gaulle",
+            "field": "Politics/Military",
+            "quote": "Greatness is a road leading towards the unknown.",
+            "meaning": "Significance requires venturing into uncertainty."
+        },
+        {
+            "author": "Margaret Thatcher",
+            "field": "Politics",
+            "quote": "If you want something said, ask a man; if you want something done, ask a woman.",
+            "meaning": "Action surpasses rhetoric; women deliver results."
+        },
+        {
+            "author": "Ronald Reagan",
+            "field": "Politics",
+            "quote": "Trust, but verify.",
+            "meaning": "Faith requires confirmation through evidence."
+        },
+        {
+            "author": "Mikhail Gorbachev",
+            "field": "Politics",
+            "quote": "If what you have done yesterday still looks big to you, you haven't done much today.",
+            "meaning": "Continuous progress diminishes past achievements' significance."
+        },
+        {
+            "author": "Nelson Mandela",
+            "field": "Politics/Activism",
+            "quote": "It always seems impossible until it's done.",
+            "meaning": "Achievement reframes difficulty retrospectively."
+        },
+        {
+            "author": "Desmond Tutu",
+            "field": "Theology/Activism",
+            "quote": "Do your little bit of good where you are; it's those little bits of good put together that overwhelm the world.",
+            "meaning": "Small actions accumulate into transformative impact."
+        },
+        {
+            "author": "Kofi Annan",
+            "field": "Diplomacy",
+            "quote": "Knowledge is power. Information is liberating.",
+            "meaning": "Understanding enables action and freedom."
+        },
+        {
+            "author": "Dag Hammarskjöld",
+            "field": "Diplomacy",
+            "quote": "Never measure the height of a mountain until you have reached the top. Then you will see how low it was.",
+            "meaning": "Challenges appear smaller after conquest."
+        },
+        {
+            "author": "Eleanor Roosevelt",
+            "field": "Humanitarianism/Politics",
+            "quote": "The future belongs to those who believe in the beauty of their dreams.",
+            "meaning": "Faith in aspirations enables their realization."
+        },
+        {
+            "author": "Woodrow Wilson",
+            "field": "Politics",
+            "quote": "I not only use all the brains that I have, but all I can borrow.",
+            "meaning": "Effective leadership leverages collective intelligence."
+        },
+        {
+            "author": "Harry S. Truman",
+            "field": "Politics",
+            "quote": "It is amazing what you can accomplish if you do not care who gets the credit.",
+            "meaning": "Ego removal enables greater collaborative achievement."
+        },
+        {
+            "author": "Dwight D. Eisenhower",
+            "field": "Military/Politics",
+            "quote": "Plans are worthless, but planning is everything.",
+            "meaning": "Process of preparation matters more than specific outcomes."
+        },
+        {
+            "author": "Lyndon B. Johnson",
+            "field": "Politics",
+            "quote": "Yesterday is not ours to recover, but tomorrow is ours to win or lose.",
+            "meaning": "Future remains controllable despite immutable past."
+        },
+        {
+            "author": "Richard Nixon",
+            "field": "Politics",
+            "quote": "A man is not finished when he is defeated. He is finished when he quits.",
+            "meaning": "Surrender, not setback, determines ultimate failure."
+        },
+        {
+            "author": "Gerald Ford",
+            "field": "Politics",
+            "quote": "Never be satisfied with less than your very best effort.",
+            "meaning": "Maximum personal commitment defines adequate performance."
+        },
+        {
+            "author": "Jimmy Carter",
+            "field": "Politics",
+            "quote": "We become not a melting pot but a beautiful mosaic.",
+            "meaning": "Diversity enriches through maintained distinctiveness."
+        },
+        {
+            "author": "George H.W. Bush",
+            "field": "Politics",
+            "quote": "Any definition of a successful life must include serving others.",
+            "meaning": "Fulfillment requires contribution beyond self-interest."
+        },
+        {
+            "author": "Bill Clinton",
+            "field": "Politics",
+            "quote": "There is nothing wrong with America that cannot be cured by what is right with America.",
+            "meaning": "Existing strengths contain solutions to current problems."
+        },
+        {
+            "author": "George W. Bush",
+            "field": "Politics",
+            "quote": "To those of you who received honors, awards and distinctions, I say well done. And to the C students, I say you, too, can be president.",
+            "meaning": "Academic achievement does not determine ultimate success."
+        },
+        {
+            "author": "Barack Obama",
+            "field": "Politics",
+            "quote": "Change will not come if we wait for some other person or some other time. We are the ones we've been waiting for.",
+            "meaning": "Transformation requires personal action in present moment."
+        },
+        {
+            "author": "Michelle Obama",
+            "field": "Public Service",
+            "quote": "When they go low, we go high.",
+            "meaning": "Dignity maintains itself despite others' poor behavior."
+        },
+        {
+            "author": "Joe Biden",
+            "field": "Politics",
+            "quote": "Don't tell me what you value. Show me your budget, and I'll tell you what you value.",
+            "meaning": "Resource allocation reveals true priorities."
+        },
+        {
+            "author": "Kamala Harris",
+            "field": "Politics/Law",
+            "quote": "I may be the first woman in this office, but I won't be the last.",
+            "meaning": "Barrier-breaking creates path for future generations."
+        },
+        {
+            "author": "Bernie Sanders",
+            "field": "Politics",
+            "quote": "Healthcare is a human right, not a privilege.",
+            "meaning": "Medical access should be universally guaranteed."
+        },
+        {
+            "author": "Alexandria Ocasio-Cortez",
+            "field": "Politics",
+            "quote": "Courage is contagious.",
+            "meaning": "Bravery inspires others to act similarly."
+        },
+        {
+            "author": "Ruth Bader Ginsburg",
+            "field": "Law",
+            "quote": "Fight for the things that you care about, but do it in a way that will lead others to join you.",
+            "meaning": "Effective advocacy attracts allies through approach."
+        },
+        {
+            "author": "Sandra Day O'Connor",
+            "field": "Law",
+            "quote": "Do the best you can in every task, no matter how unimportant it may seem at the time.",
+            "meaning": "Excellence in small matters builds overall capability."
+        },
+        {
+            "author": "Antonin Scalia",
+            "field": "Law",
+            "quote": "Words have meaning. And their meaning doesn't change.",
+            "meaning": "Language stability enables consistent legal interpretation."
+        },
+        {
+            "author": "John Marshall",
+            "field": "Law",
+            "quote": "The power to tax involves the power to destroy.",
+            "meaning": "Fiscal authority can eliminate what it regulates."
+        },
+        {
+            "author": "Earl Warren",
+            "field": "Law",
+            "quote": "Everything I did in my life that was worthwhile, I caught hell for.",
+            "meaning": "Significant contributions provoke resistance and criticism."
+        },
+        {
+            "author": "William O. Douglas",
+            "field": "Law",
+            "quote": "The right to be let alone is indeed the beginning of all freedom.",
+            "meaning": "Privacy forms foundation of liberty."
+        },
+        {
+            "author": "Hugo Black",
+            "field": "Law",
+            "quote": "It is the paradox of life that the way to miss pleasure is to seek it first.",
+            "meaning": "Happiness arrives indirectly through other pursuits."
+        },
+        {
+            "author": "Benjamin Cardozo",
+            "field": "Law",
+            "quote": "Freedom of expression is the matrix of every other form of freedom.",
+            "meaning": "Speech protection enables all other rights."
+        },
+        {
+            "author": "William Rehnquist",
+            "field": "Law",
+            "quote": "The Constitution requires a neutral government, not a secular one.",
+            "meaning": "Impartiality differs from exclusion of religion."
+        },
+        {
+            "author": "Learned Hand",
+            "field": "Law",
+            "quote": "Liberty lies in the hearts of men and women; when it dies there, no constitution can save it.",
+            "meaning": "Freedom requires cultural commitment, not only legal protection."
+        },
+        {
+            "author": "Robert H. Jackson",
+            "field": "Law",
+            "quote": "It is not the function of government to keep the citizen from falling into error; it is the function of the citizen to keep the government from falling into error.",
+            "meaning": "Citizens must monitor authority, not vice versa."
+        },
+        {
+            "author": "Felix Frankfurter",
+            "field": "Law",
+            "quote": "Wisdom too often never comes, and so one ought not to reject it merely because it comes late.",
+            "meaning": "Understanding at any age has value despite delayed arrival."
+        },
+        {
+            "author": "Louis D. Brandeis",
+            "field": "Law",
+            "quote": "The most important political office is that of the private citizen.",
+            "meaning": "Individual participation surpasses official positions in significance."
+        },
+        {
+            "author": "Oliver Wendell Holmes Jr.",
+            "field": "Law/Philosophy",
+            "quote": "A mind that is stretched by a new experience can never go back to its old dimensions.",
+            "meaning": "Growth permanently expands cognitive capacity."
+        },
+        {
+            "author": "Clarence Thomas",
+            "field": "Law",
+            "quote": "Good manners will open doors that the best education cannot.",
+            "meaning": "Social grace creates opportunities beyond formal credentials."
+        },
+        {
+            "author": "Samuel Alito",
+            "field": "Law",
+            "quote": "The Constitution protects freedom of speech, not freedom from criticism.",
+            "meaning": "Expression rights include others' responses and disagreement."
+        },
+        {
+            "author": "Elena Kagan",
+            "field": "Law",
+            "quote": "Law matters, because it keeps us safe, because it protects our most fundamental rights and freedoms.",
+            "meaning": "Legal systems serve essential protective functions."
+        },
+        {
+            "author": "Stephen Breyer",
+            "field": "Law",
+            "quote": "Independence does not mean a lack of accountability.",
+            "meaning": "Autonomy coexists with responsibility."
+        },
+        {
+            "author": "Sonia Sotomayor",
+            "field": "Law",
+            "quote": "Until we get equality in education, we won't have an equal society.",
+            "meaning": "Educational access determines broader social equity."
+        },
+        {
+            "author": "John Roberts",
+            "field": "Law",
+            "quote": "The way to stop discrimination on the basis of race is to stop discriminating on the basis of race.",
+            "meaning": "Equality requires treating race as irrelevant."
+        },
+        {
+            "author": "Amy Coney Barrett",
+            "field": "Law",
+            "quote": "Courts are not designed to solve every problem or right every wrong in our public life.",
+            "meaning": "Judicial authority has appropriate limitations."
+        },
+        {
+            "author": "Brett Kavanaugh",
+            "field": "Law",
+            "quote": "The Constitution's separation of powers and federalism reflect the framers' deep conviction that democracy is best preserved through structural principles.",
+            "meaning": "Divided authority protects democratic governance."
+        },
+        {
+            "author": "Neil Gorsuch",
+            "field": "Law",
+            "quote": "Judges should be in the business of declaring what the law is using the traditional tools that are in their toolbox, not really in the business of making the law.",
+            "meaning": "Judicial role involves interpretation, not creation."
+        },
+        {
+            "author": "William Howard Taft",
+            "field": "Politics/Law",
+            "quote": "Presidents come and go, but the Supreme Court goes on forever.",
+            "meaning": "Judicial influence endures beyond executive tenure."
+        },
+        {
+            "author": "Franklin D. Roosevelt",
+            "field": "Politics",
+            "quote": "The only thing we have to fear is fear itself.",
+            "meaning": "Anxiety causes more harm than actual threats."
+        },
+        {
+            "author": "Calvin Coolidge",
+            "field": "Politics",
+            "quote": "Nothing in this world can take the place of persistence.",
+            "meaning": "Sustained effort surpasses all other qualities."
+        },
+        {
+            "author": "Herbert Hoover",
+            "field": "Politics/Engineering",
+            "quote": "Words without actions are the assassins of idealism.",
+            "meaning": "Unfulfilled rhetoric destroys belief in principles."
+        },
+        {
+            "author": "Andrew Jackson",
+            "field": "Politics",
+            "quote": "One man with courage makes a majority.",
+            "meaning": "Brave individual can shift collective direction."
+        },
+        {
+            "author": "James Madison",
+            "field": "Politics/Philosophy",
+            "quote": "Knowledge will forever govern ignorance; and a people who mean to be their own governors must arm themselves with the power which knowledge gives.",
+            "meaning": "Self-governance requires educated citizenry."
+        },
+        {
+            "author": "George Washington",
+            "field": "Politics/Military",
+            "quote": "It is better to offer no excuse than a bad one.",
+            "meaning": "Silence surpasses poor justification."
+        },
+        {
+            "author": "John Adams",
+            "field": "Politics/Law",
+            "quote": "Facts are stubborn things.",
+            "meaning": "Reality persists regardless of interpretation or desire."
+        },
+        {
+            "author": "Samuel Adams",
+            "field": "Politics/Revolution",
+            "quote": "It does not take a majority to prevail, but rather an irate, tireless minority, keen on setting brushfires of freedom in the minds of men.",
+            "meaning": "Passionate activists create change beyond their numbers."
+        },
+        {
+            "author": "Patrick Henry",
+            "field": "Politics/Revolution",
+            "quote": "Give me liberty, or give me death!",
+            "meaning": "Freedom holds value exceeding life itself."
+        },
+        {
+            "author": "Nathan Hale",
+            "field": "Military/Revolution",
+            "quote": "I only regret that I have but one life to lose for my country.",
+            "meaning": "Patriotic sacrifice willing to exceed physical capacity."
+        },
+        {
+            "author": "Ethan Allen",
+            "field": "Military/Revolution",
+            "quote": "I am as determined to defend my rights and my country as the sun is to rise tomorrow.",
+            "meaning": "Resolve equals natural inevitability."
+        },
+        {
+            "author": "Paul Revere",
+            "field": "Revolution",
+            "quote": "The regulars are coming out.",
+            "meaning": "Warning alerts community to imminent threat."
+        },
+        {
+            "author": "Betsy Ross",
+            "field": "History",
+            "quote": "Though we toil and labor in the fields and in the factories, our hearts are set on higher things.",
+            "meaning": "Physical work doesn't diminish spiritual aspirations."
+        },
+        {
+            "author": "Harriet Beecher Stowe",
+            "field": "Literature/Activism",
+            "quote": "The bitterest tears shed over graves are for words left unsaid and deeds left undone.",
+            "meaning": "Regret stems from missed opportunities for expression and action."
+        },
+        {
+            "author": "Susan B. Anthony",
+            "field": "Women's Rights",
+            "quote": "Failure is impossible.",
+            "meaning": "Determination precludes defeat as outcome."
+        },
+        {
+            "author": "Elizabeth Cady Stanton",
+            "field": "Women's Rights",
+            "quote": "The moment we begin to fear the opinions of others and hesitate to tell the truth that is in us, and from motives of policy are silent when we should speak, the divine floods of light and life no longer flow into our souls.",
+            "meaning": "Authenticity requires disregarding social pressure."
+        },
+        {
+            "author": "Sojourner Truth",
+            "field": "Abolition/Women's Rights",
+            "quote": "Ain't I a woman?",
+            "meaning": "Rhetorical challenge to exclusionary definitions of femininity."
+        },
+        {
+            "author": "Lucretia Mott",
+            "field": "Women's Rights/Abolition",
+            "quote": "The world has never yet seen a truly great and virtuous nation because in the degradation of woman the very fountains of life are poisoned at their source.",
+            "meaning": "Society's health depends on women's status."
+        },
+        {
+            "author": "Lucy Stone",
+            "field": "Women's Rights",
+            "quote": "In education, in marriage, in religion, in everything, disappointment is the lot of woman.",
+            "meaning": "Systemic inequality pervades all social institutions."
+        },
+        {
+            "author": "Ida B. Wells",
+            "field": "Journalism/Civil Rights",
+            "quote": "The way to right wrongs is to turn the light of truth upon them.",
+            "meaning": "Exposure through investigation enables justice."
+        },
+        {
+            "author": "Mary McLeod Bethune",
+            "field": "Education/Civil Rights",
+            "quote": "We have a powerful potential in our youth, and we must have the courage to change old ideas and practices so that we may direct their power toward good ends.",
+            "meaning": "Youth development requires adaptable approaches."
+        },
+        {
+            "author": "Fannie Lou Hamer",
+            "field": "Civil Rights",
+            "quote": "Nobody's free until everybody's free.",
+            "meaning": "Liberation requires collective, not individual, achievement."
+        },
+        {
+            "author": "Ella Baker",
+            "field": "Civil Rights",
+            "quote": "Give light and people will find the way.",
+            "meaning": "Illumination enables autonomous navigation."
+        },
+        {
+            "author": "Bayard Rustin",
+            "field": "Civil Rights",
+            "quote": "We need, in every community, a group of angelic troublemakers.",
+            "meaning": "Constructive disruption serves social progress."
+        },
+        {
+            "author": "John Lewis",
+            "field": "Civil Rights/Politics",
+            "quote": "Get in good trouble, necessary trouble.",
+            "meaning": "Righteous disruption serves moral imperatives."
+        },
+        {
+            "author": "Medgar Evers",
+            "field": "Civil Rights",
+            "quote": "You can kill a man, but you can't kill an idea.",
+            "meaning": "Concepts survive physical destruction of advocates."
+        },
+        {
+            "author": "James Baldwin",
+            "field": "Literature/Civil Rights",
+            "quote": "Love takes off masks that we fear we cannot live without and know we cannot live within.",
+            "meaning": "Intimacy requires vulnerability and authenticity."
+        },
+        {
+            "author": "Audre Lorde",
+            "field": "Poetry/Activism",
+            "quote": "Your silence will not protect you.",
+            "meaning": "Avoiding confrontation fails as defensive strategy."
+        },
+        {
+            "author": "bell hooks",
+            "field": "Feminism/Cultural Criticism",
+            "quote": "To be truly visionary we have to root our imagination in our concrete reality while simultaneously imagining possibilities beyond that reality.",
+            "meaning": "Innovation requires both grounding and transcendence."
+        },
+        {
+            "author": "Angela Davis",
+            "field": "Activism/Philosophy",
+            "quote": "You have to act as if it were possible to radically transform the world. And you have to do it all the time.",
+            "meaning": "Sustained belief in change enables its possibility."
+        },
+        {
+            "author": "Cornel West",
+            "field": "Philosophy/Activism",
+            "quote": "Never forget that justice is what love looks like in public.",
+            "meaning": "Social equity manifests collective compassion."
+        },
+        {
+            "author": "Ta-Nehisi Coates",
+            "field": "Journalism/Literature",
+            "quote": "But race is the child of racism, not the father.",
+            "meaning": "Racial categories result from discrimination, not vice versa."
+        },
+        {
+            "author": "Maya Angelou",
+            "field": "Poetry/Literature",
+            "quote": "Still I rise.",
+            "meaning": "Resilience persists despite oppression."
+        },
+        {
+            "author": "Langston Hughes",
+            "field": "Poetry",
+            "quote": "What happens to a dream deferred? Does it dry up like a raisin in the sun?",
+            "meaning": "Postponed aspirations deteriorate and transform."
+        },
+        {
+            "author": "Zora Neale Hurston",
+            "field": "Literature/Anthropology",
+            "quote": "If you are silent about your pain, they'll kill you and say you enjoyed it.",
+            "meaning": "Expressing suffering prevents misrepresentation."
+        },
+        {
+            "author": "Richard Wright",
+            "field": "Literature",
+            "quote": "The artist must bow to the monster of his own imagination.",
+            "meaning": "Creativity requires submission to internal creative forces."
+        },
+        {
+            "author": "Ralph Ellison",
+            "field": "Literature",
+            "quote": "I am invisible, understand, simply because people refuse to see me.",
+            "meaning": "Social marginalization creates perceptual erasure."
+        },
+        {
+            "author": "Alice Walker",
+            "field": "Literature",
+            "quote": "Activism is my rent for living on the planet.",
+            "meaning": "Social engagement constitutes existential obligation."
+        }
+    ]
+}

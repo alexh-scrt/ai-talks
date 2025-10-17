@@ -1,0 +1,124 @@
+{
+    "quotes": [
+        {
+            "author": "William of Ockham",
+            "field": "Philosophy",
+            "quote": "Entities should not be multiplied unnecessarily.",
+            "meaning": "When constructing theories, prefer the simplest explanation that accounts for all evidence."
+        },
+        {
+            "author": "Thomas Hobbes",
+            "field": "Philosophy / Political Theory",
+            "quote": "The life of man (in a state of nature) is solitary, poor, nasty, brutish, and short.",
+            "meaning": "Without social structures, human existence is chaotic and insecure."
+        },
+        {
+            "author": "Michel de Montaigne",
+            "field": "Philosophy / Essays",
+            "quote": "My life has been full of terrible misfortunes — most of which never happened.",
+            "meaning": "Much of human suffering comes from imagined threats rather than real ones."
+        },
+        {
+            "author": "Albert Einstein",
+            "field": "Physics",
+            "quote": "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.",
+            "meaning": "Human folly seems boundless, surpassing even cosmic scale."
+        },
+        {
+            "author": "Nelson Mandela",
+            "field": "Political Philosophy / Ethics",
+            "quote": "Education is the most powerful weapon which you can use to change the world.",
+            "meaning": "Knowledge and learning empower transformation at individual and societal levels."
+        },
+        {
+            "author": "Victor Frankl",
+            "field": "Psychology / Existentialism",
+            "quote": "Life is never made unbearable by circumstances, but only by lack of meaning and purpose.",
+            "meaning": "Suffering becomes intolerable when we see no reason or goal in life."
+        },
+        {
+            "author": "Friedrich Nietzsche",
+            "field": "Philosophy",
+            "quote": "That which does not kill us makes us stronger.",
+            "meaning": "Adversity can foster resilience and growth."
+        },
+        {
+            "author": "Ralph Waldo Emerson",
+            "field": "Philosophy / Essayist",
+            "quote": "What lies behind you and what lies in front of you, pales in comparison to what lies inside of you.",
+            "meaning": "One’s inner character and potential matter more than past or future circumstances."
+        },
+        {
+            "author": "Buddha",
+            "field": "Philosophy / Religion",
+            "quote": "No one saves us but ourselves. No one can and no one may. We ourselves must walk the path.",
+            "meaning": "Self-effort and inner discipline are essential to spiritual or moral progress."
+        },
+        {
+            "author": "Buddha",
+            "field": "Philosophy / Religion",
+            "quote": "The mind is everything. What you think you become.",
+            "meaning": "Our thoughts shape our character and destiny."
+        },
+        {
+            "author": "Sun Tzu",
+            "field": "Strategy / Philosophy",
+            "quote": "The supreme art of war is to subdue the enemy without fighting.",
+            "meaning": "True mastery lies in achieving objectives without unnecessary conflict."
+        },
+        {
+            "author": "Heraclitus",
+            "field": "Philosophy",
+            "quote": "No man ever steps in the same river twice.",
+            "meaning": "Reality is in constant flux; both the river and the person are always changing."
+        },
+        {
+            "author": "Epictetus",
+            "field": "Philosophy (Stoicism)",
+            "quote": "We have two ears and one mouth so that we can listen twice as much as we speak.",
+            "meaning": "Humility and wisdom demand more listening than speaking."
+        },
+        {
+            "author": "Marie Curie",
+            "field": "Science / Chemistry",
+            "quote": "Nothing in life is to be feared; it is only to be understood.",
+            "meaning": "Understanding through inquiry dispels fear."
+        },
+        {
+            "author": "Stephen Hawking",
+            "field": "Physics / Cosmology",
+            "quote": "One, remember to look up at the stars and not down at your feet.",
+            "meaning": "Curiosity about the cosmos broadens perspective beyond oneself."
+        },
+        {
+            "author": "Stephen Hawking",
+            "field": "Physics / Cosmology",
+            "quote": "Work gives you meaning and purpose and life is empty without it.",
+            "meaning": "Engagement through purposeful work anchors our sense of value."
+        },
+        {
+            "author": "Richard Feynman",
+            "field": "Physics",
+            "quote": "What I cannot create, I do not understand.",
+            "meaning": "Deep comprehension is demonstrated through the ability to reconstruct or simulate phenomena."
+        },
+        {
+            "author": "Robert A. Heinlein",
+            "field": "Science Fiction / Thought",
+            "quote": "Everything is theoretically impossible until it is done.",
+            "meaning": "Breakthroughs often overturn perceived limits of possibility."
+        },
+        {
+            "author": "Cecilia Payne-Gaposchkin",
+            "field": "Astrophysics",
+            "quote": "The reward of the young scientist is the emotional thrill of being the first person in the history of the world to see something or to understand something.",
+            "meaning": "Discovery brings intrinsic exhilaration at witnessing novelty."
+        },
+        {
+            "author": "David Eagleman",
+            "field": "Neuroscience",
+            "quote": "What you learn from a life in science is the vastness of our ignorance.",
+            "meaning": "Scientific progress chiefly reveals the depth of what we don’t yet know."
+        }
+    ]
+}

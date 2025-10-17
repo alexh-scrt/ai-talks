@@ -1,0 +1,556 @@
+{
+    "quotes": [
+        {
+            "author": "Gregor Mendel",
+            "field": "Biology",
+            "quote": "My scientific studies have afforded me great gratification.",
+            "meaning": "Research provides deep personal satisfaction."
+        },
+        {
+            "author": "Thomas Hunt Morgan",
+            "field": "Genetics",
+            "quote": "Genes are arranged like beads on a string.",
+            "meaning": "Chromosomes organize hereditary information linearly."
+        },
+        {
+            "author": "Barbara McClintock",
+            "field": "Genetics",
+            "quote": "If you know you are on the right track, if you have this inner knowledge, then nobody can turn you off.",
+            "meaning": "Internal conviction enables persistence despite opposition."
+        },
+        {
+            "author": "James Watson",
+            "field": "Biology",
+            "quote": "We've discovered the secret of life.",
+            "meaning": "DNA structure reveals hereditary mechanism."
+        },
+        {
+            "author": "Francis Crick",
+            "field": "Biology",
+            "quote": "You're nothing but a pack of neurons.",
+            "meaning": "Human experience reduces to neural activity."
+        },
+        {
+            "author": "Rosalind Franklin",
+            "field": "Chemistry/Biology",
+            "quote": "Science and everyday life cannot and should not be separated.",
+            "meaning": "Research connects intimately with ordinary experience."
+        },
+        {
+            "author": "Lynn Margulis",
+            "field": "Biology",
+            "quote": "Life did not take over the globe by combat, but by networking.",
+            "meaning": "Symbiosis, not competition, drives evolutionary success."
+        },
+        {
+            "author": "Ernst Mayr",
+            "field": "Biology",
+            "quote": "Theory helps us bear our ignorance of facts.",
+            "meaning": "Conceptual frameworks compensate for incomplete data."
+        },
+        {
+            "author": "Theodosius Dobzhansky",
+            "field": "Biology",
+            "quote": "Nothing in biology makes sense except in the light of evolution.",
+            "meaning": "Evolutionary theory unifies all biological understanding."
+        },
+        {
+            "author": "Stephen Jay Gould",
+            "field": "Paleontology",
+            "quote": "I am, somehow, less interested in the weight and convolutions of Einstein's brain than in the near certainty that people of equal talent have lived and died in cotton fields and sweatshops.",
+            "meaning": "Opportunity, not ability, often determines achievement."
+        },
+        {
+            "author": "Richard Lewontin",
+            "field": "Genetics",
+            "quote": "It is time for students of the evolutionary process to explore the consequences of the abandonment of progress.",
+            "meaning": "Evolution lacks directional improvement."
+        },
+        {
+            "author": "John Maynard Smith",
+            "field": "Evolutionary Biology",
+            "quote": "Genetics is about how information is stored and transmitted between generations.",
+            "meaning": "Heredity involves information transfer mechanisms."
+        },
+        {
+            "author": "E.O. Wilson",
+            "field": "Biology",
+            "quote": "The real problem of humanity is the following: we have paleolithic emotions, medieval institutions, and god-like technology.",
+            "meaning": "Evolutionary lag creates dangerous misalignment."
+        },
+        {
+            "author": "Konrad Lorenz",
+            "field": "Ethology",
+            "quote": "Barking dogs occasionally bite, but laughing men hardly ever shoot.",
+            "meaning": "Display behavior often substitutes for actual aggression."
+        },
+        {
+            "author": "Nikolaas Tinbergen",
+            "field": "Ethology",
+            "quote": "To the man who studies animal behavior, the world is a treasure house.",
+            "meaning": "Observation reveals endless fascinating patterns."
+        },
+        {
+            "author": "Karl von Frisch",
+            "field": "Ethology",
+            "quote": "The bee's life is like a magic well: the more you draw from it, the more it fills with water.",
+            "meaning": "Investigation reveals increasing complexity."
+        },
+        {
+            "author": "Dian Fossey",
+            "field": "Primatology",
+            "quote": "The more you learn about the dignity of the gorilla, the more you want to avoid people.",
+            "meaning": "Animal nobility contrasts with human failings."
+        },
+        {
+            "author": "Frans de Waal",
+            "field": "Primatology",
+            "quote": "To endow animals with human emotions has long been a scientific taboo. But if we do not, we risk missing something fundamental.",
+            "meaning": "Anthropomorphism may reveal truth despite methodological concerns."
+        },
+        {
+            "author": "Temple Grandin",
+            "field": "Animal Science",
+            "quote": "I think using animals for food is an ethical thing to do, but we've got to do it right.",
+            "meaning": "Consumption requires humane treatment practices."
+        },
+        {
+            "author": "Alexander Fleming",
+            "field": "Medicine",
+            "quote": "When I woke up just after dawn on September 28, 1928, I certainly didn't plan to revolutionize all medicine by discovering the world's first antibiotic.",
+            "meaning": "Major discoveries occur unexpectedly during routine work."
+        },
+        {
+            "author": "Louis Pasteur",
+            "field": "Microbiology",
+            "quote": "Science knows no country, because knowledge belongs to humanity.",
+            "meaning": "Discovery transcends national boundaries."
+        },
+        {
+            "author": "Robert Koch",
+            "field": "Microbiology",
+            "quote": "If my efforts have led to greater success than usual, this is due to the fact that during my wanderings in the field of medicine, I have strayed onto paths where the gold was still lying by the wayside.",
+            "meaning": "Opportunity exists in unexplored territories."
+        },
+        {
+            "author": "Paul Ehrlich",
+            "field": "Medicine",
+            "quote": "Success in research needs four Gs: Glück, Geduld, Geschick und Geld.",
+            "meaning": "Discovery requires luck, patience, skill, and money."
+        },
+        {
+            "author": "Ignaz Semmelweis",
+            "field": "Medicine",
+            "quote": "When will we learn?",
+            "meaning": "Frustration at medical establishment's resistance to evidence."
+        },
+        {
+            "author": "Joseph Lister",
+            "field": "Medicine",
+            "quote": "It is our proud office to tend the fleshly tabernacle of the immortal spirit.",
+            "meaning": "Medicine serves spiritual beings through physical care."
+        },
+        {
+            "author": "William Osler",
+            "field": "Medicine",
+            "quote": "Listen to your patient, he is telling you the diagnosis.",
+            "meaning": "Careful attention reveals medical answers."
+        },
+        {
+            "author": "Harvey Cushing",
+            "field": "Neurosurgery",
+            "quote": "A physician is obligated to consider more than a diseased organ, more even than the whole man—he must view the man in his world.",
+            "meaning": "Medicine requires holistic contextual understanding."
+        },
+        {
+            "author": "Jonas Salk",
+            "field": "Medicine",
+            "quote": "The reward for work well done is the opportunity to do more.",
+            "meaning": "Success creates further responsibilities."
+        },
+        {
+            "author": "Albert Sabin",
+            "field": "Medicine",
+            "quote": "A scientist who is also a human being cannot rest while knowledge which might be used to reduce suffering rests on the shelf.",
+            "meaning": "Humanitarian obligation demands applying discoveries."
+        },
+        {
+            "author": "Frederick Banting",
+            "field": "Medicine",
+            "quote": "Insulin is not a cure for diabetes; it is a treatment.",
+            "meaning": "Management differs from elimination of disease."
+        },
+        {
+            "author": "Gertrude Elion",
+            "field": "Medicine/Chemistry",
+            "quote": "Don't be afraid of hard work. Nothing worthwhile comes easily.",
+            "meaning": "Valuable achievements require sustained effort."
+        },
+        {
+            "author": "Rosalyn Yalow",
+            "field": "Medical Physics",
+            "quote": "The world cannot afford the loss of the talents of half its people if we are to solve the many problems which beset us.",
+            "meaning": "Gender equality essential for addressing global challenges."
+        },
+        {
+            "author": "Rita Levi-Montalcini",
+            "field": "Neurobiology",
+            "quote": "Above all, don't fear difficult moments. The best comes from them.",
+            "meaning": "Adversity produces optimal outcomes."
+        },
+        {
+            "author": "Santiago Ramón y Cajal",
+            "field": "Neuroscience",
+            "quote": "As long as our brain is a mystery, the universe will also be a mystery.",
+            "meaning": "Understanding consciousness key to cosmic comprehension."
+        },
+        {
+            "author": "Wilder Penfield",
+            "field": "Neurosurgery",
+            "quote": "The brain is the organ of destiny. It holds within its humming mechanism secrets that will determine the future of the human race.",
+            "meaning": "Neural function determines collective human trajectory."
+        },
+        {
+            "author": "Oliver Sacks",
+            "field": "Neurology",
+            "quote": "Every act of perception is to some degree an act of creation.",
+            "meaning": "Experience involves constructive interpretation."
+        },
+        {
+            "author": "V.S. Ramachandran",
+            "field": "Neuroscience",
+            "quote": "The human brain, it has been said, is the most complexly organized structure in the universe.",
+            "meaning": "Neural architecture exceeds all other known systems."
+        },
+        {
+            "author": "Eric Kandel",
+            "field": "Neuroscience",
+            "quote": "Memory is everything.",
+            "meaning": "Recollection forms foundation of identity and knowledge."
+        },
+        {
+            "author": "Rodolfo Llinás",
+            "field": "Neuroscience",
+            "quote": "That which we call thinking is the evolutionary internalization of movement.",
+            "meaning": "Cognition evolved from motor control."
+        },
+        {
+            "author": "Antonio Damasio",
+            "field": "Neuroscience",
+            "quote": "We are not thinking machines that feel; rather, we are feeling machines that think.",
+            "meaning": "Emotion precedes and enables cognition."
+        },
+        {
+            "author": "Christof Koch",
+            "field": "Neuroscience",
+            "quote": "Consciousness is the last great mystery facing science.",
+            "meaning": "Subjective experience remains fundamentally unexplained."
+        },
+        {
+            "author": "Michael Gazzaniga",
+            "field": "Neuroscience",
+            "quote": "The interpreter is the last device in the information chain in our brain.",
+            "meaning": "Consciousness constructs narratives post-hoc."
+        },
+        {
+            "author": "Patricia Churchland",
+            "field": "Neurophilosophy",
+            "quote": "Epistemology is concerned with how we know what we know.",
+            "meaning": "Knowledge foundations require philosophical investigation."
+        },
+        {
+            "author": "Stanislas Dehaene",
+            "field": "Cognitive Neuroscience",
+            "quote": "Consciousness is nothing but the consequence of neuronal architecture.",
+            "meaning": "Awareness emerges from brain structure."
+        },
+        {
+            "author": "Giulio Tononi",
+            "field": "Neuroscience",
+            "quote": "Consciousness is integrated information.",
+            "meaning": "Awareness quantified through information integration."
+        },
+        {
+            "author": "David Eagleman",
+            "field": "Neuroscience",
+            "quote": "Your brain is built of cells called neurons and glia - hundreds of billions of them.",
+            "meaning": "Mind emerges from vast cellular networks."
+        },
+        {
+            "author": "Robert Sapolsky",
+            "field": "Neuroscience/Biology",
+            "quote": "We are just another primate.",
+            "meaning": "Humans share fundamental biology with other species."
+        },
+        {
+            "author": "Linus Pauling",
+            "field": "Chemistry",
+            "quote": "The best way to have a good idea is to have lots of ideas.",
+            "meaning": "Quantity generates quality in creative work."
+        },
+        {
+            "author": "Dorothy Hodgkin",
+            "field": "Chemistry",
+            "quote": "I was captured for life by chemistry and by crystals.",
+            "meaning": "Scientific passion creates lifelong devotion."
+        },
+        {
+            "author": "Ahmed Zewail",
+            "field": "Chemistry",
+            "quote": "Science knows no boundaries.",
+            "meaning": "Discovery transcends geographic and cultural limits."
+        },
+        {
+            "author": "Marie Curie",
+            "field": "Physics/Chemistry",
+            "quote": "In science, we must be interested in things, not in persons.",
+            "meaning": "Focus on phenomena rather than personalities."
+        },
+        {
+            "author": "Dmitri Mendeleev",
+            "field": "Chemistry",
+            "quote": "Elements which are similar in their chemical properties have atomic weights which are either of nearly the same value or which increase regularly.",
+            "meaning": "Periodic patterns reveal atomic organization."
+        },
+        {
+            "author": "Gilbert N. Lewis",
+            "field": "Chemistry",
+            "quote": "The scientist is a practical man and his are practical aims.",
+            "meaning": "Research serves utilitarian purposes."
+        },
+        {
+            "author": "Irving Langmuir",
+            "field": "Chemistry",
+            "quote": "Pathological science is the science of things that aren't so.",
+            "meaning": "Self-deception can masquerade as investigation."
+        },
+        {
+            "author": "Linus Torvalds",
+            "field": "Computer Science",
+            "quote": "Software is like sex: it's better when it's free.",
+            "meaning": "Open access improves quality and distribution."
+        },
+        {
+            "author": "Claude Shannon",
+            "field": "Information Theory",
+            "quote": "Information is the resolution of uncertainty.",
+            "meaning": "Data reduces possible states to actuality."
+        },
+        {
+            "author": "John von Neumann",
+            "field": "Mathematics/Computer Science",
+            "quote": "If people do not believe that mathematics is simple, it is only because they do not realize how complicated life is.",
+            "meaning": "Math is clearer than messy reality."
+        },
+        {
+            "author": "Alan Turing",
+            "field": "Computer Science",
+            "quote": "Sometimes it is the people no one imagines anything of who do the things that no one can imagine.",
+            "meaning": "Unexpected individuals achieve extraordinary results."
+        },
+        {
+            "author": "Kurt Gödel",
+            "field": "Mathematics/Logic",
+            "quote": "The more I think about language, the more it amazes me that people ever understand each other.",
+            "meaning": "Communication success is surprisingly improbable."
+        },
+        {
+            "author": "David Hilbert",
+            "field": "Mathematics",
+            "quote": "We must know, we will know.",
+            "meaning": "Mathematical problems are solvable with effort."
+        },
+        {
+            "author": "Emmy Noether",
+            "field": "Mathematics",
+            "quote": "My methods are really methods of working and thinking; this is why they have crept in everywhere anonymously.",
+            "meaning": "Approach matters more than credited discoveries."
+        },
+        {
+            "author": "Henri Poincaré",
+            "field": "Mathematics",
+            "quote": "Mathematics is the art of giving the same name to different things.",
+            "meaning": "Abstraction identifies common structure."
+        },
+        {
+            "author": "Srinivasa Ramanujan",
+            "field": "Mathematics",
+            "quote": "An equation means nothing to me unless it expresses a thought of God.",
+            "meaning": "Mathematical truth reflects divine mind."
+        },
+        {
+            "author": "G.H. Hardy",
+            "field": "Mathematics",
+            "quote": "A mathematician, like a painter or poet, is a maker of patterns.",
+            "meaning": "Math is creative pattern construction."
+        },
+        {
+            "author": "Paul Erdős",
+            "field": "Mathematics",
+            "quote": "A mathematician is a device for turning coffee into theorems.",
+            "meaning": "Caffeine fuels mathematical production."
+        },
+        {
+            "author": "Leonhard Euler",
+            "field": "Mathematics",
+            "quote": "Read Euler, read Euler, he is the master of us all.",
+            "meaning": "Historical genius remains pedagogically essential."
+        },
+        {
+            "author": "Carl Friedrich Gauss",
+            "field": "Mathematics",
+            "quote": "Mathematics is the queen of sciences.",
+            "meaning": "Quantitative reasoning rules all disciplines."
+        },
+        {
+            "author": "Pierre de Fermat",
+            "field": "Mathematics",
+            "quote": "I have discovered a truly marvelous proof of this, which this margin is too narrow to contain.",
+            "meaning": "Claimed solution tantalizingly withheld."
+        },
+        {
+            "author": "Bernhard Riemann",
+            "field": "Mathematics",
+            "quote": "If only I had the theorems! Then I should find the proofs easily enough.",
+            "meaning": "Knowing results precedes demonstrating them."
+        },
+        {
+            "author": "Georg Cantor",
+            "field": "Mathematics",
+            "quote": "The essence of mathematics lies in its freedom.",
+            "meaning": "Abstract reasoning operates without physical constraints."
+        },
+        {
+            "author": "Felix Klein",
+            "field": "Mathematics",
+            "quote": "Everyone knows what a curve is, until he has studied enough mathematics to become confused.",
+            "meaning": "Rigor complicates intuitive understanding."
+        },
+        {
+            "author": "Sophus Lie",
+            "field": "Mathematics",
+            "quote": "The theory of groups is a branch of mathematics in which one does something to something and then compares the result with the result obtained from doing the same thing to something else.",
+            "meaning": "Group theory studies operational symmetries."
+        },
+        {
+            "author": "Henri Lebesgue",
+            "field": "Mathematics",
+            "quote": "Reduced to general theories, mathematics would be a beautiful form without content.",
+            "meaning": "Abstraction requires grounding in examples."
+        },
+        {
+            "author": "John Horton Conway",
+            "field": "Mathematics",
+            "quote": "You can't tell me what to do.",
+            "meaning": "Intellectual independence defines approach."
+        },
+        {
+            "author": "Andrew Wiles",
+            "field": "Mathematics",
+            "quote": "Perhaps I can best describe my experience of doing mathematics in terms of a journey through a dark unexplored mansion.",
+            "meaning": "Research involves navigating unknown territory."
+        },
+        {
+            "author": "Terence Tao",
+            "field": "Mathematics",
+            "quote": "There's a common belief that mathematics is about finding the shortest, slickest proof. Actually, good mathematics is about finding the proof that gives the most insight.",
+            "meaning": "Understanding surpasses elegance in value."
+        },
+        {
+            "author": "Maryam Mirzakhani",
+            "field": "Mathematics",
+            "quote": "The beauty of mathematics only shows itself to more patient followers.",
+            "meaning": "Appreciation requires sustained engagement."
+        },
+        {
+            "author": "Timothy Gowers",
+            "field": "Mathematics",
+            "quote": "Mathematicians are like managers - they want other people to do the work.",
+            "meaning": "Delegation and coordination characterize practice."
+        },
+        {
+            "author": "Alexandre Grothendieck",
+            "field": "Mathematics",
+            "quote": "The introduction of the cipher 0 or the group concept was general nonsense too, and mathematics was more or less stagnating for thousands of years because nobody was around to take such childish steps.",
+            "meaning": "Revolutionary ideas initially seem absurd."
+        },
+        {
+            "author": "Benoit Mandelbrot",
+            "field": "Mathematics",
+            "quote": "Clouds are not spheres, mountains are not cones, coastlines are not circles.",
+            "meaning": "Nature requires fractal, not Euclidean, geometry."
+        },
+        {
+            "author": "René Thom",
+            "field": "Mathematics",
+            "quote": "At a time when so many scholars in the world are calculating, is it not desirable that some, who can, dream?",
+            "meaning": "Imagination complements computation in mathematics."
+        },
+        {
+            "author": "Hermann Weyl",
+            "field": "Mathematics/Physics",
+            "quote": "My work always tried to unite the true with the beautiful, but when I had to choose one or the other, I usually chose the beautiful.",
+            "meaning": "Aesthetic appeal can guide theoretical choices."
+        },
+        {
+            "author": "André Weil",
+            "field": "Mathematics",
+            "quote": "God exists since mathematics is consistent, and the Devil exists since we cannot prove it.",
+            "meaning": "Consistency believed but undemonstrable."
+        },
+        {
+            "author": "Norbert Wiener",
+            "field": "Mathematics/Cybernetics",
+            "quote": "The best material model of a cat is another cat.",
+            "meaning": "Complexity resists reduction to simpler systems."
+        },
+        {
+            "author": "Archimedes",
+            "field": "Mathematics/Physics",
+            "quote": "Give me a lever long enough and a fulcrum on which to place it, and I shall move the world.",
+            "meaning": "Mechanical advantage enables seemingly impossible tasks."
+        },
+        {
+            "author": "Euclid",
+            "field": "Mathematics",
+            "quote": "There is no royal road to geometry.",
+            "meaning": "Understanding requires effort regardless of status."
+        },
+        {
+            "author": "Apollonius of Perga",
+            "field": "Mathematics",
+            "quote": "The study of conic sections enriches the mind.",
+            "meaning": "Geometric investigation develops intellect."
+        },
+        {
+            "author": "Diophantus",
+            "field": "Mathematics",
+            "quote": "To find a square number which when increased or diminished by a given number becomes a square.",
+            "meaning": "Equations with integer solutions fascinate."
+        },
+        {
+            "author": "Hypatia",
+            "field": "Mathematics/Astronomy",
+            "quote": "Reserve your right to think, for even to think wrongly is better than not to think at all.",
+            "meaning": "Intellectual engagement surpasses mental passivity."
+        },
+        {
+            "author": "Omar Khayyam",
+            "field": "Mathematics/Poetry",
+            "quote": "The moving finger writes, and having written moves on.",
+            "meaning": "Time's passage is irreversible and definitive."
+        },
+        {
+            "author": "Al-Khwarizmi",
+            "field": "Mathematics",
+            "quote": "When I consider what people generally want in calculating, I found that it always is a number.",
+            "meaning": "Practical computation seeks quantitative results."
+        },
+        {
+            "author": "Avicenna",
+            "field": "Philosophy/Medicine",
+            "quote": "The knowledge of anything, since all things have causes, is not acquired or complete unless it is known by its causes.",
+            "meaning": "Understanding requires causal explanation."
+        }
+    ]
+}

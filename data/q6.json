@@ -1,0 +1,274 @@
+{
+    "quotes": [
+        {
+            "author": "Rosa Parks",
+            "field": "Civil Rights",
+            "quote": "I would like to be known as a person who is concerned about freedom and equality and justice and prosperity for all people.",
+            "meaning": "Legacy should reflect values of universal dignity and opportunity."
+        },
+        {
+            "author": "Malcolm X",
+            "field": "Civil Rights",
+            "quote": "Education is the passport to the future, for tomorrow belongs to those who prepare for it today.",
+            "meaning": "Learning today determines capabilities and opportunities tomorrow."
+        },
+        {
+            "author": "Cesar Chavez",
+            "field": "Labor Rights/Activism",
+            "quote": "Once social change begins, it cannot be reversed.",
+            "meaning": "Transformation, once initiated, creates irreversible momentum."
+        },
+        {
+            "author": "Frederick Douglass",
+            "field": "Abolitionism",
+            "quote": "If there is no struggle, there is no progress.",
+            "meaning": "Advancement requires conflict with resistance and obstacles."
+        },
+        {
+            "author": "Harriet Tubman",
+            "field": "Abolitionism",
+            "quote": "Every great dream begins with a dreamer.",
+            "meaning": "Vision is the starting point for all significant achievements."
+        },
+        {
+            "author": "Sojourner Truth",
+            "field": "Abolitionism/Feminism",
+            "quote": "Truth is powerful and it prevails.",
+            "meaning": "Honesty ultimately triumphs over deception and falsehood."
+        },
+        {
+            "author": "W.E.B. Du Bois",
+            "field": "Sociology/Civil Rights",
+            "quote": "The cost of liberty is less than the price of repression.",
+            "meaning": "Freedom's challenges are preferable to subjugation's burdens."
+        },
+        {
+            "author": "Booker T. Washington",
+            "field": "Education/Civil Rights",
+            "quote": "Success is to be measured not so much by the position that one has reached in life as by the obstacles which he has overcome.",
+            "meaning": "Achievement's value lies in difficulties conquered, not status attained."
+        },
+        {
+            "author": "Langston Hughes",
+            "field": "Poetry/Literature",
+            "quote": "Hold fast to dreams, for if dreams die, life is a broken-winged bird that cannot fly.",
+            "meaning": "Aspirations give life purpose and possibility; losing them cripples existence."
+        },
+        {
+            "author": "Zora Neale Hurston",
+            "field": "Literature/Anthropology",
+            "quote": "There are years that ask questions and years that answer.",
+            "meaning": "Life alternates between periods of searching and clarity."
+        },
+        {
+            "author": "James Weldon Johnson",
+            "field": "Literature/Civil Rights",
+            "quote": "The ultimate measure of a man is not where he stands in moments of comfort, but where he stands at times of challenge and controversy.",
+            "meaning": "Character reveals itself under pressure, not in ease."
+        },
+        {
+            "author": "Alice Walker",
+            "field": "Literature",
+            "quote": "The most common way people give up their power is by thinking they don't have any.",
+            "meaning": "Perceived powerlessness creates actual helplessness; recognizing agency empowers."
+        },
+        {
+            "author": "Ralph Ellison",
+            "field": "Literature",
+            "quote": "When I discover who I am, I'll be free.",
+            "meaning": "Self-knowledge is the foundation of personal liberation."
+        },
+        {
+            "author": "Richard Wright",
+            "field": "Literature",
+            "quote": "I would hurl words into this darkness and wait for an echo.",
+            "meaning": "Expression seeks connection and response in isolation."
+        },
+        {
+            "author": "Chimamanda Ngozi Adichie",
+            "field": "Literature",
+            "quote": "The single story creates stereotypes, and the problem with stereotypes is not that they are untrue, but that they are incomplete.",
+            "meaning": "Limited narratives reduce complex realities to oversimplifications."
+        },
+        {
+            "author": "Chinua Achebe",
+            "field": "Literature",
+            "quote": "Until the lions have their own historians, the history of the hunt will always glorify the hunter.",
+            "meaning": "Power determines whose perspective becomes official narrative."
+        },
+        {
+            "author": "Wole Soyinka",
+            "field": "Literature",
+            "quote": "A tiger doesn't proclaim his tigritude, he pounces.",
+            "meaning": "True strength acts rather than announces itself."
+        },
+        {
+            "author": "Gabriel García Márquez",
+            "field": "Literature",
+            "quote": "What matters in life is not what happens to you but what you remember and how you remember it.",
+            "meaning": "Perception and interpretation shape experience more than events themselves."
+        },
+        {
+            "author": "Jorge Luis Borges",
+            "field": "Literature",
+            "quote": "I have always imagined that Paradise will be a kind of library.",
+            "meaning": "Ultimate fulfillment involves infinite access to knowledge and stories."
+        },
+        {
+            "author": "Pablo Neruda",
+            "field": "Poetry",
+            "quote": "You can cut all the flowers but you cannot keep spring from coming.",
+            "meaning": "Natural renewal persists despite attempts to suppress it."
+        },
+        {
+            "author": "Octavio Paz",
+            "field": "Poetry/Philosophy",
+            "quote": "Solitude is the profoundest fact of the human condition.",
+            "meaning": "Fundamental isolation defines human experience despite connections."
+        },
+        {
+            "author": "Isabel Allende",
+            "field": "Literature",
+            "quote": "Write what should not be forgotten.",
+            "meaning": "Documentation preserves important truths and experiences."
+        },
+        {
+            "author": "Haruki Murakami",
+            "field": "Literature",
+            "quote": "Pain is inevitable. Suffering is optional.",
+            "meaning": "Discomfort occurs naturally; mental anguish involves choice."
+        },
+        {
+            "author": "Yukio Mishima",
+            "field": "Literature",
+            "quote": "The only people I am interested in are the mad ones.",
+            "meaning": "Passionate intensity matters more than conventional sanity."
+        },
+        {
+            "author": "Natsume Sōseki",
+            "field": "Literature",
+            "quote": "To know oneself is to know others, for heart and heart are one.",
+            "meaning": "Self-understanding enables empathy and connection with others."
+        },
+        {
+            "author": "Rabindranath Tagore",
+            "field": "Poetry/Philosophy",
+            "quote": "You can't cross the sea merely by standing and staring at the water.",
+            "meaning": "Achievement requires action, not passive observation."
+        },
+        {
+            "author": "Kahlil Gibran",
+            "field": "Poetry/Philosophy",
+            "quote": "Progress lies not in enhancing what is, but in advancing toward what will be.",
+            "meaning": "Growth involves moving forward, not perfecting present states."
+        },
+        {
+            "author": "Jiddu Krishnamurti",
+            "field": "Philosophy",
+            "quote": "It is no measure of health to be well adjusted to a profoundly sick society.",
+            "meaning": "Conforming to dysfunctional norms indicates problems, not wellness."
+        },
+        {
+            "author": "Thich Nhat Hanh",
+            "field": "Buddhism/Philosophy",
+            "quote": "The present moment is the only time over which we have dominion.",
+            "meaning": "Control exists only in current awareness, not past or future."
+        },
+        {
+            "author": "Dalai Lama",
+            "field": "Buddhism/Philosophy",
+            "quote": "Happiness is not something ready made. It comes from your own actions.",
+            "meaning": "Well-being results from behavior, not external circumstances."
+        },
+        {
+            "author": "Shunryu Suzuki",
+            "field": "Zen Buddhism",
+            "quote": "In the beginner's mind there are many possibilities, but in the expert's there are few.",
+            "meaning": "Openness enables creativity while expertise can limit perspective."
+        },
+        {
+            "author": "D.T. Suzuki",
+            "field": "Zen Buddhism",
+            "quote": "The mind has first to be attuned to the Unconscious.",
+            "meaning": "Deep understanding requires accessing intuitive knowledge beyond reason."
+        },
+        {
+            "author": "Alan Watts",
+            "field": "Philosophy/Eastern Religion",
+            "quote": "Trying to define yourself is like trying to bite your own teeth.",
+            "meaning": "Self cannot fully grasp itself through introspection alone."
+        },
+        {
+            "author": "Ram Dass",
+            "field": "Spirituality/Psychology",
+            "quote": "Be here now.",
+            "meaning": "Present awareness is the path to peace and understanding."
+        },
+        {
+            "author": "Eckhart Tolle",
+            "field": "Spirituality",
+            "quote": "Realize deeply that the present moment is all you ever have.",
+            "meaning": "Now is the only temporal reality; past and future are mental constructs."
+        },
+        {
+            "author": "Thomas Merton",
+            "field": "Theology/Spirituality",
+            "quote": "Art enables us to find ourselves and lose ourselves at the same time.",
+            "meaning": "Creative engagement reveals identity while transcending ego."
+        },
+        {
+            "author": "Meister Eckhart",
+            "field": "Theology/Philosophy",
+            "quote": "The eye through which I see God is the same eye through which God sees me.",
+            "meaning": "Divine and human perception are unified in spiritual experience."
+        },
+        {
+            "author": "Pierre Teilhard de Chardin",
+            "field": "Theology/Philosophy",
+            "quote": "We are not human beings having a spiritual experience. We are spiritual beings having a human experience.",
+            "meaning": "Essential nature is spiritual; physical existence is temporary form."
+        },
+        {
+            "author": "Saint Augustine",
+            "field": "Theology/Philosophy",
+            "quote": "The world is a book and those who do not travel read only one page.",
+            "meaning": "Experience beyond familiar contexts broadens understanding."
+        },
+        {
+            "author": "Thomas Aquinas",
+            "field": "Theology/Philosophy",
+            "quote": "To one who has faith, no explanation is necessary. To one without faith, no explanation is possible.",
+            "meaning": "Belief systems create incompatible frameworks for understanding."
+        },
+        {
+            "author": "Blaise Pascal",
+            "field": "Philosophy/Theology",
+            "quote": "The heart has its reasons which reason knows nothing of.",
+            "meaning": "Emotional truth operates independently from logical analysis."
+        },
+        {
+            "author": "Martin Luther",
+            "field": "Theology",
+            "quote": "You are not only responsible for what you say, but also for what you do not say.",
+            "meaning": "Silence carries moral weight equivalent to speech."
+        },
+        {
+            "author": "John Calvin",
+            "field": "Theology",
+            "quote": "A dog barks when his master is attacked. I would be a coward if I saw that God's truth is attacked and yet would remain silent.",
+            "meaning": "Defending principles requires vocal courage, not passive observation."
+        },
+        {
+            "author": "Dietrich Bonhoeffer",
+            "field": "Theology/Ethics",
+            "quote": "Silence in the face of evil is itself evil: God will not hold us guiltless. Not to speak is to speak. Not to act is to act.",
+            "meaning": "Inaction constitutes complicity; neutrality supports wrongdoing."
+        },
+        {
+            "author": "Reinhold Niebuhr",
+            "field": "Theology/Ethics",
+            "quote": "God, grant me the serenity to accept the things I cannot change, courage to change the things I can, and wisdom to know the difference.",
+            "meaning": "Effective living requires discerning between controllable and uncontrollable factors."
+        }
+    ]
+}

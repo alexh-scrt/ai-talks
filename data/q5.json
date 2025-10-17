@@ -1,0 +1,592 @@
+{
+    "quotes": [
+        {
+            "author": "Isaac Newton",
+            "field": "Physics/Mathematics",
+            "quote": "If I have seen further it is by standing on the shoulders of giants.",
+            "meaning": "Recognition that scientific progress is cumulative and depends on past thinkers."
+        },
+        {
+            "author": "Albert Einstein",
+            "field": "Physics",
+            "quote": "If we knew what we were doing, it would not be called research, would it?",
+            "meaning": "Research is inherently exploratory—uncertainty is part of the process."
+        },
+        {
+            "author": "Albert Einstein",
+            "field": "Physics",
+            "quote": "Imagination is more important than knowledge.",
+            "meaning": "Creative insight often leads discovery more than existing facts."
+        },
+        {
+            "author": "Marie Curie",
+            "field": "Physics/Chemistry",
+            "quote": "Nothing in life is to be feared, it is only to be understood.",
+            "meaning": "Understanding dispels fear; knowledge brings courage."
+        },
+        {
+            "author": "Carl Sagan",
+            "field": "Astronomy",
+            "quote": "Somewhere, something incredible is waiting to be known.",
+            "meaning": "The universe holds endless discoveries for those who seek."
+        },
+        {
+            "author": "Richard Feynman",
+            "field": "Physics",
+            "quote": "The first principle is that you must not fool yourself — and you are the easiest person to fool.",
+            "meaning": "Self-deception is the greatest obstacle to truth; intellectual honesty is essential."
+        },
+        {
+            "author": "Aristotle",
+            "field": "Philosophy",
+            "quote": "We are what we repeatedly do. Excellence, then, is not an act, but a habit.",
+            "meaning": "Character and skill emerge from consistent practice, not isolated actions."
+        },
+        {
+            "author": "Socrates",
+            "field": "Philosophy",
+            "quote": "The unexamined life is not worth living.",
+            "meaning": "Self-reflection and critical thinking give life meaning and purpose."
+        },
+        {
+            "author": "Plato",
+            "field": "Philosophy",
+            "quote": "Wise men speak because they have something to say; fools because they have to say something.",
+            "meaning": "True wisdom involves knowing when silence is more valuable than words."
+        },
+        {
+            "author": "Marcus Aurelius",
+            "field": "Philosophy",
+            "quote": "You have power over your mind — not outside events. Realize this, and you will find strength.",
+            "meaning": "Inner control and perspective matter more than external circumstances."
+        },
+        {
+            "author": "Confucius",
+            "field": "Philosophy",
+            "quote": "It does not matter how slowly you go as long as you do not stop.",
+            "meaning": "Persistence and consistent progress outweigh speed."
+        },
+        {
+            "author": "Lao Tzu",
+            "field": "Philosophy",
+            "quote": "A journey of a thousand miles begins with a single step.",
+            "meaning": "Great accomplishments start with small, decisive actions."
+        },
+        {
+            "author": "Benjamin Franklin",
+            "field": "Politics/Science",
+            "quote": "Tell me and I forget, teach me and I may remember, involve me and I learn.",
+            "meaning": "Active participation is the most effective form of learning."
+        },
+        {
+            "author": "Leonardo da Vinci",
+            "field": "Art/Science",
+            "quote": "Simplicity is the ultimate sophistication.",
+            "meaning": "True mastery reveals itself through elegant, uncomplicated solutions."
+        },
+        {
+            "author": "Galileo Galilei",
+            "field": "Astronomy/Physics",
+            "quote": "All truths are easy to understand once they are discovered; the point is to discover them.",
+            "meaning": "The challenge lies in finding truth, not in comprehending it afterward."
+        },
+        {
+            "author": "Charles Darwin",
+            "field": "Biology",
+            "quote": "It is not the strongest of the species that survives, nor the most intelligent, but the one most responsive to change.",
+            "meaning": "Adaptability is the key to survival and success."
+        },
+        {
+            "author": "Louis Pasteur",
+            "field": "Biology/Chemistry",
+            "quote": "Chance favors the prepared mind.",
+            "meaning": "Opportunities reveal themselves to those who have knowledge and readiness."
+        },
+        {
+            "author": "Nikola Tesla",
+            "field": "Engineering/Physics",
+            "quote": "The present is theirs; the future, for which I really worked, is mine.",
+            "meaning": "Visionary work may not be appreciated immediately but will shape tomorrow."
+        },
+        {
+            "author": "Thomas Edison",
+            "field": "Engineering",
+            "quote": "I have not failed. I've just found 10,000 ways that won't work.",
+            "meaning": "Failure is a learning process that leads to eventual success."
+        },
+        {
+            "author": "Winston Churchill",
+            "field": "Politics/Leadership",
+            "quote": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+            "meaning": "Persistence through both triumph and defeat defines true character."
+        },
+        {
+            "author": "Nelson Mandela",
+            "field": "Politics/Activism",
+            "quote": "Education is the most powerful weapon which you can use to change the world.",
+            "meaning": "Knowledge empowers individuals to transform society."
+        },
+        {
+            "author": "Mahatma Gandhi",
+            "field": "Politics/Philosophy",
+            "quote": "Be the change that you wish to see in the world.",
+            "meaning": "Personal transformation is the foundation for societal change."
+        },
+        {
+            "author": "Martin Luther King Jr.",
+            "field": "Civil Rights",
+            "quote": "Darkness cannot drive out darkness; only light can do that. Hate cannot drive out hate; only love can do that.",
+            "meaning": "Negativity is overcome by positive force, not by matching its energy."
+        },
+        {
+            "author": "Ralph Waldo Emerson",
+            "field": "Philosophy/Literature",
+            "quote": "What lies behind us and what lies before us are tiny matters compared to what lies within us.",
+            "meaning": "Inner strength and character outweigh past or future circumstances."
+        },
+        {
+            "author": "Henry David Thoreau",
+            "field": "Philosophy/Literature",
+            "quote": "Go confidently in the direction of your dreams. Live the life you have imagined.",
+            "meaning": "Pursue your aspirations with conviction and intentionality."
+        },
+        {
+            "author": "Mark Twain",
+            "field": "Literature",
+            "quote": "The secret of getting ahead is getting started.",
+            "meaning": "Action, not planning alone, drives progress."
+        },
+        {
+            "author": "Oscar Wilde",
+            "field": "Literature",
+            "quote": "Be yourself; everyone else is already taken.",
+            "meaning": "Authenticity is valuable because it cannot be replicated."
+        },
+        {
+            "author": "William Shakespeare",
+            "field": "Literature",
+            "quote": "To thine own self be true.",
+            "meaning": "Personal integrity requires honesty with oneself above all."
+        },
+        {
+            "author": "Maya Angelou",
+            "field": "Literature/Poetry",
+            "quote": "I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.",
+            "meaning": "Emotional impact endures longer than words or actions."
+        },
+        {
+            "author": "Helen Keller",
+            "field": "Activism/Education",
+            "quote": "Life is either a daring adventure or nothing at all.",
+            "meaning": "Meaningful existence requires courage and willingness to take risks."
+        },
+        {
+            "author": "Eleanor Roosevelt",
+            "field": "Politics/Activism",
+            "quote": "No one can make you feel inferior without your consent.",
+            "meaning": "Self-worth is internally determined, not externally imposed."
+        },
+        {
+            "author": "Friedrich Nietzsche",
+            "field": "Philosophy",
+            "quote": "He who has a why to live can bear almost any how.",
+            "meaning": "Purpose gives strength to endure hardship."
+        },
+        {
+            "author": "Viktor Frankl",
+            "field": "Psychology/Philosophy",
+            "quote": "When we are no longer able to change a situation, we are challenged to change ourselves.",
+            "meaning": "Adaptation and perspective shift are responses to unchangeable circumstances."
+        },
+        {
+            "author": "Seneca",
+            "field": "Philosophy",
+            "quote": "Luck is what happens when preparation meets opportunity.",
+            "meaning": "Success appears random but results from readiness and timing."
+        },
+        {
+            "author": "Epictetus",
+            "field": "Philosophy",
+            "quote": "It's not what happens to you, but how you react to it that matters.",
+            "meaning": "Response, not circumstance, determines outcomes and experience."
+        },
+        {
+            "author": "Voltaire",
+            "field": "Philosophy/Literature",
+            "quote": "Perfect is the enemy of good.",
+            "meaning": "Pursuing perfection can prevent achieving adequate results."
+        },
+        {
+            "author": "Blaise Pascal",
+            "field": "Mathematics/Philosophy",
+            "quote": "All of humanity's problems stem from man's inability to sit quietly in a room alone.",
+            "meaning": "Many troubles arise from inability to find peace in solitude."
+        },
+        {
+            "author": "René Descartes",
+            "field": "Philosophy/Mathematics",
+            "quote": "I think, therefore I am.",
+            "meaning": "Consciousness and thought are the foundation of existence."
+        },
+        {
+            "author": "John Locke",
+            "field": "Philosophy",
+            "quote": "Reading furnishes the mind only with materials of knowledge; it is thinking that makes what we read ours.",
+            "meaning": "Knowledge becomes wisdom through reflection and application."
+        },
+        {
+            "author": "Immanuel Kant",
+            "field": "Philosophy",
+            "quote": "Science is organized knowledge. Wisdom is organized life.",
+            "meaning": "Understanding facts differs from living well; wisdom applies knowledge."
+        },
+        {
+            "author": "Jean-Jacques Rousseau",
+            "field": "Philosophy",
+            "quote": "Man is born free, and everywhere he is in chains.",
+            "meaning": "Natural liberty is constrained by social structures and conventions."
+        },
+        {
+            "author": "Thomas Jefferson",
+            "field": "Politics/Philosophy",
+            "quote": "I cannot live without books.",
+            "meaning": "Reading is essential to intellectual and spiritual sustenance."
+        },
+        {
+            "author": "Abraham Lincoln",
+            "field": "Politics",
+            "quote": "Whatever you are, be a good one.",
+            "meaning": "Excellence in any role matters more than the role itself."
+        },
+        {
+            "author": "Theodore Roosevelt",
+            "field": "Politics",
+            "quote": "Do what you can, with what you have, where you are.",
+            "meaning": "Work with available resources rather than waiting for ideal conditions."
+        },
+        {
+            "author": "John F. Kennedy",
+            "field": "Politics",
+            "quote": "Ask not what your country can do for you — ask what you can do for your country.",
+            "meaning": "Civic responsibility involves contribution, not entitlement."
+        },
+        {
+            "author": "Steve Jobs",
+            "field": "Technology/Business",
+            "quote": "Innovation distinguishes between a leader and a follower.",
+            "meaning": "Creative thinking and originality define leadership."
+        },
+        {
+            "author": "Bill Gates",
+            "field": "Technology/Business",
+            "quote": "Success is a lousy teacher. It seduces smart people into thinking they can't lose.",
+            "meaning": "Triumph can breed overconfidence and hinder learning."
+        },
+        {
+            "author": "Henry Ford",
+            "field": "Business/Engineering",
+            "quote": "Whether you think you can, or you think you can't — you're right.",
+            "meaning": "Mindset determines capability and outcome."
+        },
+        {
+            "author": "Walt Disney",
+            "field": "Entertainment/Business",
+            "quote": "The way to get started is to quit talking and begin doing.",
+            "meaning": "Action supersedes endless discussion and planning."
+        },
+        {
+            "author": "Peter Drucker",
+            "field": "Management",
+            "quote": "The best way to predict the future is to create it.",
+            "meaning": "Active involvement shapes outcomes more than passive prediction."
+        },
+        {
+            "author": "Dale Carnegie",
+            "field": "Leadership/Psychology",
+            "quote": "You can make more friends in two months by becoming interested in other people than you can in two years by trying to get other people interested in you.",
+            "meaning": "Genuine interest in others builds stronger relationships than self-promotion."
+        },
+        {
+            "author": "Stephen Covey",
+            "field": "Leadership",
+            "quote": "Seek first to understand, then to be understood.",
+            "meaning": "Listening precedes effective communication and influence."
+        },
+        {
+            "author": "Sun Tzu",
+            "field": "Military Strategy",
+            "quote": "Know yourself and you will win all battles.",
+            "meaning": "Self-awareness is the foundation of strategic success."
+        },
+        {
+            "author": "Miyamoto Musashi",
+            "field": "Philosophy/Strategy",
+            "quote": "There is nothing outside of yourself that can ever enable you to get better, stronger, richer, quicker, or smarter. Everything is within.",
+            "meaning": "True development comes from internal resources, not external factors."
+        },
+        {
+            "author": "Bruce Lee",
+            "field": "Martial Arts/Philosophy",
+            "quote": "Absorb what is useful, discard what is not, add what is uniquely your own.",
+            "meaning": "Learning involves selective integration and personal adaptation."
+        },
+        {
+            "author": "Muhammad Ali",
+            "field": "Sports",
+            "quote": "Don't count the days; make the days count.",
+            "meaning": "Focus on meaningful action rather than passive time measurement."
+        },
+        {
+            "author": "Michael Jordan",
+            "field": "Sports",
+            "quote": "I've failed over and over and over again in my life. And that is why I succeed.",
+            "meaning": "Repeated failure is a prerequisite for eventual mastery."
+        },
+        {
+            "author": "Vince Lombardi",
+            "field": "Sports/Leadership",
+            "quote": "Perfection is not attainable, but if we chase perfection we can catch excellence.",
+            "meaning": "Striving for the ideal produces superior results, even if unattainable."
+        },
+        {
+            "author": "Babe Ruth",
+            "field": "Sports",
+            "quote": "Every strike brings me closer to the next home run.",
+            "meaning": "Failure is progress toward success, not retreat from it."
+        },
+        {
+            "author": "Wayne Gretzky",
+            "field": "Sports",
+            "quote": "You miss 100% of the shots you don't take.",
+            "meaning": "Inaction guarantees failure; attempting gives possibility of success."
+        },
+        {
+            "author": "Pelé",
+            "field": "Sports",
+            "quote": "Success is no accident. It is hard work, perseverance, learning, studying, sacrifice and most of all, love of what you are doing.",
+            "meaning": "Achievement results from deliberate effort and passion, not chance."
+        },
+        {
+            "author": "Rumi",
+            "field": "Poetry/Philosophy",
+            "quote": "Yesterday I was clever, so I wanted to change the world. Today I am wise, so I am changing myself.",
+            "meaning": "Wisdom recognizes that self-transformation precedes world transformation."
+        },
+        {
+            "author": "Khalil Gibran",
+            "field": "Poetry/Philosophy",
+            "quote": "Out of suffering have emerged the strongest souls; the most massive characters are seared with scars.",
+            "meaning": "Adversity forges resilience and depth of character."
+        },
+        {
+            "author": "Pablo Picasso",
+            "field": "Art",
+            "quote": "Every child is an artist. The problem is how to remain an artist once he grows up.",
+            "meaning": "Creativity is natural but maintaining it requires conscious effort."
+        },
+        {
+            "author": "Vincent van Gogh",
+            "field": "Art",
+            "quote": "I am always doing what I cannot do yet, in order to learn how to do it.",
+            "meaning": "Growth requires attempting tasks beyond current capability."
+        },
+        {
+            "author": "Michelangelo",
+            "field": "Art",
+            "quote": "The greater danger for most of us lies not in setting our aim too high and falling short; but in setting our aim too low, and achieving our mark.",
+            "meaning": "Modest ambitions limit potential more than failed bold attempts."
+        },
+        {
+            "author": "Claude Monet",
+            "field": "Art",
+            "quote": "I must have flowers, always, and always.",
+            "meaning": "Beauty and inspiration are daily necessities, not luxuries."
+        },
+        {
+            "author": "Georgia O'Keeffe",
+            "field": "Art",
+            "quote": "I've been absolutely terrified every moment of my life — and I've never let it keep me from doing a single thing I wanted to do.",
+            "meaning": "Courage means acting despite fear, not absence of fear."
+        },
+        {
+            "author": "Frida Kahlo",
+            "field": "Art",
+            "quote": "I paint myself because I am so often alone and because I am the subject I know best.",
+            "meaning": "Self-expression emerges from intimate self-knowledge."
+        },
+        {
+            "author": "Andy Warhol",
+            "field": "Art",
+            "quote": "They always say time changes things, but you actually have to change them yourself.",
+            "meaning": "Change requires active intervention, not passive waiting."
+        },
+        {
+            "author": "Salvador Dalí",
+            "field": "Art",
+            "quote": "Have no fear of perfection — you'll never reach it.",
+            "meaning": "Pursuing perfection is futile; focus on expression and growth."
+        },
+        {
+            "author": "Bob Ross",
+            "field": "Art/Education",
+            "quote": "We don't make mistakes, just happy little accidents.",
+            "meaning": "Errors can become opportunities for unexpected creativity."
+        },
+        {
+            "author": "Ludwig van Beethoven",
+            "field": "Music",
+            "quote": "To play a wrong note is insignificant; to play without passion is inexcusable.",
+            "meaning": "Technical perfection matters less than emotional authenticity."
+        },
+        {
+            "author": "Johann Sebastian Bach",
+            "field": "Music",
+            "quote": "The aim and final end of all music should be none other than the glory of God and the refreshment of the soul.",
+            "meaning": "Art serves higher purposes beyond mere entertainment."
+        },
+        {
+            "author": "Wolfgang Amadeus Mozart",
+            "field": "Music",
+            "quote": "Neither a lofty degree of intelligence nor imagination nor both together go to the making of genius. Love, love, love, that is the soul of genius.",
+            "meaning": "Passion and devotion matter more than raw talent."
+        },
+        {
+            "author": "Miles Davis",
+            "field": "Music",
+            "quote": "Do not fear mistakes. There are none.",
+            "meaning": "In creative work, all outcomes contribute to artistic expression."
+        },
+        {
+            "author": "Duke Ellington",
+            "field": "Music",
+            "quote": "A problem is a chance for you to do your best.",
+            "meaning": "Challenges are opportunities to demonstrate capability."
+        },
+        {
+            "author": "Louis Armstrong",
+            "field": "Music",
+            "quote": "What we play is life.",
+            "meaning": "Art and existence are inseparable; music reflects living."
+        },
+        {
+            "author": "Bob Marley",
+            "field": "Music",
+            "quote": "One good thing about music, when it hits you, you feel no pain.",
+            "meaning": "Music provides emotional healing and transcendence."
+        },
+        {
+            "author": "John Lennon",
+            "field": "Music",
+            "quote": "Life is what happens when you're busy making other plans.",
+            "meaning": "Present moments matter more than future projections."
+        },
+        {
+            "author": "David Bowie",
+            "field": "Music/Art",
+            "quote": "I don't know where I'm going from here, but I promise it won't be boring.",
+            "meaning": "Uncertainty can be embraced when paired with commitment to vitality."
+        },
+        {
+            "author": "Maya Angelou",
+            "field": "Literature/Poetry",
+            "quote": "There is no greater agony than bearing an untold story inside you.",
+            "meaning": "Unexpressed experiences create profound internal suffering."
+        },
+        {
+            "author": "Jane Austen",
+            "field": "Literature",
+            "quote": "The person, be it gentleman or lady, who has not pleasure in a good novel, must be intolerably stupid.",
+            "meaning": "Literature appreciation indicates intellectual and emotional capacity."
+        },
+        {
+            "author": "Leo Tolstoy",
+            "field": "Literature",
+            "quote": "Everyone thinks of changing the world, but no one thinks of changing himself.",
+            "meaning": "External reform begins with internal transformation."
+        },
+        {
+            "author": "Fyodor Dostoevsky",
+            "field": "Literature",
+            "quote": "The mystery of human existence lies not in just staying alive, but in finding something to live for.",
+            "meaning": "Purpose, not mere survival, gives life significance."
+        },
+        {
+            "author": "Ernest Hemingway",
+            "field": "Literature",
+            "quote": "There is nothing to writing. All you do is sit down at a typewriter and bleed.",
+            "meaning": "Authentic writing requires emotional vulnerability and honesty."
+        },
+        {
+            "author": "F. Scott Fitzgerald",
+            "field": "Literature",
+            "quote": "You don't write because you want to say something, you write because you have something to say.",
+            "meaning": "Genuine expression emerges from necessity, not mere desire."
+        },
+        {
+            "author": "George Orwell",
+            "field": "Literature",
+            "quote": "In a time of deceit telling the truth is a revolutionary act.",
+            "meaning": "Honesty becomes radical when dishonesty is normalized."
+        },
+        {
+            "author": "Virginia Woolf",
+            "field": "Literature",
+            "quote": "You cannot find peace by avoiding life.",
+            "meaning": "Engagement with existence, not escape, brings tranquility."
+        },
+        {
+            "author": "James Baldwin",
+            "field": "Literature",
+            "quote": "Not everything that is faced can be changed, but nothing can be changed until it is faced.",
+            "meaning": "Acknowledgment is the prerequisite for transformation."
+        },
+        {
+            "author": "Toni Morrison",
+            "field": "Literature",
+            "quote": "If you want to fly, you have to give up the things that weigh you down.",
+            "meaning": "Liberation requires releasing limiting attachments."
+        },
+        {
+            "author": "J.R.R. Tolkien",
+            "field": "Literature",
+            "quote": "Not all those who wander are lost.",
+            "meaning": "Purposeful exploration should not be mistaken for aimlessness."
+        },
+        {
+            "author": "C.S. Lewis",
+            "field": "Literature/Theology",
+            "quote": "You can never get a cup of tea large enough or a book long enough to suit me.",
+            "meaning": "Simple pleasures and intellectual pursuits bring endless satisfaction."
+        },
+        {
+            "author": "Dr. Seuss",
+            "field": "Children's Literature",
+            "quote": "Why fit in when you were born to stand out?",
+            "meaning": "Individuality should be celebrated, not suppressed."
+        },
+        {
+            "author": "Antoine de Saint-Exupéry",
+            "field": "Literature/Aviation",
+            "quote": "It is only with the heart that one can see rightly; what is essential is invisible to the eye.",
+            "meaning": "Emotional and spiritual perception reveals deeper truths than sight."
+        },
+        {
+            "author": "Roald Dahl",
+            "field": "Children's Literature",
+            "quote": "If you are good, life is good.",
+            "meaning": "Ethical behavior creates positive life experience."
+        },
+        {
+            "author": "Harper Lee",
+            "field": "Literature",
+            "quote": "You never really understand a person until you consider things from his point of view.",
+            "meaning": "Empathy requires imaginative perspective-taking."
+        },
+        {
+            "author": "Kurt Vonnegut",
+            "field": "Literature",
+            "quote": "We are what we pretend to be, so we must be careful about what we pretend to be.",
+            "meaning": "Adopted behaviors eventually become authentic character traits."
+        }
+    ]
+}

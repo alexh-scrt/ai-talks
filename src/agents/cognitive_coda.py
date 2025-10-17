@@ -278,11 +278,28 @@ class CognitiveCodaAgent(BaseAgent):
             raise ValueError("Cognitive Coda too short. Must be at least 3 words.")
     
     def _compute_signals(self, exchanges: List[Dict], window: int) -> Dict:
-        """Compute S-A-D signals from exchanges"""
-        return self.signal_extractor.compute_aggregate_signals(
+        """Compute S-A-D signals from exchanges with enhanced agency extraction"""
+        # Use enhanced agency computation from Phase 6A
+        agency_result = self.signal_extractor.compute_agency_score(exchanges, window_size=window)
+        
+        # Get other signals using the existing method
+        aggregate_signals = self.signal_extractor.compute_aggregate_signals(
             exchanges=exchanges,
             window=window
         )
+        
+        # Replace A with enhanced agency result
+        aggregate_signals['A'] = agency_result['A']
+        
+        # Add agency sub-components to components
+        aggregate_signals['components'].update({
+            'A_ought': agency_result['A_ought'],
+            'A_decis': agency_result['A_decis'],
+            'A_conseq': agency_result['A_conseq'],
+            'A_stance': agency_result['A_stance']
+        })
+        
+        return aggregate_signals
 
     def _compute_meaning(self, signals: Dict) -> Dict:
         """Compute meaning score and generate interpretations"""
@@ -347,12 +364,57 @@ class CognitiveCodaAgent(BaseAgent):
         
         output = f"Cognitive Coda: {result['coda']}\n\nReasoning: {result['reasoning']}"
         
-        # Add mathematical model if present
+        # Add enhanced mathematical model with sub-scores if present
         if 'mathematical_model' in result:
             math_model = result['mathematical_model']
-            output += f"\n\nMathematical Model: {math_model['equation']}"
-            output += f"\nNumbers: {math_model['numbers']}"
-            output += f"\nInterpretation: {math_model['verbal_axiom']}"
-            output += f"\nMaxim: {math_model['maxim']}"
+            components = math_model.get('components', {})
+            signals = math_model.get('signals', {})
+            
+            output += f"\n\n### Mathematical Model\n"
+            output += f"**Equation:** {math_model['equation']}\n\n"
+            
+            # Enhanced display with sub-scores from Phase 6A design
+            output += f"**Current Values:**\n"
+            A = signals.get('A', 0)
+            S = signals.get('S', 0)
+            D = signals.get('D', 0)
+            M = math_model.get('M', 0)
+            
+            output += f"- **Agency (A)**: {A:.3f}\n"
+            
+            # Add Agency sub-component breakdown
+            if 'A_ought' in components:
+                output += f"  - A_ought: {components['A_ought']:.3f}\n"
+            if 'A_decis' in components:
+                output += f"  - A_decis: {components['A_decis']:.3f}\n"
+            if 'A_conseq' in components:
+                output += f"  - A_conseq: {components['A_conseq']:.3f}\n"
+            if 'A_stance' in components:
+                output += f"  - A_stance: {components['A_stance']:.3f}\n"
+                
+            output += f"- **Structure (S)**: {S:.3f}\n"
+            output += f"- **Dependence (D)**: {D:.3f}\n"
+            output += f"- **Meaning (M)**: {M:.3f}\n\n"
+            
+            # Add parameters
+            params = math_model.get('parameters', {})
+            if params:
+                output += f"**Parameters:** "
+                param_strs = []
+                for key, value in params.items():
+                    param_strs.append(f"{key}={value}")
+                output += ", ".join(param_strs) + "\n\n"
+            
+            # Add interpretation and maxim
+            output += f"**Interpretation:** {math_model['verbal_axiom']}\n"
+            output += f"**Maxim:** {math_model['maxim']}"
+            
+            # Add Next Action recommendations from Phase 6A design
+            if 'recommendations' in result and result['recommendations']:
+                output += f"\n\n**Next:** {'; '.join(result['recommendations'])}"
+            elif A < 0.45:
+                output += f"\n\n**Next:** Increase agency commitments (A < 0.45)"
+            else:
+                output += f"\n\n**Status:** All metrics within target ranges ✓"
         
         return output

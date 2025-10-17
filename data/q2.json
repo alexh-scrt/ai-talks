@@ -1,0 +1,124 @@
+{
+    "quotes": [
+        {
+            "author": "David Wheeler",
+            "field": "Computer Science",
+            "quote": "All problems in computer science can be solved by another level of indirection.",
+            "meaning": "Software complexity is often managed by introducing layers of abstraction."
+        },
+        {
+            "author": "David Wheeler",
+            "field": "Computer Science",
+            "quote": "Compatibility means deliberately repeating other people's mistakes.",
+            "meaning": "Backward compatibility often forces us to preserve old design flaws."
+        },
+        {
+            "author": "Carl Sagan",
+            "field": "Astronomy/Science Communication",
+            "quote": "Science is a self-correcting process. To be accepted, new ideas must survive the most rigorous standards of evidence and scrutiny.",
+            "meaning": "Science progresses by subjecting hypotheses to falsification and peer review."
+        },
+        {
+            "author": "Carl Sagan",
+            "field": "Astronomy/Science Communication",
+            "quote": "Science is founded on uncertainty. Each time we learn something new and surprising, the astonishment comes with the realization that we were wrong before.",
+            "meaning": "Discovery often overturns prior beliefs; humility toward knowledge is fundamental."
+        },
+        {
+            "author": "Charles Darwin",
+            "field": "Biology",
+            "quote": "It is not the strongest of the species that survives, nor the most intelligent. It is the one most responsive to change.",
+            "meaning": "Adaptability—not raw strength or intellect—often determines survival."
+        },
+        {
+            "author": "Marie Curie",
+            "field": "Chemistry/Physics",
+            "quote": "Nothing in life is to be feared. It is only to be understood.",
+            "meaning": "Knowledge and inquiry dispel fear of the unknown."
+        },
+        {
+            "author": "René Descartes",
+            "field": "Philosophy/Mathematics",
+            "quote": "I think, therefore I am.",
+            "meaning": "Self-awareness affirms existence even amid doubt."
+        },
+        {
+            "author": "William James",
+            "field": "Philosophy/Psychology",
+            "quote": "A great many people think they are thinking when they are merely rearranging their prejudices.",
+            "meaning": "Authentic thought requires critical reflection, not just reshuffling existing beliefs."
+        },
+        {
+            "author": "Plutarch",
+            "field": "Philosophy/Biography",
+            "quote": "The mind is not a vessel to be filled but a fire to be kindled.",
+            "meaning": "Education should ignite curiosity rather than merely passively transfer information."
+        },
+        {
+            "author": "Socrates",
+            "field": "Philosophy",
+            "quote": "I know that I know nothing.",
+            "meaning": "True wisdom begins with recognizing the limits of one’s knowledge."
+        },
+        {
+            "author": "Sun Tzu",
+            "field": "Military Strategy / Philosophy",
+            "quote": "The supreme art of war is to subdue the enemy without fighting.",
+            "meaning": "The best victory is one won through strategy, not sheer force."
+        },
+        {
+            "author": "Lao Tzu",
+            "field": "Philosophy / Taoism",
+            "quote": "Being deeply loved by someone gives you strength, while loving someone deeply gives you courage.",
+            "meaning": "Both love received and love given shape our moral and spiritual fiber."
+        },
+        {
+            "author": "Alan Watts",
+            "field": "Philosophy / Comparative Religion",
+            "quote": "The only way to make sense out of change is to plunge into it, move with it, and join the dance.",
+            "meaning": "Resistance to change breeds confusion; harmony requires flow with life's currents."
+        },
+        {
+            "author": "Immanuel Kant",
+            "field": "Philosophy",
+            "quote": "Experience without theory is blind, but theory without experience is mere intellectual play.",
+            "meaning": "Knowledge requires both empirical grounding and conceptual structure."
+        },
+        {
+            "author": "Bertrand Russell",
+            "field": "Philosophy / Logic",
+            "quote": "The whole problem with the world is that fools and fanatics are always so certain of themselves, and wiser people so full of doubts.",
+            "meaning": "Intellectual humility is rarer than dogmatic certainty."
+        },
+        {
+            "author": "Hypatia",
+            "field": "Philosophy / Mathematics",
+            "quote": "Reserve your right to think, for even to think wrongly is better than not to think at all.",
+            "meaning": "Independent thought, even if error-prone, is essential to intellectual integrity."
+        },
+        {
+            "author": "Francis Bacon",
+            "field": "Philosophy / Science",
+            "quote": "Knowledge is power.",
+            "meaning": "Understanding the world grants capacity to act and transform it."
+        },
+        {
+            "author": "Niels Bohr",
+            "field": "Physics",
+            "quote": "The opposite of a right statement is a wrong statement. The opposite of a deep truth can also be a deep truth.",
+            "meaning": "Profound truths may coexist with their seeming contradictions."
+        },
+        {
+            "author": "Ernest Rutherford",
+            "field": "Physics",
+            "quote": "If you don't do the best with what you have, you could never have done better with what you could have had.",
+            "meaning": "Make full use of your current resources—there’s no virtue in wasted potential."
+        },
+        {
+            "author": "Isidor Rabi",
+            "field": "Physics",
+            "quote": "Great scientists usually show up when and where in the history of science they are needed.",
+            "meaning": "Scientific breakthroughs often emerge in response to the demands of their time."
+        }
+    ]
+}

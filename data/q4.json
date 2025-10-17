@@ -1,0 +1,124 @@
+{
+    "quotes": [
+        {
+            "author": "Neil deGrasse Tyson",
+            "field": "Astrophysics / Science Communication",
+            "quote": "The Universe is under no obligation to make sense to you.",
+            "meaning": "Nature operates independently of human intuitions or expectations."
+        },
+        {
+            "author": "William James",
+            "field": "Philosophy / Psychology",
+            "quote": "A great many people think they are thinking when they are merely rearranging their prejudices.",
+            "meaning": "True critical thought demands confronting one’s assumptions, not just reordering them."
+        },
+        {
+            "author": "Robert A. Heinlein",
+            "field": "Science Fiction / Thought",
+            "quote": "Everything is theoretically impossible until it is done.",
+            "meaning": "Many breakthroughs seem impossible until someone demonstrates them in practice."
+        },
+        {
+            "author": "Isidor Rabi",
+            "field": "Physics",
+            "quote": "Great scientists usually show up when and where in the history of science they are needed.",
+            "meaning": "Scientific advances often emerge in response to historical or conceptual necessity."
+        },
+        {
+            "author": "Vasco Ronchi",
+            "field": "Physics / Scientific Philosophy",
+            "quote": "It’s perplexing to see the flexibility of the so-called ‘exact sciences’ which by cast-iron laws of logic … can lead to conclusions which are diametrically opposed to one another.",
+            "meaning": "Scientific reasoning, though formal, can yield surprising and conflicting implications."
+        },
+        {
+            "author": "Carl Sagan",
+            "field": "Astronomy / Science Communication",
+            "quote": "Science is a self-correcting process. To be accepted, new ideas must survive the most rigorous standards of evidence and scrutiny.",
+            "meaning": "Progress in science depends on critique, falsification, and empirical testing."
+        },
+        {
+            "author": "Carl Sagan",
+            "field": "Astronomy / Science Communication",
+            "quote": "Science is founded on uncertainty. Each time we learn something new and surprising, the astonishment comes with the realization that we were wrong before.",
+            "meaning": "Scientific knowledge evolves by overturning prior assumptions in light of new evidence."
+        },
+        {
+            "author": "Charles Darwin",
+            "field": "Biology / Natural Science",
+            "quote": "It is not the strongest of the species that survives, nor the most intelligent. It is the one most responsive to change.",
+            "meaning": "Adaptability, not mere strength or intelligence, often determines survival in evolving environments."
+        },
+        {
+            "author": "Charles Darwin",
+            "field": "Biology / Natural Science",
+            "quote": "A language, like a species, when extinct, never… reappears.",
+            "meaning": "Cultural and biological extinction is irreversible once history moves on."
+        },
+        {
+            "author": "Albert Einstein",
+            "field": "Physics",
+            "quote": "If we knew what we were doing, it would not be called research, would it?",
+            "meaning": "Research inherently involves exploring the unknown; certainty cannot precede discovery."
+        },
+        {
+            "author": "Albert Einstein",
+            "field": "Physics",
+            "quote": "God does not play dice with the universe.",
+            "meaning": "Einstein rejected randomness in nature, believing in underlying order and determinism."
+        },
+        {
+            "author": "Marie Curie",
+            "field": "Physics / Chemistry",
+            "quote": "Now is the time to understand more, so that we may fear less.",
+            "meaning": "Increasing knowledge reduces irrational fear and enables confident action."
+        },
+        {
+            "author": "Ernest Rutherford",
+            "field": "Physics / Nuclear Science",
+            "quote": "If you don't do the best with what you have, you could never have done better with what you could have had.",
+            "meaning": "Maximize current resources—there’s no virtue in potential unfulfilled."
+        },
+        {
+            "author": "Thomas Berger",
+            "field": "Philosophy / Literature",
+            "quote": "The art and science of asking questions is the source of all knowledge.",
+            "meaning": "Inquiry and curiosity—posing the right questions—drive discovery and understanding."
+        },
+        {
+            "author": "Edward Teller",
+            "field": "Physics / Scientific Policy",
+            "quote": "The science of today is the technology of tomorrow.",
+            "meaning": "Scientific breakthroughs become the foundation for future practice and tools."
+        },
+        {
+            "author": "George C. Lichtenberg",
+            "field": "Physics / Aphorism",
+            "quote": "It is strange that only extraordinary man-made the discoveries which later appear so easy and simple.",
+            "meaning": "Genuinely novel insights often seem obvious in hindsight, but are hard to generate."
+        },
+        {
+            "author": "Randall Jarrell",
+            "field": "Literature / Commentary",
+            "quote": "I think that one possible definition of our modern culture is that it is one in which nine-tenths of our intellectuals can’t read any poetry.",
+            "meaning": "He critiques the narrowing of intellectual life to technical domains at the expense of the humanities."
+        },
+        {
+            "author": "Aimé Césaire",
+            "field": "Literature / Thought",
+            "quote": "Poetic knowledge is born in the great silence of scientific knowledge.",
+            "meaning": "Poetry and science are complementary modes of knowing, each illuminating the other’s gaps."
+        },
+        {
+            "author": "Charles M. Schulz",
+            "field": "Cartoon / Cultural Thought",
+            "quote": "My life has no purpose, no direction, no aim, no meaning, and yet I’m happy.",
+            "meaning": "Meaning can emerge or coexist with uncertainty and lack of grand narratives."
+        },
+        {
+            "author": "Jacob Bekenstein",
+            "field": "Physics / Cosmology",
+            "quote": "Sometimes theories are smarter than their inventors.",
+            "meaning": "The consequences of a theory may exceed the anticipations or intentions of its creator."
+        }
+    ]
+}

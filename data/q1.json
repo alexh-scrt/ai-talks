@@ -1,0 +1,124 @@
+{
+    "quotes": [
+        {
+            "author": "Isaac Newton",
+            "field": "Physics/Mathematics",
+            "quote": "If I have seen further it is by standing on the shoulders of giants.",
+            "meaning": "Recognition that scientific progress is cumulative and depends on past thinkers."
+        },
+        {
+            "author": "Albert Einstein",
+            "field": "Physics",
+            "quote": "If we knew what we were doing, it would not be called research, would it?",
+            "meaning": "Research is inherently exploratory—uncertainty is part of the process."
+        },
+        {
+            "author": "Albert Einstein",
+            "field": "Physics",
+            "quote": "Imagination is more important than knowledge.",
+            "meaning": "Creative insight often leads discovery more than existing facts."
+        },
+        {
+            "author": "Stephen Hawking",
+            "field": "Cosmology/Physics",
+            "quote": "One, remember to look up at the stars and not down at your feet.",
+            "meaning": "Curiosity about the universe gives perspective beyond daily concerns."
+        },
+        {
+            "author": "Galileo Galilei",
+            "field": "Astronomy/Physics",
+            "quote": "Measure what is measurable, and make measurable what is not so.",
+            "meaning": "Quantification is central to transforming observations into science."
+        },
+        {
+            "author": "Louis Pasteur",
+            "field": "Chemistry/Microbiology",
+            "quote": "Chance favors the prepared mind.",
+            "meaning": "Opportunities in science arise when one is ready to perceive them."
+        },
+        {
+            "author": "Charles Darwin",
+            "field": "Biology",
+            "quote": "Ignorance more frequently begets confidence than does knowledge.",
+            "meaning": "Overconfidence usually arises from limited understanding, not from deep insight."
+        },
+        {
+            "author": "Marie Curie",
+            "field": "Chemistry/Physics",
+            "quote": "Nothing in life is to be feared, it is only to be understood.",
+            "meaning": "Fear diminishes when we investigate and comprehend what concerns us."
+        },
+        {
+            "author": "René Descartes",
+            "field": "Philosophy/Mathematics",
+            "quote": "Cogito, ergo sum.",
+            "meaning": "The act of thinking proves one’s own existence."
+        },
+        {
+            "author": "Immanuel Kant",
+            "field": "Philosophy",
+            "quote": "Thoughts without content are empty; intuitions without concepts are blind.",
+            "meaning": "We need both empirical input and conceptual structure to think meaningfully."
+        },
+        {
+            "author": "Aristotle",
+            "field": "Philosophy/Science",
+            "quote": "The whole is greater than the sum of its parts.",
+            "meaning": "Systems can exhibit features that do not reduce to their elements."
+        },
+        {
+            "author": "Seneca",
+            "field": "Philosophy (Stoicism)",
+            "quote": "We suffer more often in imagination than in reality.",
+            "meaning": "Our anxieties often exceed actual harms—worry magnifies problems."
+        },
+        {
+            "author": "Marcus Aurelius",
+            "field": "Philosophy (Stoicism)",
+            "quote": "You have power over your mind—not outside events. Realize this, and you will find strength.",
+            "meaning": "Inner mastery offers resilience against external adversity."
+        },
+        {
+            "author": "Friedrich Nietzsche",
+            "field": "Philosophy",
+            "quote": "He who has a why to live can bear almost any how.",
+            "meaning": "Finding purpose enables endurance through hardship."
+        },
+        {
+            "author": "Karl Popper",
+            "field": "Philosophy of Science",
+            "quote": "A theory that is not refutable by any conceivable event is non-scientific.",
+            "meaning": "Falsifiability is a key demarcation of scientific theories."
+        },
+        {
+            "author": "Imre Lakatos",
+            "field": "Philosophy of Science",
+            "quote": "Philosophy of science without history of science is empty; history of science without philosophy of science is blind.",
+            "meaning": "Both philosophical reflection and historical context are needed for scientific understanding."
+        },
+        {
+            "author": "Rebecca Goldstein",
+            "field": "Philosophy",
+            "quote": "Philosophy is this amazing technique we've devised for getting reality to answer us back when we're getting it wrong.",
+            "meaning": "Philosophy helps us test and correct our assumptions about the world."
+        },
+        {
+            "author": "Richard Feynman",
+            "field": "Physics",
+            "quote": "The first principle is that you must not fool yourself—and you are the easiest person to fool.",
+            "meaning": "Self-deception is a major obstacle; skepticism toward one’s own reasoning is vital."
+        },
+        {
+            "author": "Paul Dirac",
+            "field": "Physics",
+            "quote": "[Philosophy is] just a way of talking about discoveries that have already been made.",
+            "meaning": "Some scientists see philosophy as retrospective commentary rather than forward inquiry."
+        },
+        {
+            "author": "Steven Weinberg",
+            "field": "Physics",
+            "quote": "The philosophy of science is just about as useful to scientists as ornithology is to birds.",
+            "meaning": "A witty criticism: philosophy may seem irrelevant to the practice of science."
+        }
+    ]
+}

@@ -1,0 +1,646 @@
+{
+    "quotes": [
+        {
+            "author": "Averroes",
+            "field": "Philosophy",
+            "quote": "Ignorance leads to fear, fear leads to hate, and hate leads to violence.",
+            "meaning": "Lack of knowledge creates chain reaction toward harm."
+        },
+        {
+            "author": "Maimonides",
+            "field": "Philosophy/Medicine",
+            "quote": "Teach thy tongue to say 'I do not know,' and thou shalt progress.",
+            "meaning": "Intellectual humility enables learning."
+        },
+        {
+            "author": "Thomas More",
+            "field": "Philosophy/Literature",
+            "quote": "A man who has not passed through the inferno of his passions has never overcome them.",
+            "meaning": "Mastery requires experiencing desires fully."
+        },
+        {
+            "author": "Erasmus",
+            "field": "Philosophy/Theology",
+            "quote": "In the land of the blind, the one-eyed man is king.",
+            "meaning": "Relative advantage creates authority."
+        },
+        {
+            "author": "Giordano Bruno",
+            "field": "Philosophy",
+            "quote": "It is proof of a base and low mind for one to wish to think with the masses or majority.",
+            "meaning": "Independent thinking surpasses conformity."
+        },
+        {
+            "author": "Paracelsus",
+            "field": "Medicine/Philosophy",
+            "quote": "Thoughts are free and are subject to no rule.",
+            "meaning": "Mental freedom operates without constraints."
+        },
+        {
+            "author": "Copernicus",
+            "field": "Astronomy",
+            "quote": "To know that we know what we know, and to know that we do not know what we do not know, that is true knowledge.",
+            "meaning": "Understanding includes recognizing ignorance."
+        },
+        {
+            "author": "Tycho Brahe",
+            "field": "Astronomy",
+            "quote": "Let me not seem to have lived in vain.",
+            "meaning": "Life's meaning requires lasting contribution."
+        },
+        {
+            "author": "Girolamo Cardano",
+            "field": "Mathematics/Medicine",
+            "quote": "The greatest advantage I know of being thought a magician is that it is a shield.",
+            "meaning": "Reputation provides protection from interference."
+        },
+        {
+            "author": "Andreas Vesalius",
+            "field": "Anatomy",
+            "quote": "I am not accustomed to saying anything with certainty after only one or two observations.",
+            "meaning": "Conclusions require repeated verification."
+        },
+        {
+            "author": "William Gilbert",
+            "field": "Physics",
+            "quote": "In the discovery of secret things and in the investigation of hidden causes, stronger reasons are obtained from sure experiments than from probable conjectures.",
+            "meaning": "Empirical evidence exceeds speculation."
+        },
+        {
+            "author": "Simon Stevin",
+            "field": "Mathematics/Engineering",
+            "quote": "Wonder is no wonder.",
+            "meaning": "Natural phenomena follow comprehensible principles."
+        },
+        {
+            "author": "William Harvey",
+            "field": "Medicine",
+            "quote": "Nature is nowhere accustomed more openly to display her secret mysteries than in cases where she shows traces of her workings apart from the beaten path.",
+            "meaning": "Anomalies reveal underlying mechanisms."
+        },
+        {
+            "author": "Christiaan Huygens",
+            "field": "Physics/Astronomy",
+            "quote": "The world is my country, science is my religion.",
+            "meaning": "Universal inquiry transcends local identities."
+        },
+        {
+            "author": "Gottfried Wilhelm Leibniz",
+            "field": "Philosophy",
+            "quote": "When God calculates and exercises his cogitation, the world is made.",
+            "meaning": "Divine computation generates reality."
+        },
+        {
+            "author": "Robert Hooke",
+            "field": "Science",
+            "quote": "The truth is, the science of Nature has been already too long made only a work of the brain and the fancy.",
+            "meaning": "Investigation requires empirical grounding."
+        },
+        {
+            "author": "Antonie van Leeuwenhoek",
+            "field": "Microbiology",
+            "quote": "My work, which I've done for a long time, was not pursued in order to gain the praise I now enjoy, but chiefly from a craving after knowledge.",
+            "meaning": "Curiosity, not recognition, motivates research."
+        },
+        {
+            "author": "Edmond Halley",
+            "field": "Astronomy",
+            "quote": "This sight... is by far the noblest astronomy affords.",
+            "meaning": "Celestial observation provides supreme wonder."
+        },
+        {
+            "author": "Daniel Bernoulli",
+            "field": "Mathematics/Physics",
+            "quote": "It is not enough to have a good mind; the main thing is to use it well.",
+            "meaning": "Application matters more than capacity."
+        },
+        {
+            "author": "Leonhard Euler",
+            "field": "Mathematics",
+            "quote": "Although to penetrate into the intimate mysteries of nature and thence to learn the true causes of phenomena is not allowed to us, nevertheless it can happen that a certain fictive hypothesis may suffice for explaining many phenomena.",
+            "meaning": "Useful models need not represent ultimate reality."
+        },
+        {
+            "author": "Benjamin Franklin",
+            "field": "Science/Politics",
+            "quote": "An investment in knowledge pays the best interest.",
+            "meaning": "Learning provides optimal returns."
+        },
+        {
+            "author": "Joseph Priestley",
+            "field": "Chemistry",
+            "quote": "Every man, when he comes to be sensible of his natural rights, and to feel his own importance, will scorn to submit to any thing less than full and complete equality.",
+            "meaning": "Self-awareness generates demand for equity."
+        },
+        {
+            "author": "Henry Cavendish",
+            "field": "Physics/Chemistry",
+            "quote": "Truth is always more than it seems.",
+            "meaning": "Reality exceeds surface appearances."
+        },
+        {
+            "author": "Alessandro Volta",
+            "field": "Physics",
+            "quote": "The language of experiment is more authoritative than any reasoning.",
+            "meaning": "Empirical evidence trumps logic."
+        },
+        {
+            "author": "André-Marie Ampère",
+            "field": "Physics",
+            "quote": "The future science of government should be called 'la science sociale.'",
+            "meaning": "Governance requires systematic social study."
+        },
+        {
+            "author": "Joseph Fourier",
+            "field": "Mathematics/Physics",
+            "quote": "Nature is an inexhaustible source of new questions.",
+            "meaning": "Reality continuously generates inquiry."
+        },
+        {
+            "author": "Augustin-Louis Cauchy",
+            "field": "Mathematics",
+            "quote": "Men pass away, but their deeds abide.",
+            "meaning": "Actions outlast individuals."
+        },
+        {
+            "author": "Évariste Galois",
+            "field": "Mathematics",
+            "quote": "I have not time.",
+            "meaning": "Urgency recognizing mortality's constraint."
+        },
+        {
+            "author": "George Boole",
+            "field": "Mathematics/Logic",
+            "quote": "No matter how correct a mathematical theorem may appear to be, one ought never to be satisfied that there was not something imperfect about it until it also gives the impression of being beautiful.",
+            "meaning": "Aesthetic quality indicates mathematical truth."
+        },
+        {
+            "author": "Augusta Ada King",
+            "field": "Mathematics",
+            "quote": "That brain of mine is something more than merely mortal; as time will show.",
+            "meaning": "Exceptional capability recognized internally."
+        },
+        {
+            "author": "Charles Babbage",
+            "field": "Mathematics/Computing",
+            "quote": "Errors using inadequate data are much less than those using no data at all.",
+            "meaning": "Imperfect information surpasses none."
+        },
+        {
+            "author": "Lord Kelvin",
+            "field": "Physics",
+            "quote": "When you can measure what you are speaking about, and express it in numbers, you know something about it.",
+            "meaning": "Quantification indicates understanding."
+        },
+        {
+            "author": "James Prescott Joule",
+            "field": "Physics",
+            "quote": "It is evident that an acquaintance with natural laws means no less than an acquaintance with the mind of God.",
+            "meaning": "Scientific knowledge reveals divine intellect."
+        },
+        {
+            "author": "Hermann von Helmholtz",
+            "field": "Physics/Medicine",
+            "quote": "Whoever wants to see and hear, one must not be wholly unprepared.",
+            "meaning": "Perception requires prior knowledge."
+        },
+        {
+            "author": "Rudolf Clausius",
+            "field": "Physics",
+            "quote": "The energy of the universe is constant. The entropy of the universe tends to a maximum.",
+            "meaning": "Thermodynamic laws govern cosmic evolution."
+        },
+        {
+            "author": "James Clerk Maxwell",
+            "field": "Physics",
+            "quote": "Science is incompetent to reason upon the creation of matter itself out of nothing.",
+            "meaning": "Origins exceed scientific methodology."
+        },
+        {
+            "author": "Georg Cantor",
+            "field": "Mathematics",
+            "quote": "In mathematics, the art of proposing a question must be held of higher value than solving it.",
+            "meaning": "Formulating problems exceeds answering them."
+        },
+        {
+            "author": "Wilhelm Röntgen",
+            "field": "Physics",
+            "quote": "I did not think; I investigated.",
+            "meaning": "Empirical work precedes theoretical speculation."
+        },
+        {
+            "author": "Henri Becquerel",
+            "field": "Physics",
+            "quote": "One must not think slightingly of the paradoxical.",
+            "meaning": "Contradictions merit serious consideration."
+        },
+        {
+            "author": "J.J. Thomson",
+            "field": "Physics",
+            "quote": "From the point of view of the physicist, a theory of matter is a policy rather than a creed.",
+            "meaning": "Models guide investigation pragmatically."
+        },
+        {
+            "author": "Ernest Rutherford",
+            "field": "Physics",
+            "quote": "If your experiment needs statistics, you ought to have done a better experiment.",
+            "meaning": "Clear effects don't require statistical analysis."
+        },
+        {
+            "author": "Niels Bohr",
+            "field": "Physics",
+            "quote": "An expert is a person who has made all the mistakes that can be made in a very narrow field.",
+            "meaning": "Mastery involves exhaustive error experience."
+        },
+        {
+            "author": "Max Born",
+            "field": "Physics",
+            "quote": "The belief that there is only one truth and that oneself is in possession of it seems to me the deepest root of all evil.",
+            "meaning": "Absolute certainty breeds destructive dogmatism."
+        },
+        {
+            "author": "Wolfgang Pauli",
+            "field": "Physics",
+            "quote": "There is no quantum world. There is only an abstract quantum physical description.",
+            "meaning": "Reality differs from mathematical models."
+        },
+        {
+            "author": "Louis de Broglie",
+            "field": "Physics",
+            "quote": "The actual state of our knowledge is always provisional.",
+            "meaning": "Understanding remains perpetually incomplete."
+        },
+        {
+            "author": "Enrico Fermi",
+            "field": "Physics",
+            "quote": "There are two possible outcomes: if the result confirms the hypothesis, then you've made a measurement. If the result is contrary to the hypothesis, then you've made a discovery.",
+            "meaning": "Both confirming and refuting yield value."
+        },
+        {
+            "author": "Lise Meitner",
+            "field": "Physics",
+            "quote": "Science makes people reach selflessly for truth and objectivity; it teaches people to accept reality, with wonder and admiration.",
+            "meaning": "Investigation cultivates epistemic virtues."
+        },
+        {
+            "author": "Otto Hahn",
+            "field": "Chemistry",
+            "quote": "Certainty of death, uncertainty of the hour.",
+            "meaning": "Mortality guaranteed; timing unknown."
+        },
+        {
+            "author": "Chien-Shiung Wu",
+            "field": "Physics",
+            "quote": "There is only one thing worse than coming home from the lab to a sink full of dirty dishes, and that is not going to the lab at all.",
+            "meaning": "Research provides fulfillment despite inconveniences."
+        },
+        {
+            "author": "Richard Feynman",
+            "field": "Physics",
+            "quote": "Nature uses only the longest threads to weave her patterns, so that each small piece of her fabric reveals the organization of the entire tapestry.",
+            "meaning": "Local structure reflects global principles."
+        },
+        {
+            "author": "Murray Gell-Mann",
+            "field": "Physics",
+            "quote": "Everything not forbidden is compulsory.",
+            "meaning": "Physical law permits all non-prohibited phenomena."
+        },
+        {
+            "author": "Sheldon Glashow",
+            "field": "Physics",
+            "quote": "We are the children of the universe; we are made of star stuff.",
+            "meaning": "Human matter originates from stellar processes."
+        },
+        {
+            "author": "Steven Weinberg",
+            "field": "Physics",
+            "quote": "With or without religion, good people can behave well and bad people can do evil; but for good people to do evil - that takes religion.",
+            "meaning": "Belief systems enable moral inversions."
+        },
+        {
+            "author": "Abdus Salam",
+            "field": "Physics",
+            "quote": "Scientific thought and its creation is the common and shared heritage of mankind.",
+            "meaning": "Knowledge belongs to all humanity."
+        },
+        {
+            "author": "Andrei Sakharov",
+            "field": "Physics",
+            "quote": "Science demands from a man all his life.",
+            "meaning": "Research requires total commitment."
+        },
+        {
+            "author": "Ilya Prigogine",
+            "field": "Chemistry/Physics",
+            "quote": "The future is uncertain... but this uncertainty is at the very heart of human creativity.",
+            "meaning": "Unpredictability enables innovation."
+        },
+        {
+            "author": "Benoit Mandelbrot",
+            "field": "Mathematics",
+            "quote": "Bottomless wonders spring from simple rules, which are repeated without end.",
+            "meaning": "Complexity emerges from iteration."
+        },
+        {
+            "author": "Stephen Jay Gould",
+            "field": "Paleontology/Biology",
+            "quote": "Science is not a heartless pursuit of objective information. It is a creative human activity.",
+            "meaning": "Research involves emotional and imaginative engagement."
+        },
+        {
+            "author": "Lynn Margulis",
+            "field": "Biology",
+            "quote": "Life on Earth is such a good story that it must be told.",
+            "meaning": "Natural history warrants narrative communication."
+        },
+        {
+            "author": "Carl Woese",
+            "field": "Microbiology",
+            "quote": "The phylogenetic concept is no longer an empty abstraction.",
+            "meaning": "Evolutionary relationships became empirically demonstrable."
+        },
+        {
+            "author": "James Lovelock",
+            "field": "Environmental Science",
+            "quote": "The Earth is a living organism.",
+            "meaning": "Planet functions as integrated system."
+        },
+        {
+            "author": "E.O. Wilson",
+            "field": "Biology",
+            "quote": "Destroying rainforest for economic gain is like burning a Renaissance painting to cook a meal.",
+            "meaning": "Short-term benefit squanders irreplaceable value."
+        },
+        {
+            "author": "Jane Goodall",
+            "field": "Primatology",
+            "quote": "Only if we understand, will we care. Only if we care, will we help.",
+            "meaning": "Knowledge enables emotional engagement and action."
+        },
+        {
+            "author": "Rachel Carson",
+            "field": "Marine Biology/Environmental Science",
+            "quote": "The more clearly we can focus our attention on the wonders and realities of the universe about us, the less taste we shall have for destruction.",
+            "meaning": "Appreciation prevents harm."
+        },
+        {
+            "author": "Dian Fossey",
+            "field": "Primatology",
+            "quote": "When you realize the value of all life, you dwell less on what is past and concentrate more on the preservation of the future.",
+            "meaning": "Recognizing worth directs focus forward."
+        },
+        {
+            "author": "Sylvia Earle",
+            "field": "Marine Biology",
+            "quote": "No water, no life. No blue, no green.",
+            "meaning": "Oceans enable terrestrial existence."
+        },
+        {
+            "author": "Jacques Cousteau",
+            "field": "Marine Exploration",
+            "quote": "The sea, once it casts its spell, holds one in its net of wonder forever.",
+            "meaning": "Ocean experience creates lasting fascination."
+        },
+        {
+            "author": "David Attenborough",
+            "field": "Natural History",
+            "quote": "An understanding of the natural world is a source of not only great curiosity, but great fulfillment.",
+            "meaning": "Nature study provides intellectual and emotional satisfaction."
+        },
+        {
+            "author": "Ernst Haeckel",
+            "field": "Biology",
+            "quote": "Ontogeny recapitulates phylogeny.",
+            "meaning": "Individual development mirrors evolutionary history."
+        },
+        {
+            "author": "Gregor Mendel",
+            "field": "Genetics",
+            "quote": "My scientific work has brought me a great deal of satisfaction.",
+            "meaning": "Research yields deep personal gratification."
+        },
+        {
+            "author": "Thomas Hunt Morgan",
+            "field": "Genetics",
+            "quote": "The egg has a polarity which is the polarity of the future individual.",
+            "meaning": "Early structure determines developmental trajectory."
+        },
+        {
+            "author": "Hermann Muller",
+            "field": "Genetics",
+            "quote": "The gene is the basis of life.",
+            "meaning": "Hereditary units constitute biological foundation."
+        },
+        {
+            "author": "George Beadle",
+            "field": "Genetics",
+            "quote": "One gene, one enzyme.",
+            "meaning": "Genetic units specify protein products."
+        },
+        {
+            "author": "Sewall Wright",
+            "field": "Evolutionary Biology",
+            "quote": "Genetic drift is evolution without natural selection.",
+            "meaning": "Random processes drive population change."
+        },
+        {
+            "author": "Ronald Fisher",
+            "field": "Statistics/Genetics",
+            "quote": "Natural selection is a mechanism for generating an exceedingly high degree of improbability.",
+            "meaning": "Evolution produces complex organized systems."
+        },
+        {
+            "author": "J.B.S. Haldane",
+            "field": "Biology",
+            "quote": "The Universe is not only queerer than we suppose, but queerer than we can suppose.",
+            "meaning": "Reality exceeds imaginative capacity."
+        },
+        {
+            "author": "Julian Huxley",
+            "field": "Evolutionary Biology",
+            "quote": "Man is the only creature that refuses to be what he is.",
+            "meaning": "Humans uniquely resist their nature."
+        },
+        {
+            "author": "Waddington",
+            "field": "Developmental Biology",
+            "quote": "The epigenetic landscape shows the paths of development.",
+            "meaning": "Developmental trajectories follow constrained channels."
+        },
+        {
+            "author": "Hans Spemann",
+            "field": "Embryology",
+            "quote": "The organizer determines the fate of neighboring cells.",
+            "meaning": "Cellular signals direct developmental outcomes."
+        },
+        {
+            "author": "Barbara McClintock",
+            "field": "Genetics",
+            "quote": "I know my corn plants intimately, and I find it a great pleasure to know them.",
+            "meaning": "Deep familiarity with research subjects brings joy."
+        },
+        {
+            "author": "Sydney Brenner",
+            "field": "Molecular Biology",
+            "quote": "Progress in science depends on new techniques, new discoveries and new ideas, probably in that order.",
+            "meaning": "Methodology enables empirical and conceptual advances."
+        },
+        {
+            "author": "François Jacob",
+            "field": "Molecular Biology",
+            "quote": "Evolution is tinkering, not engineering.",
+            "meaning": "Natural selection modifies existing structures rather than designing optimally."
+        },
+        {
+            "author": "Jacques Monod",
+            "field": "Molecular Biology",
+            "quote": "Chance and necessity are the two pillars of evolution.",
+            "meaning": "Random mutation and selective constraint drive change."
+        },
+        {
+            "author": "Max Delbrück",
+            "field": "Molecular Biology",
+            "quote": "A mature scientist must have the courage of his ignorance.",
+            "meaning": "Acknowledging unknowns demonstrates intellectual honesty."
+        },
+        {
+            "author": "Salvador Luria",
+            "field": "Microbiology",
+            "quote": "Science is not a sacred cow, but it's a beautiful thing.",
+            "meaning": "Investigation merits appreciation without worship."
+        },
+        {
+            "author": "Joshua Lederberg",
+            "field": "Genetics",
+            "quote": "Bacteria were here before we were, and will be here after we're gone.",
+            "meaning": "Microbial life outlasts human existence."
+        },
+        {
+            "author": "Barbara Stocking",
+            "field": "Medical Research",
+            "quote": "Science is not finished until it is communicated.",
+            "meaning": "Discovery requires dissemination to complete."
+        },
+        {
+            "author": "Aristotle",
+            "field": "Philosophy/Science",
+            "quote": "The whole is greater than the sum of its parts.",
+            "meaning": "Integration creates emergent properties."
+        },
+        {
+            "author": "Plato",
+            "field": "Philosophy",
+            "quote": "The first and greatest victory is to conquer yourself.",
+            "meaning": "Self-mastery surpasses external achievements."
+        },
+        {
+            "author": "Socrates",
+            "field": "Philosophy",
+            "quote": "I know that I know nothing.",
+            "meaning": "Wisdom recognizes its own limitations."
+        },
+        {
+            "author": "Heraclitus",
+            "field": "Philosophy",
+            "quote": "Character is destiny.",
+            "meaning": "Internal nature determines life trajectory."
+        },
+        {
+            "author": "Democritus",
+            "field": "Philosophy",
+            "quote": "Happiness resides not in possessions, and not in gold, happiness dwells in the soul.",
+            "meaning": "Well-being originates internally, not materially."
+        },
+        {
+            "author": "Epicurus",
+            "field": "Philosophy",
+            "quote": "Not what we have, but what we enjoy, constitutes our abundance.",
+            "meaning": "Appreciation, not accumulation, creates wealth."
+        },
+        {
+            "author": "Zeno of Elea",
+            "field": "Philosophy",
+            "quote": "Motion is impossible.",
+            "meaning": "Logical paradoxes challenge intuitive understanding."
+        },
+        {
+            "author": "Thales",
+            "field": "Philosophy",
+            "quote": "Water is the principle of all things.",
+            "meaning": "Single substance generates natural diversity."
+        },
+        {
+            "author": "Anaximander",
+            "field": "Philosophy",
+            "quote": "The infinite is the principle of all things.",
+            "meaning": "Boundless source generates limited phenomena."
+        },
+        {
+            "author": "Anaximenes",
+            "field": "Philosophy",
+            "quote": "Air is the primary substance.",
+            "meaning": "Fundamental element underlies reality."
+        },
+        {
+            "author": "Xenophanes",
+            "field": "Philosophy",
+            "quote": "If oxen and horses had hands, they would draw gods in their own image.",
+            "meaning": "Divine conceptions reflect creator's form."
+        },
+        {
+            "author": "Empedocles",
+            "field": "Philosophy",
+            "quote": "God is a circle whose center is everywhere and circumference nowhere.",
+            "meaning": "Divine presence is omnipresent and infinite."
+        },
+        {
+            "author": "Anaxagoras",
+            "field": "Philosophy",
+            "quote": "Mind ordered the universe.",
+            "meaning": "Intelligence structures cosmic arrangement."
+        },
+        {
+            "author": "Protagoras",
+            "field": "Philosophy",
+            "quote": "Man is the measure of all things.",
+            "meaning": "Human perception determines reality."
+        },
+        {
+            "author": "Gorgias",
+            "field": "Philosophy",
+            "quote": "Nothing exists; if it did, we couldn't know it; if we knew it, we couldn't communicate it.",
+            "meaning": "Radical skepticism about existence and knowledge."
+        },
+        {
+            "author": "Diogenes",
+            "field": "Philosophy",
+            "quote": "I am looking for an honest man.",
+            "meaning": "Virtue is exceptionally rare."
+        },
+        {
+            "author": "Antisthenes",
+            "field": "Philosophy",
+            "quote": "The most useful piece of learning for the uses of life is to unlearn what is untrue.",
+            "meaning": "Eliminating falsehood exceeds acquiring truth."
+        },
+        {
+            "author": "Crates",
+            "field": "Philosophy",
+            "quote": "Poverty is the philosopher's teacher.",
+            "meaning": "Material deprivation cultivates wisdom."
+        },
+        {
+            "author": "Pyrrho",
+            "field": "Philosophy",
+            "quote": "Nothing can be known with certainty.",
+            "meaning": "Skepticism about all knowledge claims."
+        },
+        {
+            "author": "Chrysippus",
+            "field": "Philosophy",
+            "quote": "Vice is ignorance; virtue is knowledge.",
+            "meaning": "Moral failure stems from lack of understanding."
+        }
+    ]
+}

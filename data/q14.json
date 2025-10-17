@@ -1,0 +1,484 @@
+{
+  "quotes": [
+    {
+      "author": "Socrates (as reported by Plato)",
+      "field": "Philosophy",
+      "quote": "The unexamined life is not worth living.",
+      "meaning": "Self‑scrutiny and philosophical inquiry are essential to a meaningful human life."
+    },
+    {
+      "author": "Aristotle",
+      "field": "Philosophy",
+      "quote": "Man is by nature a political animal.",
+      "meaning": "Humans are social beings who realize their capacities in community and civic life."
+    },
+    {
+      "author": "Laozi",
+      "field": "Philosophy / Taoism",
+      "quote": "A journey of a thousand miles begins with a single step.",
+      "meaning": "Great undertakings start with a small committed action."
+    },
+    {
+      "author": "Zhuangzi",
+      "field": "Philosophy / Taoism",
+      "quote": "Once Zhuang Zhou dreamed he was a butterfly… he did not know whether he was Zhou who had dreamt he was a butterfly, or a butterfly dreaming he was Zhou.",
+      "meaning": "The boundary between dream and waking, self and other, is fluid and perspectival."
+    },
+    {
+      "author": "Heraclitus",
+      "field": "Philosophy",
+      "quote": "No man ever steps in the same river twice.",
+      "meaning": "Reality is in continual change; both observer and world are always in flux."
+    },
+    {
+      "author": "Parmenides",
+      "field": "Philosophy",
+      "quote": "What is, is; what is not, is not.",
+      "meaning": "Being is necessary and indivisible; non‑being cannot be meaningfully conceived."
+    },
+    {
+      "author": "Epictetus",
+      "field": "Philosophy (Stoicism)",
+      "quote": "It is not what happens to you, but how you react to it that matters.",
+      "meaning": "Events lie outside our control; our judgments and responses are within our power."
+    },
+    {
+      "author": "Marcus Aurelius",
+      "field": "Philosophy (Stoicism)",
+      "quote": "You have power over your mind—not outside events. Realize this, and you will find strength.",
+      "meaning": "By governing our thoughts we cultivate resilience against circumstance."
+    },
+    {
+      "author": "Seneca",
+      "field": "Philosophy (Stoicism)",
+      "quote": "We suffer more in imagination than in reality.",
+      "meaning": "Anxiety and fear arise more often from our thoughts than from actual harms."
+    },
+    {
+      "author": "Confucius",
+      "field": "Philosophy",
+      "quote": "Real knowledge is to know the extent of one’s ignorance.",
+      "meaning": "Wisdom begins with recognizing the limits of one’s understanding."
+    },
+    {
+      "author": "Thomas Aquinas",
+      "field": "Philosophy / Theology",
+      "quote": "To one who has faith, no explanation is necessary. To one without faith, no explanation is possible.",
+      "meaning": "Commitments of faith shape what counts as compelling justification."
+    },
+    {
+      "author": "René Descartes",
+      "field": "Philosophy / Mathematics",
+      "quote": "Cogito, ergo sum.",
+      "meaning": "The very act of thinking or doubting guarantees the existence of the thinking self."
+    },
+    {
+      "author": "Baruch Spinoza",
+      "field": "Philosophy",
+      "quote": "All excellent things are as difficult as they are rare.",
+      "meaning": "True excellence is uncommon and demands sustained effort."
+    },
+    {
+      "author": "Blaise Pascal",
+      "field": "Philosophy / Mathematics",
+      "quote": "The heart has its reasons which reason knows nothing of.",
+      "meaning": "Human judgment includes non‑rational dimensions that logical analysis alone cannot capture."
+    },
+    {
+      "author": "John Locke",
+      "field": "Philosophy",
+      "quote": "No man’s knowledge here can go beyond his experience.",
+      "meaning": "All ideas originate in sensation and reflection rather than innate notions."
+    },
+    {
+      "author": "David Hume",
+      "field": "Philosophy",
+      "quote": "Reason is, and ought only to be the slave of the passions.",
+      "meaning": "Reason serves our ends and sentiments; it cannot determine them by itself."
+    },
+    {
+      "author": "Immanuel Kant",
+      "field": "Philosophy",
+      "quote": "Sapere aude! Dare to know.",
+      "meaning": "The Enlightenment calls individuals to use their own understanding without tutelage."
+    },
+    {
+      "author": "Immanuel Kant",
+      "field": "Philosophy",
+      "quote": "Thoughts without content are empty; intuitions without concepts are blind.",
+      "meaning": "Experience requires both sensory data and the concepts that organize it."
+    },
+    {
+      "author": "Jean‑Jacques Rousseau",
+      "field": "Philosophy / Political Theory",
+      "quote": "Man is born free, and everywhere he is in chains.",
+      "meaning": "Social arrangements can corrupt natural freedom; legitimate authority must be justified."
+    },
+    {
+      "author": "Voltaire",
+      "field": "Philosophy",
+      "quote": "Judge a man by his questions rather than by his answers.",
+      "meaning": "Curiosity and inquiry reveal intellectual character more than rehearsed conclusions."
+    },
+    {
+      "author": "Arthur Schopenhauer",
+      "field": "Philosophy",
+      "quote": "Talent hits a target no one else can hit; genius hits a target no one else can see.",
+      "meaning": "Genius perceives possibilities invisible to ordinary vision."
+    },
+    {
+      "author": "Søren Kierkegaard",
+      "field": "Philosophy",
+      "quote": "Life can only be understood backwards; but it must be lived forwards.",
+      "meaning": "We interpret life in hindsight, yet must choose without complete knowledge."
+    },
+    {
+      "author": "Friedrich Nietzsche",
+      "field": "Philosophy",
+      "quote": "He who has a why to live can bear almost any how.",
+      "meaning": "Purpose enables endurance through hardship."
+    },
+    {
+      "author": "Friedrich Nietzsche",
+      "field": "Philosophy",
+      "quote": "What does not kill me makes me stronger.",
+      "meaning": "Adversity can cultivate resilience and growth."
+    },
+    {
+      "author": "Friedrich Nietzsche",
+      "field": "Philosophy",
+      "quote": "If you gaze long into an abyss, the abyss also gazes into you.",
+      "meaning": "Prolonged confrontation with darkness can transform the observer."
+    },
+    {
+      "author": "John Stuart Mill",
+      "field": "Philosophy / Political Theory",
+      "quote": "Over himself, over his own body and mind, the individual is sovereign.",
+      "meaning": "Personal liberty should be constrained only to prevent harm to others."
+    },
+    {
+      "author": "William James",
+      "field": "Philosophy / Psychology",
+      "quote": "Act as if what you do makes a difference. It does.",
+      "meaning": "Our choices shape outcomes and character; pragmatic action matters."
+    },
+    {
+      "author": "Ludwig Wittgenstein",
+      "field": "Philosophy",
+      "quote": "Whereof one cannot speak, thereof one must be silent.",
+      "meaning": "Language has limits; some things cannot be meaningfully said."
+    },
+    {
+      "author": "Ludwig Wittgenstein",
+      "field": "Philosophy",
+      "quote": "The limits of my language mean the limits of my world.",
+      "meaning": "What can be expressed sets bounds on what can be thought."
+    },
+    {
+      "author": "Martin Heidegger",
+      "field": "Philosophy",
+      "quote": "Language is the house of Being.",
+      "meaning": "Our understanding of existence is disclosed through language."
+    },
+    {
+      "author": "Jean‑Paul Sartre",
+      "field": "Philosophy",
+      "quote": "Man is condemned to be free.",
+      "meaning": "We cannot escape responsibility for our choices; freedom is inescapable."
+    },
+    {
+      "author": "Simone de Beauvoir",
+      "field": "Philosophy",
+      "quote": "One is not born, but rather becomes, a woman.",
+      "meaning": "Gender is socially constituted through norms and practices, not predetermined fate."
+    },
+    {
+      "author": "Albert Camus",
+      "field": "Philosophy",
+      "quote": "One must imagine Sisyphus happy.",
+      "meaning": "Meaning can be created through lucid acceptance of an absurd condition."
+    },
+    {
+      "author": "Karl Popper",
+      "field": "Philosophy of Science",
+      "quote": "It must be possible for an empirical scientific system to be refuted by experience.",
+      "meaning": "Falsifiability is essential to distinguish scientific claims from non‑scientific ones."
+    },
+    {
+      "author": "Paul Feyerabend",
+      "field": "Philosophy of Science",
+      "quote": "Anything goes.",
+      "meaning": "Methodological pluralism can foster scientific progress; rigid rules may hinder discovery."
+    },
+    {
+      "author": "Isaac Newton",
+      "field": "Physics / Mathematics",
+      "quote": "If I have seen further it is by standing on the shoulders of giants.",
+      "meaning": "Scientific advances build on the insights of predecessors."
+    },
+    {
+      "author": "Galileo Galilei",
+      "field": "Astronomy / Physics",
+      "quote": "Measure what is measurable, and make measurable what is not so.",
+      "meaning": "Quantification turns observation into science by extending measurement."
+    },
+    {
+      "author": "Johannes Kepler",
+      "field": "Astronomy",
+      "quote": "Truth is the daughter of time, not of authority.",
+      "meaning": "Empirical discovery, not social rank, reveals reality."
+    },
+    {
+      "author": "Michael Faraday",
+      "field": "Physics / Chemistry",
+      "quote": "Nothing is too wonderful to be true, if it be consistent with the laws of nature.",
+      "meaning": "Nature permits marvels so long as they accord with its principles."
+    },
+    {
+      "author": "James Clerk Maxwell",
+      "field": "Physics",
+      "quote": "Thoroughly conscious ignorance is the prelude to every real advance in science.",
+      "meaning": "Recognizing ignorance motivates rigorous inquiry and discovery."
+    },
+    {
+      "author": "Max Planck",
+      "field": "Physics",
+      "quote": "A new scientific truth does not triumph by convincing its opponents… but rather because its opponents eventually die.",
+      "meaning": "Scientific change often comes generationally rather than by rapid conversion."
+    },
+    {
+      "author": "Werner Heisenberg",
+      "field": "Physics",
+      "quote": "What we observe is not nature itself, but nature exposed to our method of questioning.",
+      "meaning": "Observation is theory‑laden; measurement reflects experimental setups."
+    },
+    {
+      "author": "Werner Heisenberg",
+      "field": "Physics",
+      "quote": "The more precisely the position is determined, the less precisely the momentum is known.",
+      "meaning": "Quantum uncertainty sets fundamental limits on simultaneous measurements."
+    },
+    {
+      "author": "Erwin Schrödinger",
+      "field": "Physics",
+      "quote": "Consciousness cannot be accounted for in physical terms. For consciousness is absolutely fundamental.",
+      "meaning": "He argued that subjective awareness is basic, not reducible to other properties."
+    },
+    {
+      "author": "Paul Dirac",
+      "field": "Physics",
+      "quote": "It is more important to have beauty in one’s equations than to have them fit experiment.",
+      "meaning": "Mathematical elegance can guide theory, sometimes ahead of data."
+    },
+    {
+      "author": "Albert Einstein",
+      "field": "Physics",
+      "quote": "God does not play dice with the universe.",
+      "meaning": "Einstein rejected fundamental randomness, preferring underlying order."
+    },
+    {
+      "author": "Albert Einstein",
+      "field": "Physics",
+      "quote": "Imagination is more important than knowledge.",
+      "meaning": "Creative insight opens possibilities beyond accumulated facts."
+    },
+    {
+      "author": "Richard Feynman",
+      "field": "Physics",
+      "quote": "The first principle is that you must not fool yourself—and you are the easiest person to fool.",
+      "meaning": "Intellectual honesty begins with skepticism toward one’s own biases."
+    },
+    {
+      "author": "Richard Feynman",
+      "field": "Physics",
+      "quote": "What I cannot create, I do not understand.",
+      "meaning": "Deep understanding is shown by the ability to reconstruct or simulate a phenomenon."
+    },
+    {
+      "author": "Stephen Hawking",
+      "field": "Physics / Cosmology",
+      "quote": "However difficult life may seem, there is always something you can do and succeed at.",
+      "meaning": "Perseverance and adaptation enable achievement despite constraints."
+    },
+    {
+      "author": "Carl Sagan",
+      "field": "Astronomy",
+      "quote": "We are made of star‑stuff.",
+      "meaning": "The elements in our bodies were forged in stellar interiors."
+    },
+    {
+      "author": "Carl Sagan",
+      "field": "Astronomy",
+      "quote": "Extraordinary claims require extraordinary evidence.",
+      "meaning": "The more a claim departs from established knowledge, the stronger the evidence it demands."
+    },
+    {
+      "author": "Marie Curie",
+      "field": "Chemistry / Physics",
+      "quote": "Nothing in life is to be feared, it is only to be understood.",
+      "meaning": "Knowledge dispels fear and empowers progress."
+    },
+    {
+      "author": "Louis Pasteur",
+      "field": "Biology / Chemistry",
+      "quote": "Chance favors the prepared mind.",
+      "meaning": "Preparation enables one to recognize and exploit serendipity."
+    },
+    {
+      "author": "Charles Darwin",
+      "field": "Biology",
+      "quote": "Ignorance more frequently begets confidence than does knowledge.",
+      "meaning": "Overconfidence often arises from limited understanding."
+    },
+    {
+      "author": "Gregor Mendel",
+      "field": "Biology",
+      "quote": "My scientific studies have afforded me great satisfaction.",
+      "meaning": "Careful, patient research brings intrinsic fulfillment."
+    },
+    {
+      "author": "Alan Turing",
+      "field": "Computer Science / Mathematics",
+      "quote": "We can only see a short distance ahead, but we can see plenty there that needs to be done.",
+      "meaning": "Even with limited foresight, there remains ample meaningful work in computing and AI."
+    },
+    {
+      "author": "John von Neumann",
+      "field": "Mathematics / Computing",
+      "quote": "In mathematics you don’t understand things. You just get used to them.",
+      "meaning": "Familiarity with abstract structures can substitute for intuitive grasp."
+    },
+    {
+      "author": "Katherine Johnson",
+      "field": "Mathematics",
+      "quote": "Like what you do, and then you will do your best.",
+      "meaning": "Passion for one’s work fosters excellence."
+    },
+    {
+      "author": "Hypatia of Alexandria",
+      "field": "Mathematics / Philosophy",
+      "quote": "Reserve your right to think, for even to think wrongly is better than not to think at all.",
+      "meaning": "Independent thought—imperfect though it may be—is essential to human dignity."
+    },
+    {
+      "author": "Ada Lovelace",
+      "field": "Mathematics / Computing",
+      "quote": "That brain of mine is something more than merely mortal; as time will show.",
+      "meaning": "Human imagination and analysis can transcend perceived limits."
+    },
+    {
+      "author": "Emmy Noether",
+      "field": "Mathematics",
+      "quote": "The beauty of mathematics only shows itself to more patient followers.",
+      "meaning": "Mathematical elegance reveals itself through persistence."
+    },
+    {
+      "author": "Peter Medawar",
+      "field": "Biology",
+      "quote": "The scientist is not a person who gives the right answers; he is one who asks the right questions.",
+      "meaning": "Progress hinges on incisive, well‑posed questions rather than quick answers."
+    },
+    {
+      "author": "Jacob Bronowski",
+      "field": "Science / Humanities",
+      "quote": "Science is a very human form of knowledge. We are always at the brink of the known.",
+      "meaning": "Scientific inquiry advances by pushing the boundary of the unknown."
+    },
+    {
+      "author": "Max Born",
+      "field": "Physics",
+      "quote": "Science is not formal logic—it needs the free play of the mind.",
+      "meaning": "Creativity and intuition complement rigor in discovery."
+    },
+    {
+      "author": "Norbert Wiener",
+      "field": "Cybernetics",
+      "quote": "The best material model of a cat is another, or preferably the same, cat.",
+      "meaning": "Complex systems resist simple models; fidelity often demands embodied complexity."
+    },
+    {
+      "author": "Francis Bacon",
+      "field": "Philosophy / Science",
+      "quote": "Knowledge is power.",
+      "meaning": "Understanding the world grants the ability to act effectively."
+    },
+    {
+      "author": "Karl Marx",
+      "field": "Philosophy / Political Economy",
+      "quote": "The philosophers have only interpreted the world, in various ways; the point, however, is to change it.",
+      "meaning": "Theory should lead to praxis—transforming social conditions, not merely analyzing them."
+    },
+    {
+      "author": "Michel Foucault",
+      "field": "Philosophy",
+      "quote": "I don’t write a book so that it will be the final word; I write a book so that other books are possible.",
+      "meaning": "Knowledge is provisional and generative; it opens further inquiry."
+    },
+    {
+      "author": "Judith Butler",
+      "field": "Philosophy / Gender Studies",
+      "quote": "Gender is the repeated stylization of the body.",
+      "meaning": "Identity emerges through performative acts shaped by norms."
+    },
+    {
+      "author": "Thomas Henry Huxley",
+      "field": "Biology",
+      "quote": "The great tragedy of science—the slaying of a beautiful hypothesis by an ugly fact.",
+      "meaning": "Empirical evidence must override elegant but false theories."
+    },
+    {
+      "author": "Rachel Carson",
+      "field": "Biology / Ecology",
+      "quote": "In nature nothing exists alone.",
+      "meaning": "Ecological interdependence ties living systems together."
+    },
+    {
+      "author": "Jane Goodall",
+      "field": "Primatology",
+      "quote": "What you do makes a difference, and you have to decide what kind of difference you want to make.",
+      "meaning": "Individual choices carry moral weight for the world we shape."
+    },
+    {
+      "author": "Tim Berners‑Lee",
+      "field": "Computer Science",
+      "quote": "Data is a precious thing and will last longer than the systems themselves.",
+      "meaning": "Information outlives platforms; open standards safeguard access."
+    },
+    {
+      "author": "Donald Knuth",
+      "field": "Computer Science",
+      "quote": "Premature optimization is the root of all evil.",
+      "meaning": "Prioritize clarity and correctness before micro‑efficiency in code."
+    },
+    {
+      "author": "Edsger W. Dijkstra",
+      "field": "Computer Science",
+      "quote": "Simplicity is prerequisite for reliability.",
+      "meaning": "Complexity breeds errors; simple designs are more dependable."
+    },
+    {
+      "author": "Wernher von Braun",
+      "field": "Rocket Science",
+      "quote": "Research is what I’m doing when I don’t know what I’m doing.",
+      "meaning": "Exploration proceeds by trial and learning under uncertainty."
+    },
+    {
+      "author": "Subrahmanyan Chandrasekhar",
+      "field": "Astrophysics",
+      "quote": "I am not conscious of falling under any of the influences that dominate other people.",
+      "meaning": "Independent thinking fosters discovery even against prevailing opinion."
+    },
+    {
+      "author": "Dorothy Hodgkin",
+      "field": "Chemistry",
+      "quote": "I was captured for life by chemistry and by crystals.",
+      "meaning": "A lifelong scientific vocation can begin with early fascination."
+    },
+    {
+      "author": "Rosalind Franklin",
+      "field": "Chemistry / Crystallography",
+      "quote": "Science and everyday life cannot and should not be separated.",
+      "meaning": "Scientific thinking belongs to daily decision‑making and society’s health."
+    }
+  ]
+}

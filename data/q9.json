@@ -1,0 +1,580 @@
+{
+    "quotes": [
+        {
+            "author": "Nick Drake",
+            "field": "Music",
+            "quote": "Time has told me you're a rare, rare find.",
+            "meaning": "Duration reveals exceptional value in relationship."
+        },
+        {
+            "author": "Bon Scott",
+            "field": "Music",
+            "quote": "It's a long way to the top if you wanna rock and roll.",
+            "meaning": "Musical success requires extended difficult journey."
+        },
+        {
+            "author": "Ozzy Osbourne",
+            "field": "Music",
+            "quote": "I'm just a dreamer, I dream my life away.",
+            "meaning": "Existence spent in imaginative contemplation."
+        },
+        {
+            "author": "Ronnie James Dio",
+            "field": "Music",
+            "quote": "Music is a language that doesn't speak in particular words. It speaks in emotions.",
+            "meaning": "Sound communicates through feeling, not verbal meaning."
+        },
+        {
+            "author": "Lemmy Kilmister",
+            "field": "Music",
+            "quote": "We are Motörhead, and we play rock and roll.",
+            "meaning": "Simple direct statement of identity and purpose."
+        },
+        {
+            "author": "Brian May",
+            "field": "Music/Astrophysics",
+            "quote": "I despise the Lottery. There's less chance of you becoming a millionaire than there is of getting hit on the head by a passing asteroid.",
+            "meaning": "Statistical improbability exposes false hope."
+        },
+        {
+            "author": "Bono",
+            "field": "Music/Activism",
+            "quote": "Music can change the world because it can change people.",
+            "meaning": "Sound transforms society through individual impact."
+        },
+        {
+            "author": "The Edge",
+            "field": "Music",
+            "quote": "The magic of playing has to do with how much everyone wants it to work.",
+            "meaning": "Collective desire creates musical excellence."
+        },
+        {
+            "author": "Sting",
+            "field": "Music",
+            "quote": "I don't think happiness is necessarily the reason we're here.",
+            "meaning": "Purpose transcends simple pleasure-seeking."
+        },
+        {
+            "author": "Peter Gabriel",
+            "field": "Music",
+            "quote": "Self-conscious rejection of the absolute is the best way to resist power and totalitarianism.",
+            "meaning": "Questioning certainty prevents authoritarian control."
+        },
+        {
+            "author": "Phil Collins",
+            "field": "Music",
+            "quote": "I'm not a singer who plays drums. I'm a drummer who sings.",
+            "meaning": "Primary identity determines creative approach."
+        },
+        {
+            "author": "Genesis P-Orridge",
+            "field": "Music/Art",
+            "quote": "Always be original. Never duplicate.",
+            "meaning": "Authenticity requires avoiding imitation."
+        },
+        {
+            "author": "Brian Eno",
+            "field": "Music/Production",
+            "quote": "Honor thy error as a hidden intention.",
+            "meaning": "Mistakes contain unconscious creative directions."
+        },
+        {
+            "author": "Tom Waits",
+            "field": "Music",
+            "quote": "I don't have a drinking problem, except when I can't get a drink.",
+            "meaning": "Dependence defined by access difficulty, not consumption."
+        },
+        {
+            "author": "Nick Cave",
+            "field": "Music/Literature",
+            "quote": "I'm a believer. I don't go to church. I don't belong to any particular religion, but I do believe in God.",
+            "meaning": "Faith exists independently of institutional practice."
+        },
+        {
+            "author": "PJ Harvey",
+            "field": "Music",
+            "quote": "I feel like it's very important that I'm doing what I'm doing, and I want to keep honoring that.",
+            "meaning": "Artistic integrity requires commitment to authentic work."
+        },
+        {
+            "author": "Trent Reznor",
+            "field": "Music",
+            "quote": "I'd much rather have people hate me than be indifferent.",
+            "meaning": "Strong reaction surpasses apathy in value."
+        },
+        {
+            "author": "Maynard James Keenan",
+            "field": "Music",
+            "quote": "All I can do is focus on staying creative and hopefully helping other people find their niche.",
+            "meaning": "Personal growth enables assisting others' development."
+        },
+        {
+            "author": "Billy Corgan",
+            "field": "Music",
+            "quote": "I don't have a problem with my body.",
+            "meaning": "Self-acceptance of physical form."
+        },
+        {
+            "author": "Kim Gordon",
+            "field": "Music/Art",
+            "quote": "Women aren't allowed to be kick-ass.",
+            "meaning": "Gender expectations constrain female assertiveness."
+        },
+        {
+            "author": "Thurston Moore",
+            "field": "Music",
+            "quote": "Rock and roll is a nuclear blast of reality in a mundane world where no-one is allowed to be magnificent.",
+            "meaning": "Music enables transcendence of ordinary constraints."
+        },
+        {
+            "author": "J Mascis",
+            "field": "Music",
+            "quote": "It's hard to say how certain stories just punch us in the heart.",
+            "meaning": "Emotional impact operates beyond rational explanation."
+        },
+        {
+            "author": "Robert Smith",
+            "field": "Music",
+            "quote": "I don't find the technology threatening. A lot of people my age, my generation, find it difficult to immerse themselves.",
+            "meaning": "Generational attitudes shape technological adoption."
+        },
+        {
+            "author": "Simon Le Bon",
+            "field": "Music",
+            "quote": "I'm an optimist. I'm hopeful.",
+            "meaning": "Positive outlook defines personal orientation."
+        },
+        {
+            "author": "Boy George",
+            "field": "Music",
+            "quote": "I suppose there is a lot of toughness in me.",
+            "meaning": "Resilience exists as core character trait."
+        },
+        {
+            "author": "Madonna",
+            "field": "Music/Entertainment",
+            "quote": "I'm tough, ambitious, and I know exactly what I want.",
+            "meaning": "Clarity and determination define approach."
+        },
+        {
+            "author": "Cyndi Lauper",
+            "field": "Music",
+            "quote": "I've always wondered what it would be like if somebody from outer space landed with three heads.",
+            "meaning": "Imagination explores alternative possibilities."
+        },
+        {
+            "author": "Pat Benatar",
+            "field": "Music",
+            "quote": "We are strong, no one can tell us we're wrong.",
+            "meaning": "Collective power resists external judgment."
+        },
+        {
+            "author": "Annie Lennox",
+            "field": "Music",
+            "quote": "The word feminism needs to be taken back. It needs to be reclaimed.",
+            "meaning": "Movements require linguistic reclamation."
+        },
+        {
+            "author": "Sade",
+            "field": "Music",
+            "quote": "Whatever I'm doing, I'm in that moment and I'm doing it.",
+            "meaning": "Present engagement defines activity."
+        },
+        {
+            "author": "Björk",
+            "field": "Music",
+            "quote": "I'm self-sufficient. I spend a lot of time on my own.",
+            "meaning": "Independence characterizes personal functioning."
+        },
+        {
+            "author": "Kate Bush",
+            "field": "Music",
+            "quote": "I love comedy. I like to think that there's a sense of humor in some of my music.",
+            "meaning": "Levity enriches artistic expression."
+        },
+        {
+            "author": "Tori Amos",
+            "field": "Music",
+            "quote": "Healing takes courage, and we all have courage, even if we have to dig a little to find it.",
+            "meaning": "Recovery requires accessing internal bravery."
+        },
+        {
+            "author": "Fiona Apple",
+            "field": "Music",
+            "quote": "I got drunk when I was five. Everybody gets drunk before they're 21.",
+            "meaning": "Early experience with substances as normalized phenomenon."
+        },
+        {
+            "author": "Alanis Morissette",
+            "field": "Music",
+            "quote": "I see the whole concept of Generation X implies that everyone has lost hope.",
+            "meaning": "Generational label suggests pessimistic worldview."
+        },
+        {
+            "author": "Liz Phair",
+            "field": "Music",
+            "quote": "I don't always trust my own instincts. It would be nice if someone else would tell me what I want to do.",
+            "meaning": "Self-doubt creates desire for external direction."
+        },
+        {
+            "author": "Courtney Love",
+            "field": "Music",
+            "quote": "I'm not a woman. I'm a force of nature.",
+            "meaning": "Identity transcends gender into elemental power."
+        },
+        {
+            "author": "Shirley Manson",
+            "field": "Music",
+            "quote": "I'm afraid of happy people. They're chemically unbalanced.",
+            "meaning": "Suspicion of consistent cheerfulness."
+        },
+        {
+            "author": "Gwen Stefani",
+            "field": "Music/Fashion",
+            "quote": "Act as young as you feel. You're not getting older; you're getting more entitled to be your weird self.",
+            "meaning": "Age permits greater authenticity."
+        },
+        {
+            "author": "Hayley Williams",
+            "field": "Music",
+            "quote": "Sometimes it takes a good fall to really know where you stand.",
+            "meaning": "Failure clarifies position and perspective."
+        },
+        {
+            "author": "Amy Lee",
+            "field": "Music",
+            "quote": "I love contrast in music.",
+            "meaning": "Dynamic range creates artistic interest."
+        },
+        {
+            "author": "Florence Welch",
+            "field": "Music",
+            "quote": "I've got quite a fragile sense of self-worth.",
+            "meaning": "Confidence remains vulnerable and fluctuating."
+        },
+        {
+            "author": "St. Vincent",
+            "field": "Music",
+            "quote": "I grew up around a lot of various religions, so it's a part of my consciousness in a way.",
+            "meaning": "Exposure shapes spiritual awareness."
+        },
+        {
+            "author": "Grimes",
+            "field": "Music",
+            "quote": "I don't think I know anyone who has a steady job in Montreal.",
+            "meaning": "Economic precarity as regional characteristic."
+        },
+        {
+            "author": "Lorde",
+            "field": "Music",
+            "quote": "I try to write about small insignificant things. I try to find out what it's like being alive.",
+            "meaning": "Existence revealed through mundane details."
+        },
+        {
+            "author": "Billie Eilish",
+            "field": "Music",
+            "quote": "I don't know how to function without music.",
+            "meaning": "Sound essential to personal operation."
+        },
+        {
+            "author": "Taylor Swift",
+            "field": "Music",
+            "quote": "People haven't always been there for me but music always has.",
+            "meaning": "Art provides reliable support beyond human relationships."
+        },
+        {
+            "author": "Ariana Grande",
+            "field": "Music",
+            "quote": "I love making music and I'm falling in love with making records.",
+            "meaning": "Creative process generates increasing affection."
+        },
+        {
+            "author": "Lady Gaga",
+            "field": "Music/Fashion",
+            "quote": "I'm just trying to change the world, one sequin at a time.",
+            "meaning": "Transformation through aesthetic intervention."
+        },
+        {
+            "author": "Katy Perry",
+            "field": "Music",
+            "quote": "Find out what your gift is and nurture it.",
+            "meaning": "Identifying and developing talent defines success."
+        },
+        {
+            "author": "Rihanna",
+            "field": "Music/Fashion",
+            "quote": "The minute you learn to love yourself, you won't want to be anyone else.",
+            "meaning": "Self-acceptance eliminates envy."
+        },
+        {
+            "author": "Beyoncé",
+            "field": "Music",
+            "quote": "Power is not given to you. You have to take it.",
+            "meaning": "Authority requires assertion, not permission."
+        },
+        {
+            "author": "Adele",
+            "field": "Music",
+            "quote": "I don't make music for eyes. I make music for ears.",
+            "meaning": "Auditory quality supersedes visual presentation."
+        },
+        {
+            "author": "Sam Smith",
+            "field": "Music",
+            "quote": "I'm not fixed in any way. I'm in a fluid state.",
+            "meaning": "Identity remains changeable and unfixed."
+        },
+        {
+            "author": "Ed Sheeran",
+            "field": "Music",
+            "quote": "I can't tell you the amount of times I've been walking down the streets and I'm like, 'It's Ed Sheeran!'",
+            "meaning": "Self-recognition humorous acknowledgment of fame."
+        },
+        {
+            "author": "Bruno Mars",
+            "field": "Music",
+            "quote": "Hawaii is paradise. It sounds cheesy to say it, but there's music in the air there.",
+            "meaning": "Place contains inherent sonic quality."
+        },
+        {
+            "author": "The Weeknd",
+            "field": "Music",
+            "quote": "I'm not a celebrity, I'm just a musician.",
+            "meaning": "Professional identity distinct from fame."
+        },
+        {
+            "author": "Drake",
+            "field": "Hip-Hop",
+            "quote": "Live without pretending, love without depending, listen without defending, speak without offending.",
+            "meaning": "Authentic relating requires vulnerability and respect."
+        },
+        {
+            "author": "Nicki Minaj",
+            "field": "Hip-Hop",
+            "quote": "I am not a word, I am not a line, I am not a girl that can ever be defined.",
+            "meaning": "Identity resists categorical limitation."
+        },
+        {
+            "author": "Cardi B",
+            "field": "Hip-Hop",
+            "quote": "Knock me down nine times but I get up ten.",
+            "meaning": "Resilience exceeds setbacks through persistence."
+        },
+        {
+            "author": "Megan Thee Stallion",
+            "field": "Hip-Hop",
+            "quote": "If you're not going to be confident, I'm going to be confident for you.",
+            "meaning": "Providing strength others lack in themselves."
+        },
+        {
+            "author": "Lizzo",
+            "field": "Music",
+            "quote": "Self-care is how you take your power back.",
+            "meaning": "Personal attention restores agency."
+        },
+        {
+            "author": "H.E.R.",
+            "field": "Music",
+            "quote": "I want to make timeless music.",
+            "meaning": "Aspiration toward enduring artistic relevance."
+        },
+        {
+            "author": "SZA",
+            "field": "Music",
+            "quote": "I'm learning how to be brave in my beautiful mistakes.",
+            "meaning": "Courage involves accepting imperfect attempts."
+        },
+        {
+            "author": "Frank Ocean",
+            "field": "Music",
+            "quote": "Work hard in silence, let your success be your noise.",
+            "meaning": "Achievement speaks louder than self-promotion."
+        },
+        {
+            "author": "Tyler, the Creator",
+            "field": "Hip-Hop",
+            "quote": "I wasn't a weird kid per se, I was just extremely sarcastic and socially awkward.",
+            "meaning": "Self-assessment of adolescent social characteristics."
+        },
+        {
+            "author": "Earl Sweatshirt",
+            "field": "Hip-Hop",
+            "quote": "I'll be dead before I'm 25.",
+            "meaning": "Fatalistic prediction about lifespan."
+        },
+        {
+            "author": "Vince Staples",
+            "field": "Hip-Hop",
+            "quote": "Life's a bitch, depending on how you dress her.",
+            "meaning": "Perspective shapes experience of existence."
+        },
+        {
+            "author": "Childish Gambino",
+            "field": "Hip-Hop",
+            "quote": "I refuse to go onstage without looking into the crowd and seeing a reflection of myself.",
+            "meaning": "Audience representation validates performance."
+        },
+        {
+            "author": "Chance the Rapper",
+            "field": "Hip-Hop",
+            "quote": "Depending on the story, I don't feel that I'm trying to teach anything.",
+            "meaning": "Narrative purpose varies without didactic intention."
+        },
+        {
+            "author": "Logic",
+            "field": "Hip-Hop",
+            "quote": "Who can relate?",
+            "meaning": "Universal inquiry seeking shared experience."
+        },
+        {
+            "author": "Mac Miller",
+            "field": "Hip-Hop",
+            "quote": "No matter where life takes me, find me with a smile.",
+            "meaning": "Positive disposition maintained across circumstances."
+        },
+        {
+            "author": "Juice WRLD",
+            "field": "Hip-Hop",
+            "quote": "Legends never die.",
+            "meaning": "Cultural memory preserves significant figures."
+        },
+        {
+            "author": "XXXTentacion",
+            "field": "Hip-Hop",
+            "quote": "I want to make music that can change lives.",
+            "meaning": "Artistic ambition toward transformative impact."
+        },
+        {
+            "author": "Lil Peep",
+            "field": "Hip-Hop",
+            "quote": "I just want to be everybody's everything.",
+            "meaning": "Desire for universal significance."
+        },
+        {
+            "author": "Post Malone",
+            "field": "Hip-Hop",
+            "quote": "Just believe in yourself and work really hard.",
+            "meaning": "Success formula combining confidence and effort."
+        },
+        {
+            "author": "Travis Scott",
+            "field": "Hip-Hop",
+            "quote": "I'm not making songs for awards.",
+            "meaning": "Artistic motivation independent of recognition."
+        },
+        {
+            "author": "Playboi Carti",
+            "field": "Hip-Hop",
+            "quote": "Cash Carti!",
+            "meaning": "Self-reference emphasizing financial success."
+        },
+        {
+            "author": "Lil Uzi Vert",
+            "field": "Hip-Hop",
+            "quote": "I don't really know how to do anything else.",
+            "meaning": "Music as singular capability."
+        },
+        {
+            "author": "21 Savage",
+            "field": "Hip-Hop",
+            "quote": "We came from nothing to something.",
+            "meaning": "Transformation from poverty to success."
+        },
+        {
+            "author": "Offset",
+            "field": "Hip-Hop",
+            "quote": "Started from the bottom, now we here.",
+            "meaning": "Journey from disadvantage to achievement."
+        },
+        {
+            "author": "Quavo",
+            "field": "Hip-Hop",
+            "quote": "We some young rich ninjas.",
+            "meaning": "Youthful financial success and skill."
+        },
+        {
+            "author": "Takeoff",
+            "field": "Hip-Hop",
+            "quote": "I just want to be great at what I do.",
+            "meaning": "Excellence as primary ambition."
+        },
+        {
+            "author": "Lil Baby",
+            "field": "Hip-Hop",
+            "quote": "Turned nothing into something.",
+            "meaning": "Creating value from absence."
+        },
+        {
+            "author": "DaBaby",
+            "field": "Hip-Hop",
+            "quote": "Let's go!",
+            "meaning": "Energetic call to action."
+        },
+        {
+            "author": "Roddy Ricch",
+            "field": "Hip-Hop",
+            "quote": "I got it out the mud.",
+            "meaning": "Success achieved from difficult circumstances."
+        },
+        {
+            "author": "Polo G",
+            "field": "Hip-Hop",
+            "quote": "Through the pain, I'm still smiling.",
+            "meaning": "Maintaining positivity despite hardship."
+        },
+        {
+            "author": "Pop Smoke",
+            "field": "Hip-Hop",
+            "quote": "Welcome to the party.",
+            "meaning": "Invitation to celebratory atmosphere."
+        },
+        {
+            "author": "King Von",
+            "field": "Hip-Hop",
+            "quote": "Stories I tell 'em is real.",
+            "meaning": "Authentic narrative basis for expression."
+        },
+        {
+            "author": "Lil Durk",
+            "field": "Hip-Hop",
+            "quote": "The voice of the streets.",
+            "meaning": "Self-designation as community representative."
+        },
+        {
+            "author": "Young Thug",
+            "field": "Hip-Hop",
+            "quote": "I'm a natural born hustler.",
+            "meaning": "Inherent entrepreneurial character."
+        },
+        {
+            "author": "Gunna",
+            "field": "Hip-Hop",
+            "quote": "Pushin' P.",
+            "meaning": "Maintaining positive momentum."
+        },
+        {
+            "author": "Future",
+            "field": "Hip-Hop",
+            "quote": "Life is good.",
+            "meaning": "Affirmation of positive existence."
+        },
+        {
+            "author": "Metro Boomin",
+            "field": "Hip-Hop Production",
+            "quote": "If Young Metro don't trust you, I'm gon' shoot you.",
+            "meaning": "Personal judgment determines protective action."
+        },
+        {
+            "author": "Mike WiLL Made-It",
+            "field": "Hip-Hop Production",
+            "quote": "Ear drummers!",
+            "meaning": "Production collective identification."
+        },
+        {
+            "author": "DJ Khaled",
+            "field": "Hip-Hop/Production",
+            "quote": "Another one.",
+            "meaning": "Continuous success generation."
+        }
+    ]
+}
